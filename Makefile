@@ -2,9 +2,10 @@ SHELL := /bin/sh
 
 GO ?= go
 GOVULNCHECK_VERSION ?= v1.7.0
+GITLEAKS_VERSION ?= v8.30.1
 BENCHSTAT_VERSION ?= v0.0.0-20251208221838-04cf7a2dca90
 
-.PHONY: fmt-check lint test test-race conformance differential differential-oracle fuzz-smoke vulncheck bench benchmark-verify benchmark-oracle benchmark-oracle-check benchmark-claim benchmark-profile benchmark-profile-check docs-check release-verify
+.PHONY: fmt-check lint test test-race conformance differential differential-oracle fuzz-smoke vulncheck secret-scan bench benchmark-verify benchmark-oracle benchmark-oracle-check benchmark-claim benchmark-profile benchmark-profile-check docs-check release-verify
 
 fmt-check:
 	@test -z "$$(gofmt -l .)" || { echo "gofmt is required for the listed files" >&2; exit 1; }
@@ -51,6 +52,9 @@ fuzz-smoke:
 
 vulncheck:
 	$(GO) run golang.org/x/vuln/cmd/govulncheck@$(GOVULNCHECK_VERSION) ./...
+
+secret-scan:
+	$(GO) run github.com/zricethezav/gitleaks/v8@$(GITLEAKS_VERSION) git --redact --log-opts=--all
 
 bench: benchmark-oracle-check
 	@test -d internal/benchmark || { echo "benchmark implementation is not present: internal/benchmark" >&2; exit 1; }
