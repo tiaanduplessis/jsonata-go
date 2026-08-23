@@ -2,7 +2,7 @@
 
 The scoped performance claim gate did not pass. No fastest-library claim is supported by this run.
 
-Evidence recorded: `2026-08-23T13:45:15Z`. Report generated: `2026-08-23T13:54:41Z`.
+Evidence recorded: `2026-08-23T14:06:28Z`. Report generated: `2026-08-23T14:15:54Z`.
 
 ## Environment
 
@@ -13,7 +13,7 @@ Evidence recorded: `2026-08-23T13:45:15Z`. Report generated: `2026-08-23T13:54:4
 | CPU | Apple M5 |
 | Logical CPUs / GOMAXPROCS | 10 / 10 |
 | Power | AC power |
-| Source revision / dirty (benchmark artifacts excluded) | `238e811b3d011f7c5be713fad3fd3d96879b8dcc` / false |
+| Source revision / dirty (benchmark artifacts excluded) | `d7244a0818270284a02c788662c379a5070696b9` / false |
 | Repetitions / benchtime / warm-ups | 10 / `200ms` / 1 |
 
 ## Pinned implementations
@@ -34,14 +34,14 @@ Comparable cases: 15. Complete required coverage: true.
 
 | Implementation | Geometric mean ns/op | Mean B/op | Mean allocs/op |
 |---|---:|---:|---:|
-| jsonata-go | 1555.08 | 5023.99 | 47.40 |
-| blues | 776.61 | 1665.33 | 30.53 |
-| gnata | 855.08 | 4462.67 | 28.53 |
+| jsonata-go | 1524.47 | 5023.99 | 47.40 |
+| blues | 649.58 | 1665.33 | 30.53 |
+| gnata | 875.40 | 4462.67 | 28.53 |
 
 | Competitor | Workspace ratio | 95% interval | Statistically faster |
 |---|---:|---:|---|
-| blues | 2.002 | 1.899-2.111 | false |
-| gnata | 1.819 | 1.756-1.884 | false |
+| blues | 2.347 | 2.279-2.417 | false |
+| gnata | 1.741 | 1.669-1.818 | false |
 
 ### decoded
 
@@ -49,14 +49,14 @@ Comparable cases: 15. Complete required coverage: true.
 
 | Implementation | Geometric mean ns/op | Mean B/op | Mean allocs/op |
 |---|---:|---:|---:|
-| jsonata-go | 589.67 | 344.53 | 5.13 |
-| blues | 2668.15 | 4017.05 | 112.00 |
-| gnata | 662.92 | 1707.69 | 27.67 |
+| jsonata-go | 592.90 | 344.54 | 5.13 |
+| blues | 2273.63 | 4017.07 | 112.00 |
+| gnata | 628.49 | 1707.67 | 27.67 |
 
 | Competitor | Workspace ratio | 95% interval | Statistically faster |
 |---|---:|---:|---|
-| blues | 0.221 | 0.210-0.233 | true |
-| gnata | 0.890 | 0.863-0.916 | true |
+| blues | 0.261 | 0.252-0.269 | true |
+| gnata | 0.943 | 0.912-0.976 | true |
 
 ### bytes
 
@@ -64,21 +64,21 @@ Comparable cases: 14. Complete required coverage: true.
 
 | Implementation | Geometric mean ns/op | Mean B/op | Mean allocs/op |
 |---|---:|---:|---:|
-| jsonata-go | 2883.85 | 6344.79 | 117.21 |
-| blues | 7553.21 | 8409.72 | 217.07 |
-| gnata | 1739.76 | 7259.08 | 162.00 |
+| jsonata-go | 2842.20 | 6344.75 | 117.21 |
+| blues | 6366.25 | 8409.77 | 217.07 |
+| gnata | 1678.84 | 7258.87 | 162.00 |
 
 | Competitor | Workspace ratio | 95% interval | Statistically faster |
 |---|---:|---:|---|
-| blues | 0.382 | 0.359-0.406 | true |
-| gnata | 1.658 | 1.607-1.710 | false |
+| blues | 0.446 | 0.433-0.460 | true |
+| gnata | 1.693 | 1.638-1.749 | false |
 
 ## Parallel throughput
 
 | Implementation | Cases | Serial geometric mean ns/op | Parallel geometric mean ns/op | Throughput scale |
 |---|---:|---:|---:|---:|
-| jsonata-go | 15 | 589.67 | 213.82 | 2.76x |
-| gnata | 15 | 662.92 | 386.35 | 1.72x |
+| jsonata-go | 15 | 592.90 | 200.00 | 2.96x |
+| gnata | 15 | 628.49 | 379.03 | 1.66x |
 
 ## Unsupported cells
 
@@ -109,7 +109,7 @@ Scope: lowest statistically supported geometric-mean latency on complete decoded
 
 Met: **false**.
 
-- jsonata-go is not statistically faster than gnata for bytes (upper 95% ratio 1.710)
+- jsonata-go is not statistically faster than gnata for bytes (upper 95% ratio 1.749)
 
 ## Method
 

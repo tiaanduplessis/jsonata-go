@@ -1,37 +1,37 @@
 File: benchmark.test
 Type: delay
-Time: 2026-08-23 15:55:30 SAST
-Showing nodes accounting for 48.75ms, 99.87% of 48.81ms total
-Dropped 208 nodes (cum <= 0.24ms)
-Showing top 30 nodes out of 58
+Time: 2026-08-23 16:16:32 SAST
+Showing nodes accounting for 45.36ms, 100% of 45.36ms total
+Dropped 186 nodes (cum <= 0.23ms)
+Showing top 30 nodes out of 34
       flat  flat%   sum%        cum   cum%
-   48.40ms 99.16% 99.16%    48.40ms 99.16%  runtime.unlock (partial-inline)
-    0.35ms  0.71% 99.87%     0.35ms  0.71%  sync.(*Mutex).Unlock
-         0     0% 99.87%     0.41ms  0.84%  encoding/json.Marshal (inline)
-         0     0% 99.87%     0.35ms  0.71%  encoding/json/jsontext.export.PutBufferedEncoder
-         0     0% 99.87%     0.35ms  0.71%  encoding/json/jsontext.putBufferedEncoder
-         0     0% 99.87%     0.41ms  0.84%  encoding/json/v2.Marshal
-         0     0% 99.87%     0.39ms  0.79%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.Compare
-         0     0% 99.87%     0.36ms  0.74%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.canonical
-         0     0% 99.87%     0.49ms     1%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.verifyParallel.func1
-         0     0% 99.87%     0.26ms  0.54%  github.com/tiaanduplessis/jsonata-go/internal/benchmark_test.BenchmarkMatrix.func1
-         0     0% 99.87%     0.26ms  0.52%  runtime.(*mcache).nextFree
-         0     0% 99.87%     0.26ms  0.52%  runtime.(*mcache).refill
-         0     0% 99.87%     0.26ms  0.52%  runtime.(*mcentral).cacheSpan
-         0     0% 99.87%     0.32ms  0.66%  runtime.(*mheap).allocManual
-         0     0% 99.87%     0.47ms  0.97%  runtime.(*mheap).allocSpan
-         0     0% 99.87%     0.25ms  0.51%  runtime.(*mheap).freeSpan (inline)
-         0     0% 99.87%     0.25ms  0.51%  runtime.(*mheap).freeSpan.func1
-         0     0% 99.87%     0.26ms  0.54%  runtime.(*sweepLocked).sweep
-         0     0% 99.87%    11.52ms 23.60%  runtime.findRunnable
-         0     0% 99.87%    24.23ms 49.63%  runtime.forEachP (inline)
-         0     0% 99.87%    24.23ms 49.63%  runtime.forEachP.func1
-         0     0% 99.87%    24.23ms 49.63%  runtime.forEachPInternal
-         0     0% 99.87%    29.29ms 60.01%  runtime.gcBgMarkWorker
-         0     0% 99.87%     0.39ms  0.79%  runtime.gcBgMarkWorker.func2
-         0     0% 99.87%     0.39ms  0.79%  runtime.gcDrain
-         0     0% 99.87%     0.37ms  0.76%  runtime.gcDrainMarkWorkerDedicated (inline)
-         0     0% 99.87%    28.94ms 59.28%  runtime.gcMarkDone
-         0     0% 99.87%     4.71ms  9.64%  runtime.gcMarkDone.func2
-         0     0% 99.87%     9.93ms 20.33%  runtime.gcMarkTermination
-         0     0% 99.87%     0.58ms  1.19%  runtime.gcstopm
+   45.09ms 99.42% 99.42%    45.09ms 99.42%  runtime.unlock (partial-inline)
+    0.26ms  0.58%   100%     0.26ms  0.58%  runtime._LostContendedRuntimeLock
+         0     0%   100%     0.27ms  0.59%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     0.27ms  0.59%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     0.27ms  0.61%  runtime.(*sweepLocked).sweep
+         0     0%   100%    11.55ms 25.48%  runtime.findRunnable
+         0     0%   100%       22ms 48.51%  runtime.forEachP (inline)
+         0     0%   100%       22ms 48.51%  runtime.forEachP.func1
+         0     0%   100%       22ms 48.51%  runtime.forEachPInternal
+         0     0%   100%    26.37ms 58.15%  runtime.gcBgMarkWorker
+         0     0%   100%    26.26ms 57.91%  runtime.gcMarkDone
+         0     0%   100%     4.25ms  9.37%  runtime.gcMarkDone.func2
+         0     0%   100%    10.50ms 23.15%  runtime.gcMarkTermination
+         0     0%   100%     1.20ms  2.65%  runtime.gcstopm
+         0     0%   100%     8.73ms 19.26%  runtime.gopreempt_m (inline)
+         0     0%   100%     9.46ms 20.85%  runtime.goschedImpl
+         0     0%   100%     0.72ms  1.59%  runtime.gosched_m
+         0     0%   100%     0.42ms  0.92%  runtime.incidlelocked
+         0     0%   100%     8.99ms 19.81%  runtime.mcall
+         0     0%   100%     8.66ms 19.09%  runtime.morestack
+         0     0%   100%     0.52ms  1.15%  runtime.mstart
+         0     0%   100%     0.52ms  1.15%  runtime.mstart0
+         0     0%   100%     0.52ms  1.15%  runtime.mstart1
+         0     0%   100%     8.67ms 19.11%  runtime.newstack
+         0     0%   100%     8.17ms 18.01%  runtime.park_m
+         0     0%   100%     1.13ms  2.50%  runtime.resetspinning
+         0     0%   100%     0.42ms  0.92%  runtime.retake
+         0     0%   100%     6.31ms 13.91%  runtime.runSafePointFn
+         0     0%   100%    12.72ms 28.05%  runtime.schedule
+         0     0%   100%     4.28ms  9.44%  runtime.stopTheWorldWithSema
