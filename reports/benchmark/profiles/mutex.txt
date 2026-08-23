@@ -1,37 +1,37 @@
 File: benchmark.test
 Type: delay
-Time: 2026-08-23 16:16:32 SAST
-Showing nodes accounting for 45.36ms, 100% of 45.36ms total
-Dropped 186 nodes (cum <= 0.23ms)
-Showing top 30 nodes out of 34
+Time: 2026-08-23 16:51:23 SAST
+Showing nodes accounting for 26.12ms, 100% of 26.12ms total
+Dropped 127 nodes (cum <= 0.13ms)
+Showing top 30 nodes out of 67
       flat  flat%   sum%        cum   cum%
-   45.09ms 99.42% 99.42%    45.09ms 99.42%  runtime.unlock (partial-inline)
-    0.26ms  0.58%   100%     0.26ms  0.58%  runtime._LostContendedRuntimeLock
-         0     0%   100%     0.27ms  0.59%  runtime.(*mheap).freeSpan (inline)
-         0     0%   100%     0.27ms  0.59%  runtime.(*mheap).freeSpan.func1
-         0     0%   100%     0.27ms  0.61%  runtime.(*sweepLocked).sweep
-         0     0%   100%    11.55ms 25.48%  runtime.findRunnable
-         0     0%   100%       22ms 48.51%  runtime.forEachP (inline)
-         0     0%   100%       22ms 48.51%  runtime.forEachP.func1
-         0     0%   100%       22ms 48.51%  runtime.forEachPInternal
-         0     0%   100%    26.37ms 58.15%  runtime.gcBgMarkWorker
-         0     0%   100%    26.26ms 57.91%  runtime.gcMarkDone
-         0     0%   100%     4.25ms  9.37%  runtime.gcMarkDone.func2
-         0     0%   100%    10.50ms 23.15%  runtime.gcMarkTermination
-         0     0%   100%     1.20ms  2.65%  runtime.gcstopm
-         0     0%   100%     8.73ms 19.26%  runtime.gopreempt_m (inline)
-         0     0%   100%     9.46ms 20.85%  runtime.goschedImpl
-         0     0%   100%     0.72ms  1.59%  runtime.gosched_m
-         0     0%   100%     0.42ms  0.92%  runtime.incidlelocked
-         0     0%   100%     8.99ms 19.81%  runtime.mcall
-         0     0%   100%     8.66ms 19.09%  runtime.morestack
-         0     0%   100%     0.52ms  1.15%  runtime.mstart
-         0     0%   100%     0.52ms  1.15%  runtime.mstart0
-         0     0%   100%     0.52ms  1.15%  runtime.mstart1
-         0     0%   100%     8.67ms 19.11%  runtime.newstack
-         0     0%   100%     8.17ms 18.01%  runtime.park_m
-         0     0%   100%     1.13ms  2.50%  runtime.resetspinning
-         0     0%   100%     0.42ms  0.92%  runtime.retake
-         0     0%   100%     6.31ms 13.91%  runtime.runSafePointFn
-         0     0%   100%    12.72ms 28.05%  runtime.schedule
-         0     0%   100%     4.28ms  9.44%  runtime.stopTheWorldWithSema
+   25.95ms 99.32% 99.32%    25.95ms 99.32%  runtime.unlock (inline)
+    0.18ms  0.68%   100%     0.18ms  0.68%  runtime._LostContendedRuntimeLock
+         0     0%   100%     0.18ms  0.68%  encoding/json.(*Decoder).Decode
+         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*Decoder).ReadValue (inline)
+         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).ReadValue
+         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).consumeArray
+         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).consumeObject
+         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).consumeValue
+         0     0%   100%     0.17ms  0.64%  encoding/json/jsontext.(*decoderState).consumeWhitespace
+         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).fetch
+         0     0%   100%     0.16ms   0.6%  github.com/recolabs/gnata.(*Expression).Eval (inline)
+         0     0%   100%     0.16ms   0.6%  github.com/recolabs/gnata.(*Expression).evalCore
+         0     0%   100%     0.24ms  0.92%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.Compare
+         0     0%   100%     0.24ms  0.92%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.canonicalJSON
+         0     0%   100%     0.16ms   0.6%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.gnataExpression.Eval
+         0     0%   100%     0.42ms  1.61%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.verifyParallel.func1
+         0     0%   100%     0.20ms  0.76%  runtime.(*mcache).nextFree
+         0     0%   100%     0.20ms  0.76%  runtime.(*mcache).refill
+         0     0%   100%     0.20ms  0.76%  runtime.(*mcentral).cacheSpan
+         0     0%   100%     0.18ms   0.7%  runtime.(*mcentral).grow
+         0     0%   100%     0.18ms   0.7%  runtime.(*mheap).alloc
+         0     0%   100%     0.18ms   0.7%  runtime.(*mheap).alloc.func1
+         0     0%   100%     0.22ms  0.83%  runtime.(*mheap).allocSpan
+         0     0%   100%     0.42ms  1.60%  runtime.(*pageAlloc).scavenge
+         0     0%   100%     0.42ms  1.60%  runtime.(*pageAlloc).scavenge.func1
+         0     0%   100%     0.42ms  1.60%  runtime.(*pageAlloc).scavengeOne
+         0     0%   100%     0.42ms  1.60%  runtime.(*scavengerState).init.func2
+         0     0%   100%     0.42ms  1.60%  runtime.(*scavengerState).run
+         0     0%   100%     0.13ms  0.51%  runtime.asyncPreempt2.func1
+         0     0%   100%     0.42ms  1.60%  runtime.bgscavenge

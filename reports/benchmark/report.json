@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-23T14:15:54Z",
-  "evidence_at": "2026-08-23T14:06:28Z",
+  "generated_at": "2026-08-23T14:50:35Z",
+  "evidence_at": "2026-08-23T14:41:13Z",
   "repository": {
-    "revision": "d7244a0818270284a02c788662c379a5070696b9",
+    "revision": "5b4734a4c7fc8a2007a4764b68208cbc0a83a600",
     "dirty": false
   },
   "analysis": {
@@ -207,19 +207,19 @@
         "metrics": [
           {
             "implementation": "jsonata-go",
-            "geometric_mean_ns": 1524.4737532864046,
+            "geometric_mean_ns": 1528.8634120066845,
             "arithmetic_mean_bytes_per_op": 5023.986666666667,
             "arithmetic_mean_allocs_per_op": 47.4
           },
           {
             "implementation": "blues",
-            "geometric_mean_ns": 649.5782878063538,
+            "geometric_mean_ns": 657.537972477,
             "arithmetic_mean_bytes_per_op": 1665.3333333333333,
             "arithmetic_mean_allocs_per_op": 30.533333333333335
           },
           {
             "implementation": "gnata",
-            "geometric_mean_ns": 875.3976978637235,
+            "geometric_mean_ns": 851.9169326503544,
             "arithmetic_mean_bytes_per_op": 4462.666666666667,
             "arithmetic_mean_allocs_per_op": 28.533333333333335
           }
@@ -227,16 +227,16 @@
         "comparisons": [
           {
             "competitor": "blues",
-            "workspace_ratio": 2.3468668548553313,
-            "lower_95": 2.27901123321372,
-            "upper_95": 2.4167428199341603,
+            "workspace_ratio": 2.325133263782977,
+            "lower_95": 2.2501501329743605,
+            "upper_95": 2.402615103377051,
             "statistically_faster": false
           },
           {
             "competitor": "gnata",
-            "workspace_ratio": 1.7414642019354851,
-            "lower_95": 1.668589090925615,
-            "upper_95": 1.817522110815474,
+            "workspace_ratio": 1.7946155938588109,
+            "lower_95": 1.7215193076424455,
+            "upper_95": 1.8708155728626492,
             "statistically_faster": false
           }
         ]
@@ -264,36 +264,36 @@
         "metrics": [
           {
             "implementation": "jsonata-go",
-            "geometric_mean_ns": 592.9012774930027,
-            "arithmetic_mean_bytes_per_op": 344.54,
+            "geometric_mean_ns": 582.4723369959944,
+            "arithmetic_mean_bytes_per_op": 344.53333333333336,
             "arithmetic_mean_allocs_per_op": 5.133333333333334
           },
           {
             "implementation": "blues",
-            "geometric_mean_ns": 2273.625810196823,
-            "arithmetic_mean_bytes_per_op": 4017.0666666666666,
+            "geometric_mean_ns": 2290.660851550813,
+            "arithmetic_mean_bytes_per_op": 4016.9,
             "arithmetic_mean_allocs_per_op": 112
           },
           {
             "implementation": "gnata",
-            "geometric_mean_ns": 628.491385656557,
-            "arithmetic_mean_bytes_per_op": 1707.6733333333334,
+            "geometric_mean_ns": 619.6326160629648,
+            "arithmetic_mean_bytes_per_op": 1707.6133333333332,
             "arithmetic_mean_allocs_per_op": 27.666666666666668
           }
         ],
         "comparisons": [
           {
             "competitor": "blues",
-            "workspace_ratio": 0.26077346361654624,
-            "lower_95": 0.252429284729514,
-            "upper_95": 0.2693934635968934,
+            "workspace_ratio": 0.25428135142819386,
+            "lower_95": 0.24369944340294095,
+            "upper_95": 0.2653227466639685,
             "statistically_faster": true
           },
           {
             "competitor": "gnata",
-            "workspace_ratio": 0.9433721623306325,
-            "lower_95": 0.9115875433702534,
-            "upper_95": 0.9762650259240189,
+            "workspace_ratio": 0.9400285296421601,
+            "lower_95": 0.9024920550001114,
+            "upper_95": 0.979126222381085,
             "statistically_faster": true
           }
         ]
@@ -320,36 +320,36 @@
         "metrics": [
           {
             "implementation": "jsonata-go",
-            "geometric_mean_ns": 2842.2032373271245,
-            "arithmetic_mean_bytes_per_op": 6344.75,
+            "geometric_mean_ns": 2874.244119979344,
+            "arithmetic_mean_bytes_per_op": 6344.842857142857,
             "arithmetic_mean_allocs_per_op": 117.21428571428571
           },
           {
             "implementation": "blues",
-            "geometric_mean_ns": 6366.254665114921,
-            "arithmetic_mean_bytes_per_op": 8409.771428571428,
+            "geometric_mean_ns": 6410.602415775216,
+            "arithmetic_mean_bytes_per_op": 8409.82142857143,
             "arithmetic_mean_allocs_per_op": 217.07142857142858
           },
           {
             "implementation": "gnata",
-            "geometric_mean_ns": 1678.8373867862488,
-            "arithmetic_mean_bytes_per_op": 7258.871428571429,
+            "geometric_mean_ns": 1672.177587530276,
+            "arithmetic_mean_bytes_per_op": 7258.9857142857145,
             "arithmetic_mean_allocs_per_op": 162
           }
         ],
         "comparisons": [
           {
             "competitor": "blues",
-            "workspace_ratio": 0.44644824733473226,
-            "lower_95": 0.43330977629564205,
-            "upper_95": 0.4599850925409616,
+            "workspace_ratio": 0.4483578817657454,
+            "lower_95": 0.4296577824719262,
+            "upper_95": 0.4678718699913253,
             "statistically_faster": true
           },
           {
             "competitor": "gnata",
-            "workspace_ratio": 1.6929592226724721,
-            "lower_95": 1.638378597979814,
-            "upper_95": 1.7493581356383743,
+            "workspace_ratio": 1.7188629613344197,
+            "lower_95": 1.6478099139553302,
+            "upper_95": 1.7929797938619656,
             "statistically_faster": false
           }
         ]
@@ -359,23 +359,23 @@
       {
         "implementation": "jsonata-go",
         "cases": 15,
-        "serial_geometric_mean_ns": 592.9012774930027,
-        "parallel_geometric_mean_ns": 200.00002204699257,
-        "throughput_scale": 2.964506060672798
+        "serial_geometric_mean_ns": 582.4723369959944,
+        "parallel_geometric_mean_ns": 202.35738393478937,
+        "throughput_scale": 2.8784338167946415
       },
       {
         "implementation": "gnata",
         "cases": 15,
-        "serial_geometric_mean_ns": 628.491385656557,
-        "parallel_geometric_mean_ns": 379.0257375907946,
-        "throughput_scale": 1.658176011084217
+        "serial_geometric_mean_ns": 619.6326160629648,
+        "parallel_geometric_mean_ns": 380.4854053773796,
+        "throughput_scale": 1.6285318892807203
       }
     ],
     "claim": {
       "met": false,
       "scope": "lowest statistically supported geometric-mean latency on complete decoded and raw-input comparable suites",
       "reasons": [
-        "jsonata-go is not statistically faster than gnata for bytes (upper 95% ratio 1.749)"
+        "jsonata-go is not statistically faster than gnata for bytes (upper 95% ratio 1.793)"
       ]
     }
   }

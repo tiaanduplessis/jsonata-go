@@ -1,20 +1,20 @@
 File: benchmark.test
 Type: delay
-Time: 2026-08-23 16:16:32 SAST
-Showing nodes accounting for 39.29s, 100% of 39.30s total
-Dropped 15 nodes (cum <= 0.20s)
+Time: 2026-08-23 16:51:23 SAST
+Showing nodes accounting for 38.32s, 100% of 38.33s total
+Dropped 15 nodes (cum <= 0.19s)
       flat  flat%   sum%        cum   cum%
-    39.29s   100%   100%     39.29s   100%  runtime.chanrecv1
-         0     0%   100%     19.59s 49.85%  github.com/tiaanduplessis/jsonata-go/internal/benchmark_test.BenchmarkMatrix
-         0     0%   100%     19.71s 50.15%  main.main
-         0     0%   100%     19.71s 50.15%  runtime.main
-         0     0%   100%     39.18s 99.69%  testing.(*B).Run
-         0     0%   100%     19.58s 49.83%  testing.(*B).doBench
-         0     0%   100%     19.58s 49.83%  testing.(*B).run
-         0     0%   100%     19.60s 49.87%  testing.(*B).run1
-         0     0%   100%     19.59s 49.85%  testing.(*B).run1.func1
-         0     0%   100%     39.19s 99.71%  testing.(*B).runN
-         0     0%   100%     19.71s 50.15%  testing.(*M).Run
-         0     0%   100%     19.58s 49.83%  testing.(*benchState).processBench
-         0     0%   100%     19.60s 49.86%  testing.runBenchmarks
-         0     0%   100%     19.60s 49.86%  testing.runBenchmarks.func1
+    38.32s   100%   100%     38.32s   100%  runtime.chanrecv1
+         0     0%   100%     19.08s 49.78%  github.com/tiaanduplessis/jsonata-go/internal/benchmark_test.BenchmarkMatrix
+         0     0%   100%     19.25s 50.22%  main.main
+         0     0%   100%     19.25s 50.22%  runtime.main
+         0     0%   100%     38.15s 99.55%  testing.(*B).Run
+         0     0%   100%     19.07s 49.75%  testing.(*B).doBench
+         0     0%   100%     19.07s 49.75%  testing.(*B).run
+         0     0%   100%     19.09s 49.81%  testing.(*B).run1
+         0     0%   100%     19.08s 49.78%  testing.(*B).run1.func1
+         0     0%   100%     38.16s 99.58%  testing.(*B).runN
+         0     0%   100%     19.25s 50.22%  testing.(*M).Run
+         0     0%   100%     19.07s 49.75%  testing.(*benchState).processBench
+         0     0%   100%     19.09s 49.80%  testing.runBenchmarks
+         0     0%   100%     19.09s 49.80%  testing.runBenchmarks.func1

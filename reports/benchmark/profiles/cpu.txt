@@ -1,38 +1,38 @@
 File: benchmark.test
 Type: cpu
-Time: 2026-08-23 16:16:12 SAST
-Duration: 19.71s, Total samples = 21.94s (111.34%)
-Showing nodes accounting for 17.32s, 78.94% of 21.94s total
-Dropped 419 nodes (cum <= 0.11s)
-Showing top 30 nodes out of 177
+Time: 2026-08-23 16:51:04 SAST
+Duration: 19.25s, Total samples = 21.48s (111.60%)
+Showing nodes accounting for 18.41s, 85.71% of 21.48s total
+Dropped 391 nodes (cum <= 0.11s)
+Showing top 30 nodes out of 141
       flat  flat%   sum%        cum   cum%
-     5.70s 25.98% 25.98%      5.70s 25.98%  runtime.kevent
-     3.51s 16.00% 41.98%      3.51s 16.00%  runtime.madvise
-     1.79s  8.16% 50.14%      1.79s  8.16%  runtime.pthread_cond_wait
-     0.87s  3.97% 54.10%      0.87s  3.97%  runtime.pthread_cond_signal
-     0.78s  3.56% 57.66%      0.78s  3.56%  runtime.pthread_kill
-     0.65s  2.96% 60.62%      0.80s  3.65%  internal/runtime/maps.(*Iter).Next
-     0.59s  2.69% 63.31%      0.59s  2.69%  runtime.usleep
-     0.44s  2.01% 65.31%      1.21s  5.52%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticPathValueSafe
-     0.40s  1.82% 67.14%      0.59s  2.69%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
-     0.27s  1.23% 68.37%      0.38s  1.73%  runtime.tryDeferToSpanScan
-     0.23s  1.05% 69.42%      0.62s  2.83%  runtime.scanObject
-     0.20s  0.91% 70.33%      0.20s  0.91%  internal/runtime/maps.memHashAES
-     0.19s  0.87% 71.19%      0.19s  0.87%  internal/chacha8rand.block
-     0.15s  0.68% 71.88%      0.20s  0.91%  runtime.mallocgcTinySC2
-     0.13s  0.59% 72.47%      0.13s  0.59%  runtime.memclrNoHeapPointers
-     0.13s  0.59% 73.06%      0.13s  0.59%  runtime.pthread_cond_timedwait_relative_np
-     0.12s  0.55% 73.61%      0.12s  0.55%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.(*staticRawScanner).string
-     0.12s  0.55% 74.16%      0.18s  0.82%  runtime.typePointers.next
-     0.11s   0.5% 74.66%      0.11s   0.5%  encoding/json/internal/jsonwire.ConsumeSimpleString
-     0.11s   0.5% 75.16%      0.19s  0.87%  runtime.scanblock
-     0.10s  0.46% 75.62%      0.60s  2.73%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.(*staticTransformCloneState).clone
-     0.10s  0.46% 76.07%      0.61s  2.78%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticSumMatches
-     0.10s  0.46% 76.53%      0.23s  1.05%  runtime.scanObjectsSmall
-     0.09s  0.41% 76.94%      0.44s  2.01%  runtime.mallocgcSmallScanNoHeader
-     0.08s  0.36% 77.30%      1.02s  4.65%  runtime.mallocgc
-     0.08s  0.36% 77.67%      0.17s  0.77%  runtime.mallocgcSmallScanNoHeaderSC5
-     0.07s  0.32% 77.99%      0.14s  0.64%  internal/runtime/maps.(*Map).putSlotSmallFastStr
-     0.07s  0.32% 78.30%      0.53s  2.42%  runtime.mapIterNext
-     0.07s  0.32% 78.62%      0.70s  3.19%  runtime.mapaccess2_faststr
-     0.07s  0.32% 78.94%      0.53s  2.42%  runtime.mapassign_faststr
+     7.68s 35.75% 35.75%      7.68s 35.75%  runtime.kevent
+     3.06s 14.25% 50.00%      3.06s 14.25%  runtime.madvise
+     1.80s  8.38% 58.38%      1.80s  8.38%  runtime.pthread_cond_wait
+     0.98s  4.56% 62.94%      0.98s  4.56%  runtime.pthread_cond_signal
+     0.96s  4.47% 67.41%      0.96s  4.47%  runtime.pthread_kill
+     0.84s  3.91% 71.32%      0.84s  3.91%  runtime.usleep
+     0.55s  2.56% 73.88%      0.65s  3.03%  internal/runtime/maps.(*Iter).Next
+     0.45s  2.09% 75.98%      1.10s  5.12%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticPathValueSafe
+     0.27s  1.26% 77.23%      0.38s  1.77%  runtime.tryDeferToSpanScan
+     0.21s  0.98% 78.21%      0.32s  1.49%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+     0.20s  0.93% 79.14%      0.20s  0.93%  runtime.pthread_cond_timedwait_relative_np
+     0.17s  0.79% 79.93%      0.17s  0.79%  internal/runtime/maps.memHashAES
+     0.16s  0.74% 80.68%      0.56s  2.61%  runtime.scanObject
+     0.09s  0.42% 81.10%      0.33s  1.54%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticSumMatches
+     0.09s  0.42% 81.52%      0.13s  0.61%  runtime.typePointers.next
+     0.09s  0.42% 81.94%      0.19s  0.88%  runtime.wbBufFlush1
+     0.08s  0.37% 82.31%      0.57s  2.65%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.(*staticTransformCloneState).clone
+     0.08s  0.37% 82.68%      0.47s  2.19%  runtime.stealWork
+     0.07s  0.33% 83.01%      0.23s  1.07%  internal/runtime/maps.(*Iter).Init
+     0.07s  0.33% 83.33%      0.72s  3.35%  runtime.mallocgc
+     0.07s  0.33% 83.66%      0.33s  1.54%  runtime.mallocgcSmallScanNoHeader
+     0.07s  0.33% 83.99%      0.42s  1.96%  runtime.mapIterNext
+     0.07s  0.33% 84.31%      0.21s  0.98%  runtime.scanObjectsSmall
+     0.06s  0.28% 84.59%      0.13s  0.61%  internal/runtime/maps.rand
+     0.05s  0.23% 84.82%      0.37s  1.72%  runtime.mapaccess2_faststr
+     0.05s  0.23% 85.06%      0.44s  2.05%  runtime.mapassign_faststr
+     0.04s  0.19% 85.24%      0.12s  0.56%  encoding/json/jsontext.(*decoderState).consumeObject
+     0.04s  0.19% 85.43%      0.64s  2.98%  runtime.lock2
+     0.03s  0.14% 85.57%      0.15s   0.7%  encoding/json/jsontext.(*decoderState).consumeValue
+     0.03s  0.14% 85.71%      0.77s  3.58%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticSumFilteredValues
