@@ -6,7 +6,7 @@ require (
 	github.com/blues/jsonata-go v1.5.4
 	github.com/dlclark/regexp2 v1.12.0
 	github.com/recolabs/gnata v0.2.3
-	golang.org/x/text v0.39.0
+	golang.org/x/text v0.41.0
 	golang.org/x/vuln v1.7.0
 )
 
