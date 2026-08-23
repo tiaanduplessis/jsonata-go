@@ -7,8 +7,10 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"math"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
 	"time"
 
@@ -117,16 +119,8 @@ func checkCommittedEvidence(jsonPath, markdownPath, rawDir string, corpus benchm
 	if err != nil {
 		return err
 	}
-	reportedAnalysis, err := json.Marshal(report.Analysis)
-	if err != nil {
-		return fmt.Errorf("encode benchmark report analysis: %w", err)
-	}
-	computedAnalysis, err := json.Marshal(analysis)
-	if err != nil {
-		return fmt.Errorf("encode computed benchmark analysis: %w", err)
-	}
-	if string(reportedAnalysis) != string(computedAnalysis) {
-		return fmt.Errorf("benchmark report analysis differs from the authenticated raw evidence")
+	if err := compareAnalysis(report.Analysis, analysis); err != nil {
+		return fmt.Errorf("benchmark report analysis differs from the authenticated raw evidence: %w", err)
 	}
 	markdown, err := os.ReadFile(markdownPath)
 	if err != nil {
@@ -134,6 +128,49 @@ func checkCommittedEvidence(jsonPath, markdownPath, rawDir string, corpus benchm
 	}
 	if string(markdown) != string(renderMarkdown(report)) {
 		return fmt.Errorf("benchmark Markdown report differs from the authenticated JSON report")
+	}
+	return nil
+}
+
+// compareAnalysis allows only the sub-picosecond floating-point drift caused
+// by architecture-specific math implementations. All non-floating fields,
+// including the statistical claim decision, must match exactly.
+func compareAnalysis(reported, computed benchmark.Analysis) error {
+	return compareAnalysisValue("analysis", reflect.ValueOf(reported), reflect.ValueOf(computed))
+}
+
+func compareAnalysisValue(path string, reported, computed reflect.Value) error {
+	if reported.Type() != computed.Type() {
+		return fmt.Errorf("%s has incompatible types", path)
+	}
+	switch reported.Kind() {
+	case reflect.Struct:
+		for i := 0; i < reported.NumField(); i++ {
+			fieldPath := path + "." + reported.Type().Field(i).Name
+			if err := compareAnalysisValue(fieldPath, reported.Field(i), computed.Field(i)); err != nil {
+				return err
+			}
+		}
+	case reflect.Slice:
+		if reported.Len() != computed.Len() {
+			return fmt.Errorf("%s has different length", path)
+		}
+		for i := 0; i < reported.Len(); i++ {
+			if err := compareAnalysisValue(fmt.Sprintf("%s[%d]", path, i), reported.Index(i), computed.Index(i)); err != nil {
+				return err
+			}
+		}
+	case reflect.Float32, reflect.Float64:
+		const relativeTolerance = 1e-12
+		a, b := reported.Float(), computed.Float()
+		scale := max(1, math.Abs(a), math.Abs(b))
+		if math.IsNaN(a) || math.IsNaN(b) || math.Abs(a-b) > relativeTolerance*scale {
+			return fmt.Errorf("%s differs: reported %.17g, computed %.17g", path, a, b)
+		}
+	default:
+		if !reflect.DeepEqual(reported.Interface(), computed.Interface()) {
+			return fmt.Errorf("%s differs", path)
+		}
 	}
 	return nil
 }

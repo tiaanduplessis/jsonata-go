@@ -39,6 +39,40 @@ func TestLoadReportRejectsUnknownFields(t *testing.T) {
 	}
 }
 
+func TestCompareAnalysisAllowsArchitectureRoundingDrift(t *testing.T) {
+	reported := benchmark.Analysis{Suites: []benchmark.SuiteAnalysis{{Metrics: []benchmark.ImplementationMetrics{{
+		Implementation:  "jsonata-go",
+		GeometricMeanNS: 1000,
+	}}}}}
+	computed := benchmark.Analysis{Suites: []benchmark.SuiteAnalysis{{Metrics: []benchmark.ImplementationMetrics{{
+		Implementation:  "jsonata-go",
+		GeometricMeanNS: 1000 + 5e-10,
+	}}}}}
+	if err := compareAnalysis(reported, computed); err != nil {
+		t.Fatalf("expected insignificant floating-point drift to pass: %v", err)
+	}
+}
+
+func TestCompareAnalysisRejectsMaterialOrSemanticChanges(t *testing.T) {
+	reported := benchmark.Analysis{Suites: []benchmark.SuiteAnalysis{{
+		Complete: true,
+		Metrics:  []benchmark.ImplementationMetrics{{Implementation: "jsonata-go", GeometricMeanNS: 1000}},
+	}}}
+	material := reported
+	material.Suites = append([]benchmark.SuiteAnalysis(nil), reported.Suites...)
+	material.Suites[0].Metrics = append([]benchmark.ImplementationMetrics(nil), reported.Suites[0].Metrics...)
+	material.Suites[0].Metrics[0].GeometricMeanNS = 1000.001
+	if err := compareAnalysis(reported, material); err == nil {
+		t.Fatal("material numerical changes must fail")
+	}
+	semantic := reported
+	semantic.Suites = append([]benchmark.SuiteAnalysis(nil), reported.Suites...)
+	semantic.Suites[0].Complete = false
+	if err := compareAnalysis(reported, semantic); err == nil {
+		t.Fatal("semantic changes must fail")
+	}
+}
+
 func TestMarkdownStatesUnsupportedCellsAreUntimed(t *testing.T) {
 	document := reportDocument{Analysis: benchmark.Analysis{Unsupported: []benchmark.VerificationRecord{{
 		Implementation: "competitor", CaseID: "case", Mode: benchmark.ModeBytes, Class: "api", Reason: "not supported",
