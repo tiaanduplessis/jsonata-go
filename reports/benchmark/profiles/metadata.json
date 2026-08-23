@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-08-23T12:07:35Z",
+  "recorded_at": "2026-08-23T13:55:33Z",
   "reference": {
     "implementation": "jsonata-js",
     "version": "2.2.2",
@@ -12,7 +12,7 @@
     }
   },
   "machine": {
-    "go_version": "go1.26.6",
+    "go_version": "go1.27.0",
     "goos": "darwin",
     "goarch": "arm64",
     "compiler": "gc",
@@ -22,7 +22,7 @@
     "power_mode": "AC power"
   },
   "repository": {
-    "revision": "ca6b2906c3025c113e428e4c2f045b76266fb095",
+    "revision": "238e811b3d011f7c5be713fad3fd3d96879b8dcc",
     "dirty": false
   },
   "commands": [
@@ -102,42 +102,42 @@
   "files": [
     {
       "file": "cpu.pprof",
-      "sha256": "11703b9fdabb1f3c687bf3a97b4ee1b183c62f451581ec7f338e7fd0be2d6e3e",
-      "bytes": 46008
+      "sha256": "24dbfbe591dfcbbc9e41893a19469c1169b45b2d55829bd7fed8f140ff757fa1",
+      "bytes": 38578
     },
     {
       "file": "heap.pprof",
-      "sha256": "3b4135fd5685e9a91269c0066ea15167587420327304fd02aa9e9ee77fd34fb4",
-      "bytes": 17677
+      "sha256": "2fdff46fab02c35795aaef8f9a1762fa90c2df8ae71d38417b18429e0cb43ccb",
+      "bytes": 20264
     },
     {
       "file": "mutex.pprof",
-      "sha256": "8d54ab04b6432431b5ca35fd65979ac3358c36a757d03c69242f370e82de0675",
-      "bytes": 10850
+      "sha256": "c4af566630c110f335b92842073de475a73da4193ed518d2a294cee68e6e5e81",
+      "bytes": 14628
     },
     {
       "file": "block.pprof",
-      "sha256": "607c1244d5dba4be3eff4772089c1c41bea6df93d4eab6a36fc5c81b5226740f",
-      "bytes": 1964
+      "sha256": "6e3bceebfd5370ee0467e65b4361bcb724d89f499163a9043c35eb28e905f5fb",
+      "bytes": 2386
     },
     {
       "file": "cpu.txt",
-      "sha256": "6bd63d6f6b81ecad4a355e7f6562122d8bf70f350c138be287bc1a6ec5c754bb",
-      "bytes": 2585
+      "sha256": "55da064a94bafa97df39dc17eb4687a4dab69ec7d6f99c14ec3d1c7a0e890d80",
+      "bytes": 2700
     },
     {
       "file": "allocations.txt",
-      "sha256": "b6ba7ba447a688d33914d8609a02e869a9e60ac7a7428f6e6ce159319dc27ed1",
-      "bytes": 3436
+      "sha256": "ea68868a44f6827552502063e98bb85b4877b0bb2edc9797becbcdf889ca7ae8",
+      "bytes": 3429
     },
     {
       "file": "mutex.txt",
-      "sha256": "788360548eda1e363937b0eaec64fa8673801326f4e30fd64111392a0cb80e46",
-      "bytes": 2437
+      "sha256": "8e40d1c1900a03a11bb0ba7e17c36b648b46b0b0462126d760356d88e62dbc1a",
+      "bytes": 2571
     },
     {
       "file": "block.txt",
-      "sha256": "8ed18aef69d2753885adec3d13f7e5cf337dfb7391f83bc6301fd3943654c75f",
+      "sha256": "b679799e81dbcb7d0625b87bd96039d69eaf969679be0fe91bb8c97217d93555",
       "bytes": 1148
     }
   ]

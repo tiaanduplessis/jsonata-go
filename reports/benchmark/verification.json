@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-08-23T11:55:40Z",
+  "recorded_at": "2026-08-23T13:45:14Z",
   "reference": {
     "implementation": "jsonata-js",
     "version": "2.2.2",
@@ -38,7 +38,7 @@
     "minimum_samples": 6
   },
   "machine": {
-    "go_version": "go1.26.6",
+    "go_version": "go1.27.0",
     "goos": "darwin",
     "goarch": "arm64",
     "compiler": "gc",
@@ -48,7 +48,7 @@
     "power_mode": "AC power"
   },
   "repository": {
-    "revision": "ca6b2906c3025c113e428e4c2f045b76266fb095",
+    "revision": "238e811b3d011f7c5be713fad3fd3d96879b8dcc",
     "dirty": false
   },
   "cases": 15,

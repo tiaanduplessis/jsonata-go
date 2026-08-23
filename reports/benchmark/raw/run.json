@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-08-23T11:55:41Z",
+  "recorded_at": "2026-08-23T13:45:15Z",
   "reference": {
     "implementation": "jsonata-js",
     "version": "2.2.2",
@@ -31,7 +31,7 @@
     }
   ],
   "machine": {
-    "go_version": "go1.26.6",
+    "go_version": "go1.27.0",
     "goos": "darwin",
     "goarch": "arm64",
     "compiler": "gc",
@@ -41,7 +41,7 @@
     "power_mode": "AC power"
   },
   "repository": {
-    "revision": "ca6b2906c3025c113e428e4c2f045b76266fb095",
+    "revision": "238e811b3d011f7c5be713fad3fd3d96879b8dcc",
     "dirty": false
   },
   "run": {
@@ -139,20 +139,20 @@
     {
       "implementation": "jsonata-go",
       "file": "jsonata-go.txt",
-      "sha256": "e83724e07aa351a6409aca9ad96b0ba1ac3cdd6af5a67efe8f195ce2611f374e",
-      "bytes": 71276
+      "sha256": "3e4e05c7a5932d91bc0ddd02d0219f585a3a9887d534b5f9114e4b9392d1a805",
+      "bytes": 71336
     },
     {
       "implementation": "blues",
       "file": "blues.txt",
-      "sha256": "4142548c0b31d1149fd59238909a060101c13879b1f6cc4ebedee09783c4066d",
-      "bytes": 53691
+      "sha256": "9127a5acb4013dabb9b513c634c353b33b8c11a23ff9b32fdacae7682353c2cf",
+      "bytes": 53729
     },
     {
       "implementation": "gnata",
       "file": "gnata.txt",
-      "sha256": "2e1b89c278db8dfff7cc26d30e9b5c6ec1eadea2b0c3faa78de4463313474ca4",
-      "bytes": 70107
+      "sha256": "82ae93d4ade7a6a4e9a7fa095b8953edcbf4bb3c9afc3ccbd846b3a6f97236eb",
+      "bytes": 70181
     }
   ]
 }
