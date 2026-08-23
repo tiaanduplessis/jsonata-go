@@ -1,0 +1,1806 @@
+{
+  "schemaVersion": 1,
+  "referenceName": "jsonata-js-v2.2.2",
+  "referenceCommit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+  "cases": [
+    {
+      "id": "generated-000",
+      "kind": "value",
+      "value": -9
+    },
+    {
+      "id": "generated-001",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-002",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-003",
+      "kind": "value",
+      "value": "label-003"
+    },
+    {
+      "id": "generated-004",
+      "kind": "value",
+      "value": -14
+    },
+    {
+      "id": "generated-005",
+      "kind": "value",
+      "value": [
+        9,
+        2,
+        0,
+        2,
+        -10,
+        9,
+        -12
+      ]
+    },
+    {
+      "id": "generated-006",
+      "kind": "value",
+      "value": {
+        "sum": -1,
+        "text": "label-006-x"
+      }
+    },
+    {
+      "id": "generated-007",
+      "kind": "value",
+      "value": [
+        -4,
+        -3,
+        -6,
+        10,
+        -8
+      ]
+    },
+    {
+      "id": "generated-008",
+      "kind": "value",
+      "value": "item-8-1"
+    },
+    {
+      "id": "generated-009",
+      "kind": "value",
+      "value": [
+        "item-9-0",
+        "item-9-2",
+        "item-9-1"
+      ]
+    },
+    {
+      "id": "generated-010",
+      "kind": "value",
+      "value": [
+        -4,
+        -10,
+        -9
+      ]
+    },
+    {
+      "id": "generated-011",
+      "kind": "value",
+      "value": [
+        "item-11-0-0",
+        "item-11-1-0",
+        "item-11-2-0",
+        "item-11-3-0",
+        "item-11-4-0"
+      ]
+    },
+    {
+      "id": "generated-012",
+      "kind": "value",
+      "value": 17
+    },
+    {
+      "id": "generated-013",
+      "kind": "value",
+      "value": [
+        30,
+        26,
+        22,
+        -14,
+        -26
+      ]
+    },
+    {
+      "id": "generated-014",
+      "kind": "value",
+      "value": 11
+    },
+    {
+      "id": "generated-015",
+      "kind": "value",
+      "value": 21
+    },
+    {
+      "id": "generated-016",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-017",
+      "kind": "value",
+      "value": "item-0-017"
+    },
+    {
+      "id": "generated-018",
+      "kind": "value",
+      "value": "label:018:0"
+    },
+    {
+      "id": "generated-019",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-020",
+      "kind": "value",
+      "value": {
+        "a": 0,
+        "b": -4,
+        "v": 0
+      }
+    },
+    {
+      "id": "generated-021",
+      "kind": "value",
+      "value": [
+        "a:-7",
+        "b:11"
+      ]
+    },
+    {
+      "id": "generated-022",
+      "kind": "value",
+      "value": {
+        "b": 8
+      }
+    },
+    {
+      "id": "generated-023",
+      "kind": "value",
+      "value": [
+        -3,
+        -8,
+        1,
+        -13,
+        5,
+        -10,
+        0
+      ]
+    },
+    {
+      "id": "generated-024",
+      "kind": "value",
+      "value": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "generated-025",
+      "kind": "value",
+      "value": -1
+    },
+    {
+      "id": "generated-026",
+      "kind": "value",
+      "value": "lab"
+    },
+    {
+      "id": "generated-027",
+      "kind": "value",
+      "value": "label-027"
+    },
+    {
+      "id": "generated-028",
+      "kind": "value",
+      "value": "9"
+    },
+    {
+      "id": "generated-029",
+      "kind": "value",
+      "value": {
+        "generated": 0,
+        "text": "case-029"
+      }
+    },
+    {
+      "id": "generated-030",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "generated-031",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-032",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-033",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "generated-034",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "generated-035",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "generated-036",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "generated-037",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "generated-038",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "generated-039",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "generated-040",
+      "kind": "value",
+      "value": 16
+    },
+    {
+      "id": "generated-041",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-042",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-043",
+      "kind": "value",
+      "value": "9"
+    },
+    {
+      "id": "generated-044",
+      "kind": "value",
+      "value": 4
+    },
+    {
+      "id": "generated-045",
+      "kind": "value",
+      "value": [
+        10,
+        -8,
+        1,
+        1,
+        2,
+        -10
+      ]
+    },
+    {
+      "id": "generated-046",
+      "kind": "value",
+      "value": {
+        "sum": -17,
+        "text": "label-0469"
+      }
+    },
+    {
+      "id": "generated-047",
+      "kind": "value",
+      "value": [
+        -6,
+        11,
+        0,
+        0,
+        8,
+        -7
+      ]
+    },
+    {
+      "id": "generated-048",
+      "kind": "value",
+      "value": [
+        "item-48-0",
+        "item-48-1",
+        "item-48-2"
+      ]
+    },
+    {
+      "id": "generated-049",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-050",
+      "kind": "value",
+      "value": [
+        3,
+        -1
+      ]
+    },
+    {
+      "id": "generated-051",
+      "kind": "value",
+      "value": [
+        "item-51-0-1",
+        "item-51-1-1",
+        "item-51-2-1"
+      ]
+    },
+    {
+      "id": "generated-052",
+      "kind": "value",
+      "value": 33
+    },
+    {
+      "id": "generated-053",
+      "kind": "value",
+      "value": [
+        -13,
+        11,
+        21,
+        -3,
+        -19,
+        11
+      ]
+    },
+    {
+      "id": "generated-054",
+      "kind": "value",
+      "value": [
+        8,
+        1,
+        11
+      ]
+    },
+    {
+      "id": "generated-055",
+      "kind": "value",
+      "value": 17
+    },
+    {
+      "id": "generated-056",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-057",
+      "kind": "value",
+      "value": "item-1-057"
+    },
+    {
+      "id": "generated-058",
+      "kind": "value",
+      "value": "label:058:1"
+    },
+    {
+      "id": "generated-059",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-060",
+      "kind": "value",
+      "value": {
+        "a": 15,
+        "b": 1,
+        "v": 1
+      }
+    },
+    {
+      "id": "generated-061",
+      "kind": "value",
+      "value": [
+        "a:12",
+        "b:2"
+      ]
+    },
+    {
+      "id": "generated-062",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-063",
+      "kind": "value",
+      "value": [
+        8,
+        -13,
+        -9,
+        4,
+        11,
+        -8,
+        1
+      ]
+    },
+    {
+      "id": "generated-064",
+      "kind": "value",
+      "value": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "generated-065",
+      "kind": "value",
+      "value": 7
+    },
+    {
+      "id": "generated-066",
+      "kind": "value",
+      "value": "abe"
+    },
+    {
+      "id": "generated-067",
+      "kind": "value",
+      "value": "label-067"
+    },
+    {
+      "id": "generated-068",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "generated-069",
+      "kind": "value",
+      "value": {
+        "generated": 1,
+        "text": "case-069"
+      }
+    },
+    {
+      "id": "generated-070",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "generated-071",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-072",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-073",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "generated-074",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "generated-075",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "generated-076",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "generated-077",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "generated-078",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "generated-079",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "generated-080",
+      "kind": "value",
+      "value": -1
+    },
+    {
+      "id": "generated-081",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-082",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-083",
+      "kind": "value",
+      "value": "label-083"
+    },
+    {
+      "id": "generated-084",
+      "kind": "value",
+      "value": 85
+    },
+    {
+      "id": "generated-085",
+      "kind": "value",
+      "value": [
+        10,
+        3,
+        2,
+        14,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "generated-086",
+      "kind": "value",
+      "value": {
+        "sum": 2,
+        "text": "label-086el"
+      }
+    },
+    {
+      "id": "generated-087",
+      "kind": "value",
+      "value": [
+        5,
+        -3,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "generated-088",
+      "kind": "value",
+      "value": [
+        "item-88-1",
+        "item-88-2"
+      ]
+    },
+    {
+      "id": "generated-089",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-090",
+      "kind": "value",
+      "value": [
+        7,
+        -7,
+        -5,
+        -4
+      ]
+    },
+    {
+      "id": "generated-091",
+      "kind": "value",
+      "value": [
+        "item-91-0-2",
+        "item-91-1-2",
+        "item-91-2-2",
+        "item-91-3-2",
+        "item-91-4-2"
+      ]
+    },
+    {
+      "id": "generated-092",
+      "kind": "value",
+      "value": 36
+    },
+    {
+      "id": "generated-093",
+      "kind": "value",
+      "value": [
+        7,
+        15,
+        11
+      ]
+    },
+    {
+      "id": "generated-094",
+      "kind": "value",
+      "value": 13
+    },
+    {
+      "id": "generated-095",
+      "kind": "value",
+      "value": 9
+    },
+    {
+      "id": "generated-096",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-097",
+      "kind": "value",
+      "value": "item-2-097"
+    },
+    {
+      "id": "generated-098",
+      "kind": "value",
+      "value": "label:098:2"
+    },
+    {
+      "id": "generated-099",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-100",
+      "kind": "value",
+      "value": {
+        "a": 8,
+        "b": -8,
+        "v": 2
+      }
+    },
+    {
+      "id": "generated-101",
+      "kind": "value",
+      "value": [
+        "a:-4",
+        "b:13"
+      ]
+    },
+    {
+      "id": "generated-102",
+      "kind": "value",
+      "value": {
+        "b": 14
+      }
+    },
+    {
+      "id": "generated-103",
+      "kind": "value",
+      "value": [
+        12,
+        -4,
+        2
+      ]
+    },
+    {
+      "id": "generated-104",
+      "kind": "value",
+      "value": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "generated-105",
+      "kind": "value",
+      "value": 6
+    },
+    {
+      "id": "generated-106",
+      "kind": "value",
+      "value": "bel"
+    },
+    {
+      "id": "generated-107",
+      "kind": "value",
+      "value": "label-107"
+    },
+    {
+      "id": "generated-108",
+      "kind": "value",
+      "value": "9"
+    },
+    {
+      "id": "generated-109",
+      "kind": "value",
+      "value": {
+        "generated": 2,
+        "text": "case-109"
+      }
+    },
+    {
+      "id": "generated-110",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "generated-111",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-112",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-113",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "generated-114",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "generated-115",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "generated-116",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "generated-117",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "generated-118",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "generated-119",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "generated-120",
+      "kind": "value",
+      "value": 16
+    },
+    {
+      "id": "generated-121",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-122",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-123",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "generated-124",
+      "kind": "value",
+      "value": 32
+    },
+    {
+      "id": "generated-125",
+      "kind": "value",
+      "value": [
+        -7,
+        -15,
+        3,
+        0,
+        -4,
+        14,
+        0
+      ]
+    },
+    {
+      "id": "generated-126",
+      "kind": "value",
+      "value": {
+        "sum": 2,
+        "text": "label-126-x"
+      }
+    },
+    {
+      "id": "generated-127",
+      "kind": "value",
+      "value": [
+        7,
+        -1
+      ]
+    },
+    {
+      "id": "generated-128",
+      "kind": "value",
+      "value": [
+        "item-128-0",
+        "item-128-1",
+        "item-128-3"
+      ]
+    },
+    {
+      "id": "generated-129",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-130",
+      "kind": "value",
+      "value": [
+        7,
+        8,
+        0,
+        10
+      ]
+    },
+    {
+      "id": "generated-131",
+      "kind": "value",
+      "value": [
+        "item-131-0-3",
+        "item-131-1-3",
+        "item-131-2-3",
+        "item-131-3-3",
+        "item-131-4-3"
+      ]
+    },
+    {
+      "id": "generated-132",
+      "kind": "value",
+      "value": -32
+    },
+    {
+      "id": "generated-133",
+      "kind": "value",
+      "value": [
+        -15,
+        42,
+        45,
+        -9,
+        27,
+        9
+      ]
+    },
+    {
+      "id": "generated-134",
+      "kind": "value",
+      "value": [
+        11,
+        9,
+        7
+      ]
+    },
+    {
+      "id": "generated-135",
+      "kind": "value",
+      "value": 19
+    },
+    {
+      "id": "generated-136",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-137",
+      "kind": "value",
+      "value": "item-3-137"
+    },
+    {
+      "id": "generated-138",
+      "kind": "value",
+      "value": "label:138:3"
+    },
+    {
+      "id": "generated-139",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-140",
+      "kind": "value",
+      "value": {
+        "a": 13,
+        "b": -3,
+        "v": 3
+      }
+    },
+    {
+      "id": "generated-141",
+      "kind": "value",
+      "value": [
+        "a:6",
+        "b:-4"
+      ]
+    },
+    {
+      "id": "generated-142",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-143",
+      "kind": "value",
+      "value": [
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "id": "generated-144",
+      "kind": "value",
+      "value": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "generated-145",
+      "kind": "value",
+      "value": -4
+    },
+    {
+      "id": "generated-146",
+      "kind": "value",
+      "value": "el-"
+    },
+    {
+      "id": "generated-147",
+      "kind": "value",
+      "value": "label-147"
+    },
+    {
+      "id": "generated-148",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "generated-149",
+      "kind": "value",
+      "value": {
+        "generated": 3,
+        "text": "case-149"
+      }
+    },
+    {
+      "id": "generated-150",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "generated-151",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-152",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-153",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "generated-154",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "generated-155",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "generated-156",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "generated-157",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "generated-158",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "generated-159",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "generated-160",
+      "kind": "value",
+      "value": 94
+    },
+    {
+      "id": "generated-161",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-162",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-163",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "generated-164",
+      "kind": "value",
+      "value": 40
+    },
+    {
+      "id": "generated-165",
+      "kind": "value",
+      "value": [
+        -4,
+        -8,
+        4,
+        -12,
+        9,
+        12,
+        7,
+        4,
+        -6
+      ]
+    },
+    {
+      "id": "generated-166",
+      "kind": "value",
+      "value": {
+        "sum": 19,
+        "text": "label-166el"
+      }
+    },
+    {
+      "id": "generated-167",
+      "kind": "value",
+      "value": [
+        -2,
+        -3,
+        1
+      ]
+    },
+    {
+      "id": "generated-168",
+      "kind": "value",
+      "value": "item-168-2"
+    },
+    {
+      "id": "generated-169",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-170",
+      "kind": "value",
+      "value": [
+        5,
+        2
+      ]
+    },
+    {
+      "id": "generated-171",
+      "kind": "value",
+      "value": [
+        "item-171-0-4",
+        "item-171-1-4",
+        "item-171-2-4"
+      ]
+    },
+    {
+      "id": "generated-172",
+      "kind": "value",
+      "value": -13
+    },
+    {
+      "id": "generated-173",
+      "kind": "value",
+      "value": [
+        -24,
+        48
+      ]
+    },
+    {
+      "id": "generated-174",
+      "kind": "value",
+      "value": 9
+    },
+    {
+      "id": "generated-175",
+      "kind": "value",
+      "value": 18
+    },
+    {
+      "id": "generated-176",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-177",
+      "kind": "value",
+      "value": "item-4-177"
+    },
+    {
+      "id": "generated-178",
+      "kind": "value",
+      "value": "label:178:4"
+    },
+    {
+      "id": "generated-179",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-180",
+      "kind": "value",
+      "value": {
+        "a": 13,
+        "b": -11,
+        "v": 4
+      }
+    },
+    {
+      "id": "generated-181",
+      "kind": "value",
+      "value": [
+        "a:3",
+        "b:-6"
+      ]
+    },
+    {
+      "id": "generated-182",
+      "kind": "value",
+      "value": {
+        "a": 8
+      }
+    },
+    {
+      "id": "generated-183",
+      "kind": "value",
+      "value": [
+        -10,
+        -7,
+        -5,
+        15,
+        9,
+        4
+      ]
+    },
+    {
+      "id": "generated-184",
+      "kind": "value",
+      "value": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "generated-185",
+      "kind": "value",
+      "value": 0
+    },
+    {
+      "id": "generated-186",
+      "kind": "value",
+      "value": "l-1"
+    },
+    {
+      "id": "generated-187",
+      "kind": "value",
+      "value": "label-187"
+    },
+    {
+      "id": "generated-188",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "generated-189",
+      "kind": "value",
+      "value": {
+        "generated": 4,
+        "text": "case-189"
+      }
+    },
+    {
+      "id": "generated-190",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "generated-191",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-192",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-193",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "generated-194",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "generated-195",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "generated-196",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "generated-197",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "generated-198",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "generated-199",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "generated-200",
+      "kind": "value",
+      "value": -25
+    },
+    {
+      "id": "generated-201",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-202",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-203",
+      "kind": "value",
+      "value": "label-203"
+    },
+    {
+      "id": "generated-204",
+      "kind": "value",
+      "value": 12
+    },
+    {
+      "id": "generated-205",
+      "kind": "value",
+      "value": [
+        -8,
+        -8,
+        5,
+        -10,
+        -14,
+        5,
+        1,
+        11,
+        -2
+      ]
+    },
+    {
+      "id": "generated-206",
+      "kind": "value",
+      "value": {
+        "sum": 25,
+        "text": "label-206el"
+      }
+    },
+    {
+      "id": "generated-207",
+      "kind": "value",
+      "value": [
+        6,
+        4,
+        -3,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "generated-208",
+      "kind": "value",
+      "value": [
+        "item-208-2",
+        "item-208-4"
+      ]
+    },
+    {
+      "id": "generated-209",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-210",
+      "kind": "value",
+      "value": [
+        4,
+        11,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "generated-211",
+      "kind": "value",
+      "value": [
+        "item-211-0-5",
+        "item-211-1-5",
+        "item-211-2-5",
+        "item-211-3-5",
+        "item-211-4-5"
+      ]
+    },
+    {
+      "id": "generated-212",
+      "kind": "value",
+      "value": 14
+    },
+    {
+      "id": "generated-213",
+      "kind": "value",
+      "value": [
+        -8,
+        10,
+        11,
+        17,
+        7,
+        11
+      ]
+    },
+    {
+      "id": "generated-214",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-215",
+      "kind": "value",
+      "value": 27
+    },
+    {
+      "id": "generated-216",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "generated-217",
+      "kind": "value",
+      "value": "item-5-217"
+    },
+    {
+      "id": "generated-218",
+      "kind": "value",
+      "value": "label:218:5"
+    },
+    {
+      "id": "generated-219",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-220",
+      "kind": "value",
+      "value": {
+        "a": -4,
+        "b": -6,
+        "v": 5
+      }
+    },
+    {
+      "id": "generated-221",
+      "kind": "value",
+      "value": [
+        "a:6",
+        "b:2"
+      ]
+    },
+    {
+      "id": "generated-222",
+      "kind": "value",
+      "value": {
+        "b": 12
+      }
+    },
+    {
+      "id": "generated-223",
+      "kind": "value",
+      "value": [
+        5,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "generated-224",
+      "kind": "value",
+      "value": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "generated-225",
+      "kind": "value",
+      "value": 5
+    },
+    {
+      "id": "generated-226",
+      "kind": "value",
+      "value": "-22"
+    },
+    {
+      "id": "generated-227",
+      "kind": "value",
+      "value": "label-227"
+    },
+    {
+      "id": "generated-228",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "generated-229",
+      "kind": "value",
+      "value": {
+        "generated": 5,
+        "text": "case-229"
+      }
+    },
+    {
+      "id": "generated-230",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "generated-231",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-232",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "generated-233",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "generated-234",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "generated-235",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "generated-236",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "generated-237",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "generated-238",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "generated-239",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "generated-240",
+      "kind": "value",
+      "value": 33
+    },
+    {
+      "id": "generated-241",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-242",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "generated-243",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "generated-244",
+      "kind": "value",
+      "value": 20
+    },
+    {
+      "id": "generated-245",
+      "kind": "value",
+      "value": [
+        3,
+        14,
+        6,
+        13,
+        -1,
+        -15,
+        -9,
+        4,
+        -9
+      ]
+    },
+    {
+      "id": "generated-246",
+      "kind": "value",
+      "value": {
+        "sum": -3,
+        "text": "label-246a"
+      }
+    },
+    {
+      "id": "generated-247",
+      "kind": "value",
+      "value": [
+        6,
+        7,
+        8,
+        5,
+        13,
+        15
+      ]
+    },
+    {
+      "id": "generated-248",
+      "kind": "value",
+      "value": [
+        "item-248-2",
+        "item-248-4"
+      ]
+    },
+    {
+      "id": "generated-249",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-250",
+      "kind": "value",
+      "value": [
+        -3,
+        -1
+      ]
+    },
+    {
+      "id": "generated-251",
+      "kind": "value",
+      "value": [
+        "item-251-0-6",
+        "item-251-1-6",
+        "item-251-2-6",
+        "item-251-3-6"
+      ]
+    },
+    {
+      "id": "generated-252",
+      "kind": "value",
+      "value": -15
+    },
+    {
+      "id": "generated-253",
+      "kind": "value",
+      "value": [
+        -46,
+        2,
+        46,
+        -38
+      ]
+    },
+    {
+      "id": "generated-254",
+      "kind": "undefined"
+    },
+    {
+      "id": "generated-255",
+      "kind": "value",
+      "value": -33
+    }
+  ]
+}

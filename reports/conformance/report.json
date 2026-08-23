@@ -1,0 +1,524 @@
+{
+  "referenceName": "jsonata-js-v2.2.2",
+  "referenceCommit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+  "discoveredGroups": [
+    {
+      "name": "array-constructor",
+      "cases": 26
+    },
+    {
+      "name": "blocks",
+      "cases": 7
+    },
+    {
+      "name": "boolean-expresssions",
+      "cases": 31
+    },
+    {
+      "name": "closures",
+      "cases": 2
+    },
+    {
+      "name": "coalescing-operator",
+      "cases": 15
+    },
+    {
+      "name": "comments",
+      "cases": 4
+    },
+    {
+      "name": "comparison-operators",
+      "cases": 48
+    },
+    {
+      "name": "conditionals",
+      "cases": 9
+    },
+    {
+      "name": "context",
+      "cases": 4
+    },
+    {
+      "name": "default-operator",
+      "cases": 19
+    },
+    {
+      "name": "descendent-operator",
+      "cases": 17
+    },
+    {
+      "name": "encoding",
+      "cases": 4
+    },
+    {
+      "name": "errors",
+      "cases": 27
+    },
+    {
+      "name": "fields",
+      "cases": 8
+    },
+    {
+      "name": "flattening",
+      "cases": 61
+    },
+    {
+      "name": "function-abs",
+      "cases": 4
+    },
+    {
+      "name": "function-append",
+      "cases": 6
+    },
+    {
+      "name": "function-applications",
+      "cases": 22
+    },
+    {
+      "name": "function-assert",
+      "cases": 8
+    },
+    {
+      "name": "function-average",
+      "cases": 13
+    },
+    {
+      "name": "function-boolean",
+      "cases": 24
+    },
+    {
+      "name": "function-ceil",
+      "cases": 4
+    },
+    {
+      "name": "function-contains",
+      "cases": 8
+    },
+    {
+      "name": "function-count",
+      "cases": 14
+    },
+    {
+      "name": "function-decodeUrl",
+      "cases": 3
+    },
+    {
+      "name": "function-decodeUrlComponent",
+      "cases": 3
+    },
+    {
+      "name": "function-distinct",
+      "cases": 8
+    },
+    {
+      "name": "function-each",
+      "cases": 4
+    },
+    {
+      "name": "function-encodeUrl",
+      "cases": 3
+    },
+    {
+      "name": "function-encodeUrlComponent",
+      "cases": 3
+    },
+    {
+      "name": "function-error",
+      "cases": 11
+    },
+    {
+      "name": "function-eval",
+      "cases": 12
+    },
+    {
+      "name": "function-exists",
+      "cases": 25
+    },
+    {
+      "name": "function-floor",
+      "cases": 4
+    },
+    {
+      "name": "function-formatBase",
+      "cases": 9
+    },
+    {
+      "name": "function-formatInteger",
+      "cases": 65
+    },
+    {
+      "name": "function-formatNumber",
+      "cases": 45
+    },
+    {
+      "name": "function-fromMillis",
+      "cases": 93
+    },
+    {
+      "name": "function-join",
+      "cases": 12
+    },
+    {
+      "name": "function-keys",
+      "cases": 7
+    },
+    {
+      "name": "function-length",
+      "cases": 17
+    },
+    {
+      "name": "function-lookup",
+      "cases": 4
+    },
+    {
+      "name": "function-lowercase",
+      "cases": 2
+    },
+    {
+      "name": "function-max",
+      "cases": 27
+    },
+    {
+      "name": "function-merge",
+      "cases": 5
+    },
+    {
+      "name": "function-number",
+      "cases": 34
+    },
+    {
+      "name": "function-pad",
+      "cases": 13
+    },
+    {
+      "name": "function-parseInteger",
+      "cases": 61
+    },
+    {
+      "name": "function-power",
+      "cases": 7
+    },
+    {
+      "name": "function-replace",
+      "cases": 12
+    },
+    {
+      "name": "function-reverse",
+      "cases": 4
+    },
+    {
+      "name": "function-round",
+      "cases": 18
+    },
+    {
+      "name": "function-shuffle",
+      "cases": 4
+    },
+    {
+      "name": "function-sift",
+      "cases": 5
+    },
+    {
+      "name": "function-signatures",
+      "cases": 41
+    },
+    {
+      "name": "function-sort",
+      "cases": 11
+    },
+    {
+      "name": "function-split",
+      "cases": 19
+    },
+    {
+      "name": "function-spread",
+      "cases": 4
+    },
+    {
+      "name": "function-sqrt",
+      "cases": 4
+    },
+    {
+      "name": "function-string",
+      "cases": 31
+    },
+    {
+      "name": "function-substring",
+      "cases": 19
+    },
+    {
+      "name": "function-substringAfter",
+      "cases": 5
+    },
+    {
+      "name": "function-substringBefore",
+      "cases": 5
+    },
+    {
+      "name": "function-sum",
+      "cases": 7
+    },
+    {
+      "name": "function-tomillis",
+      "cases": 60
+    },
+    {
+      "name": "function-trim",
+      "cases": 3
+    },
+    {
+      "name": "function-typeOf",
+      "cases": 13
+    },
+    {
+      "name": "function-uppercase",
+      "cases": 2
+    },
+    {
+      "name": "function-zip",
+      "cases": 6
+    },
+    {
+      "name": "higher-order-functions",
+      "cases": 3
+    },
+    {
+      "name": "hof-filter",
+      "cases": 4
+    },
+    {
+      "name": "hof-map",
+      "cases": 12
+    },
+    {
+      "name": "hof-reduce",
+      "cases": 11
+    },
+    {
+      "name": "hof-single",
+      "cases": 11
+    },
+    {
+      "name": "hof-zip-map",
+      "cases": 4
+    },
+    {
+      "name": "inclusion-operator",
+      "cases": 9
+    },
+    {
+      "name": "joins",
+      "cases": 45
+    },
+    {
+      "name": "lambdas",
+      "cases": 14
+    },
+    {
+      "name": "literals",
+      "cases": 24
+    },
+    {
+      "name": "matchers",
+      "cases": 2
+    },
+    {
+      "name": "missing-paths",
+      "cases": 6
+    },
+    {
+      "name": "multiple-array-selectors",
+      "cases": 3
+    },
+    {
+      "name": "null",
+      "cases": 7
+    },
+    {
+      "name": "numeric-operators",
+      "cases": 19
+    },
+    {
+      "name": "object-constructor",
+      "cases": 27
+    },
+    {
+      "name": "parent-operator",
+      "cases": 44
+    },
+    {
+      "name": "parentheses",
+      "cases": 8
+    },
+    {
+      "name": "partial-application",
+      "cases": 5
+    },
+    {
+      "name": "performance",
+      "cases": 2
+    },
+    {
+      "name": "predicates",
+      "cases": 4
+    },
+    {
+      "name": "quoted-selectors",
+      "cases": 8
+    },
+    {
+      "name": "range-operator",
+      "cases": 25
+    },
+    {
+      "name": "regex",
+      "cases": 39
+    },
+    {
+      "name": "simple-array-selectors",
+      "cases": 23
+    },
+    {
+      "name": "sorting",
+      "cases": 21
+    },
+    {
+      "name": "string-concat",
+      "cases": 12
+    },
+    {
+      "name": "tail-recursion",
+      "cases": 10
+    },
+    {
+      "name": "token-conversion",
+      "cases": 4
+    },
+    {
+      "name": "transform",
+      "cases": 104
+    },
+    {
+      "name": "transforms",
+      "cases": 15
+    },
+    {
+      "name": "variables",
+      "cases": 13
+    },
+    {
+      "name": "wildcards",
+      "cases": 13
+    }
+  ],
+  "enabledGroups": [
+    "array-constructor",
+    "blocks",
+    "boolean-expresssions",
+    "closures",
+    "coalescing-operator",
+    "comments",
+    "comparison-operators",
+    "conditionals",
+    "context",
+    "default-operator",
+    "descendent-operator",
+    "encoding",
+    "errors",
+    "fields",
+    "flattening",
+    "function-abs",
+    "function-append",
+    "function-applications",
+    "function-assert",
+    "function-average",
+    "function-boolean",
+    "function-ceil",
+    "function-contains",
+    "function-count",
+    "function-decodeUrl",
+    "function-decodeUrlComponent",
+    "function-distinct",
+    "function-each",
+    "function-encodeUrl",
+    "function-encodeUrlComponent",
+    "function-error",
+    "function-eval",
+    "function-exists",
+    "function-floor",
+    "function-formatBase",
+    "function-formatInteger",
+    "function-formatNumber",
+    "function-fromMillis",
+    "function-join",
+    "function-keys",
+    "function-length",
+    "function-lookup",
+    "function-lowercase",
+    "function-max",
+    "function-merge",
+    "function-number",
+    "function-pad",
+    "function-parseInteger",
+    "function-power",
+    "function-replace",
+    "function-reverse",
+    "function-round",
+    "function-shuffle",
+    "function-sift",
+    "function-signatures",
+    "function-sort",
+    "function-split",
+    "function-spread",
+    "function-sqrt",
+    "function-string",
+    "function-substring",
+    "function-substringAfter",
+    "function-substringBefore",
+    "function-sum",
+    "function-tomillis",
+    "function-trim",
+    "function-typeOf",
+    "function-uppercase",
+    "function-zip",
+    "higher-order-functions",
+    "hof-filter",
+    "hof-map",
+    "hof-reduce",
+    "hof-single",
+    "hof-zip-map",
+    "inclusion-operator",
+    "joins",
+    "lambdas",
+    "literals",
+    "matchers",
+    "missing-paths",
+    "multiple-array-selectors",
+    "null",
+    "numeric-operators",
+    "object-constructor",
+    "parent-operator",
+    "parentheses",
+    "partial-application",
+    "performance",
+    "predicates",
+    "quoted-selectors",
+    "range-operator",
+    "regex",
+    "simple-array-selectors",
+    "sorting",
+    "string-concat",
+    "tail-recursion",
+    "token-conversion",
+    "transform",
+    "transforms",
+    "variables",
+    "wildcards"
+  ],
+  "enabledCases": 1686,
+  "remainingGroups": null,
+  "remainingCases": [],
+  "passes": 1686,
+  "failures": [],
+  "skips": []
+}

@@ -1,0 +1,1172 @@
+{
+  "recorded_at": "2026-08-23T11:55:40Z",
+  "reference": {
+    "implementation": "jsonata-js",
+    "version": "2.2.2",
+    "commit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+    "generator": "testdata/benchmark/generate-oracle.mjs",
+    "generation": {
+      "matrix_sha256": "00188eed6b864ca43f63a9661cc51635df7ad71ff8860e951f93f0db1018f56e",
+      "generator_sha256": "57a5f6c34494a530c9d3e4b51565275c921cfa8397590ba810827ee13f81816e",
+      "package_lock_sha256": "2dfafd6d8fba701563fead913976837b2e3f97d3007b757ca39d597859d08298"
+    }
+  },
+  "implementations": [
+    {
+      "id": "jsonata-go",
+      "module": "github.com/tiaanduplessis/jsonata-go",
+      "version": "workspace"
+    },
+    {
+      "id": "blues",
+      "module": "github.com/blues/jsonata-go",
+      "version": "v1.5.4",
+      "commit": "e0d39c06990dd541e7d6dbac338853bef894b8f4"
+    },
+    {
+      "id": "gnata",
+      "module": "github.com/recolabs/gnata",
+      "version": "v0.2.3",
+      "commit": "8abdb304a3c096c88a43760fd1160ada1851b29d"
+    }
+  ],
+  "run": {
+    "count": 10,
+    "benchtime": "200ms",
+    "warmup": 1,
+    "confidence": 0.95,
+    "minimum_samples": 6
+  },
+  "machine": {
+    "go_version": "go1.26.6",
+    "goos": "darwin",
+    "goarch": "arm64",
+    "compiler": "gc",
+    "cpu_model": "Apple M5",
+    "cpu_count": 10,
+    "gomaxprocs": 10,
+    "power_mode": "AC power"
+  },
+  "repository": {
+    "revision": "ca6b2906c3025c113e428e4c2f045b76266fb095",
+    "dirty": false
+  },
+  "cases": 15,
+  "requested_cells": 180,
+  "eligible_cells": 164,
+  "unsupported_cells": 16,
+  "records": [
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-simple-path",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-simple-path",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-simple-path",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-simple-path",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-comparison",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-comparison",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-comparison",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-comparison",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-projection",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-projection",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-projection",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-projection",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-regex",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-regex",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-regex",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-regex",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-aggregate",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-aggregate",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-aggregate",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-aggregate",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-higher-order",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-higher-order",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-higher-order",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-higher-order",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-transform",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-transform",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-transform",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "medium-transform",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-custom-function",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-custom-function",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-custom-function",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "small-custom-function",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "large-filter-reduce",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "large-filter-reduce",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "large-filter-reduce",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "large-filter-reduce",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "large-regex-scan",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "large-regex-scan",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "large-regex-scan",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "large-regex-scan",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-deep-path",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-deep-path",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-deep-path",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-deep-path",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-wide-object",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-wide-object",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-wide-object",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-wide-object",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-descendant",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-descendant",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-descendant",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "adversarial-descendant",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "official-dataset1-contacts",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "official-dataset1-contacts",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "official-dataset1-contacts",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "official-dataset1-contacts",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "official-dataset5-orders",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "official-dataset5-orders",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "official-dataset5-orders",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "jsonata-go",
+      "case_id": "official-dataset5-orders",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-simple-path",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-simple-path",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-simple-path",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-simple-path",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-comparison",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-comparison",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-comparison",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-comparison",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-projection",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-projection",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-projection",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-projection",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-regex",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-regex",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-regex",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-regex",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-aggregate",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-aggregate",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-aggregate",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-aggregate",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-higher-order",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-higher-order",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-higher-order",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-higher-order",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-transform",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-transform",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-transform",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "medium-transform",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-custom-function",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-custom-function",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-custom-function",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "small-custom-function",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "large-filter-reduce",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "large-filter-reduce",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "large-filter-reduce",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "large-filter-reduce",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "large-regex-scan",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "large-regex-scan",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "large-regex-scan",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "large-regex-scan",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-deep-path",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-deep-path",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-deep-path",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-deep-path",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-wide-object",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-wide-object",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-wide-object",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-wide-object",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-descendant",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-descendant",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-descendant",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "adversarial-descendant",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "official-dataset1-contacts",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "official-dataset1-contacts",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "official-dataset1-contacts",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "official-dataset1-contacts",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "official-dataset5-orders",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "official-dataset5-orders",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "official-dataset5-orders",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "blues",
+      "case_id": "official-dataset5-orders",
+      "mode": "parallel",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v1.5.4 does not document compiled expressions as safe for concurrent evaluation"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-simple-path",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-simple-path",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-simple-path",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-simple-path",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-comparison",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-comparison",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-comparison",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-comparison",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-projection",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-projection",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-projection",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-projection",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-regex",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-regex",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-regex",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-regex",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-aggregate",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-aggregate",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-aggregate",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-aggregate",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-higher-order",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-higher-order",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-higher-order",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-higher-order",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-transform",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-transform",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-transform",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "medium-transform",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-custom-function",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-custom-function",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-custom-function",
+      "mode": "bytes",
+      "status": "unsupported",
+      "class": "api-or-safety-limit",
+      "reason": "v0.2.3 has no raw-input evaluation API that accepts a custom-function environment"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "small-custom-function",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "large-filter-reduce",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "large-filter-reduce",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "large-filter-reduce",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "large-filter-reduce",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "large-regex-scan",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "large-regex-scan",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "large-regex-scan",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "large-regex-scan",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-deep-path",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-deep-path",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-deep-path",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-deep-path",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-wide-object",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-wide-object",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-wide-object",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-wide-object",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-descendant",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-descendant",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-descendant",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "adversarial-descendant",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "official-dataset1-contacts",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "official-dataset1-contacts",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "official-dataset1-contacts",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "official-dataset1-contacts",
+      "mode": "parallel",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "official-dataset5-orders",
+      "mode": "compile",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "official-dataset5-orders",
+      "mode": "decoded",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "official-dataset5-orders",
+      "mode": "bytes",
+      "status": "eligible"
+    },
+    {
+      "implementation": "gnata",
+      "case_id": "official-dataset5-orders",
+      "mode": "parallel",
+      "status": "eligible"
+    }
+  ]
+}

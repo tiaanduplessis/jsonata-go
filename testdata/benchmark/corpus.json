@@ -1,0 +1,438 @@
+{
+  "schema_version": 3,
+  "reference": {
+    "implementation": "jsonata-js",
+    "version": "2.2.2",
+    "commit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+    "generator": "testdata/benchmark/generate-oracle.mjs",
+    "generation": {
+      "matrix_sha256": "00188eed6b864ca43f63a9661cc51635df7ad71ff8860e951f93f0db1018f56e",
+      "generator_sha256": "57a5f6c34494a530c9d3e4b51565275c921cfa8397590ba810827ee13f81816e",
+      "package_lock_sha256": "2dfafd6d8fba701563fead913976837b2e3f97d3007b757ca39d597859d08298"
+    }
+  },
+  "implementations": [
+    {
+      "id": "jsonata-go",
+      "module": "github.com/tiaanduplessis/jsonata-go",
+      "version": "workspace"
+    },
+    {
+      "id": "blues",
+      "module": "github.com/blues/jsonata-go",
+      "version": "v1.5.4",
+      "commit": "e0d39c06990dd541e7d6dbac338853bef894b8f4"
+    },
+    {
+      "id": "gnata",
+      "module": "github.com/recolabs/gnata",
+      "version": "v0.2.3",
+      "commit": "8abdb304a3c096c88a43760fd1160ada1851b29d"
+    }
+  ],
+  "run": {
+    "count": 10,
+    "benchtime": "200ms",
+    "warmup": 1,
+    "confidence": 0.95,
+    "minimum_samples": 6
+  },
+  "coverage": {
+    "required_dimensions": {
+      "decoded": [
+        "small",
+        "medium",
+        "large",
+        "simple-path",
+        "regex",
+        "transform",
+        "custom-function",
+        "adversarial",
+        "official-dataset"
+      ],
+      "bytes": [
+        "small",
+        "medium",
+        "large",
+        "simple-path",
+        "regex",
+        "transform",
+        "adversarial",
+        "official-dataset"
+      ],
+      "parallel": [
+        "small",
+        "medium",
+        "large",
+        "simple-path",
+        "regex",
+        "transform",
+        "custom-function",
+        "adversarial",
+        "official-dataset"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "small-simple-path",
+      "category": "path",
+      "size_tier": "small",
+      "dimensions": [
+        "small",
+        "simple-path"
+      ],
+      "expression": "customer.profile.name",
+      "input": "{\"customer\":{\"profile\":{\"name\":\"Ada\",\"tier\":\"gold\"}}}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": "Ada"
+      }
+    },
+    {
+      "id": "small-comparison",
+      "category": "comparison",
+      "size_tier": "small",
+      "dimensions": [
+        "small",
+        "comparison"
+      ],
+      "expression": "customer.profile.tier = \"gold\"",
+      "input": "{\"customer\":{\"profile\":{\"name\":\"Ada\",\"tier\":\"gold\"}}}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": true
+      }
+    },
+    {
+      "id": "small-projection",
+      "category": "projection",
+      "size_tier": "small",
+      "dimensions": [
+        "small",
+        "projection"
+      ],
+      "expression": "orders[status = \"paid\"].amount",
+      "input": "{\"orders\":[{\"status\":\"paid\",\"amount\":12.5},{\"status\":\"pending\",\"amount\":8},{\"status\":\"paid\",\"amount\":7.5}]}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": [
+          12.5,
+          7.5
+        ]
+      }
+    },
+    {
+      "id": "small-regex",
+      "category": "regex",
+      "size_tier": "small",
+      "dimensions": [
+        "small",
+        "regex"
+      ],
+      "expression": "$contains(message, /order-[0-9]{4}/i)",
+      "input": "{\"message\":\"Accepted ORDER-2048 for processing\"}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": true
+      }
+    },
+    {
+      "id": "medium-aggregate",
+      "category": "aggregate",
+      "size_tier": "large",
+      "dimensions": [
+        "large",
+        "aggregate"
+      ],
+      "expression": "$sum(orders[status = \"paid\"].(price * quantity))",
+      "input": "{\"orders\":[{\"status\":\"paid\",\"price\":12.5,\"quantity\":2},{\"status\":\"pending\",\"price\":9,\"quantity\":1},{\"status\":\"paid\",\"price\":4.75,\"quantity\":4},{\"status\":\"failed\",\"price\":100,\"quantity\":1},{\"status\":\"paid\",\"price\":21,\"quantity\":3},{\"status\":\"pending\",\"price\":3.5,\"quantity\":5},{\"status\":\"paid\",\"price\":8.25,\"quantity\":2},{\"status\":\"paid\",\"price\":2,\"quantity\":10},{\"status\":\"failed\",\"price\":50,\"quantity\":2},{\"status\":\"paid\",\"price\":14,\"quantity\":1},{\"status\":\"pending\",\"price\":19,\"quantity\":2},{\"status\":\"paid\",\"price\":6.5,\"quantity\":6}]}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": 196.5
+      }
+    },
+    {
+      "id": "medium-higher-order",
+      "category": "higher-order",
+      "size_tier": "medium",
+      "dimensions": [
+        "medium",
+        "higher-order"
+      ],
+      "expression": "$map(items, function($item){$item.price * $item.quantity})",
+      "input": "{\"items\":[{\"price\":2.5,\"quantity\":2},{\"price\":4,\"quantity\":3},{\"price\":7.25,\"quantity\":4},{\"price\":11,\"quantity\":1},{\"price\":1.5,\"quantity\":8},{\"price\":20,\"quantity\":2},{\"price\":3.75,\"quantity\":3},{\"price\":9,\"quantity\":5}]}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": [
+          5,
+          12,
+          29,
+          11,
+          12,
+          40,
+          11.25,
+          45
+        ]
+      }
+    },
+    {
+      "id": "medium-transform",
+      "category": "transform",
+      "size_tier": "medium",
+      "dimensions": [
+        "medium",
+        "transform"
+      ],
+      "expression": "$ ~> |account.orders[status = \"pending\"]|{\"status\": \"review\", \"total\": price * quantity}, [\"internal\"]|",
+      "input": "{\"account\":{\"id\":\"acct-7\",\"orders\":[{\"id\":1,\"status\":\"paid\",\"price\":4,\"quantity\":2,\"internal\":\"a\"},{\"id\":2,\"status\":\"pending\",\"price\":9,\"quantity\":3,\"internal\":\"b\"},{\"id\":3,\"status\":\"pending\",\"price\":2.5,\"quantity\":4,\"internal\":\"c\"}]},\"trace\":\"keep\"}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": {
+          "account": {
+            "id": "acct-7",
+            "orders": [
+              {
+                "id": 1,
+                "status": "paid",
+                "price": 4,
+                "quantity": 2,
+                "internal": "a"
+              },
+              {
+                "id": 2,
+                "status": "review",
+                "price": 9,
+                "quantity": 3,
+                "total": 27
+              },
+              {
+                "id": 3,
+                "status": "review",
+                "price": 2.5,
+                "quantity": 4,
+                "total": 10
+              }
+            ]
+          },
+          "trace": "keep"
+        }
+      }
+    },
+    {
+      "id": "small-custom-function",
+      "category": "custom-function",
+      "size_tier": "small",
+      "dimensions": [
+        "small",
+        "custom-function"
+      ],
+      "expression": "$double(value) + $double(offset)",
+      "input": "{\"value\":21,\"offset\":1.5}",
+      "custom_function": "double",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": 45
+      }
+    },
+    {
+      "id": "large-filter-reduce",
+      "category": "large-array",
+      "size_tier": "large",
+      "dimensions": [
+        "large",
+        "aggregate"
+      ],
+      "expression": "$sum(events[type = \"sale\" and active].amount)",
+      "input": "{\"events\":[{\"id\":1,\"type\":\"sale\",\"active\":true,\"amount\":10.25,\"payload\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"},{\"id\":2,\"type\":\"view\",\"active\":true,\"amount\":2,\"payload\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"},{\"id\":3,\"type\":\"sale\",\"active\":false,\"amount\":8,\"payload\":\"cccccccccccccccccccccccccccccccc\"},{\"id\":4,\"type\":\"sale\",\"active\":true,\"amount\":12,\"payload\":\"dddddddddddddddddddddddddddddddd\"},{\"id\":5,\"type\":\"sale\",\"active\":true,\"amount\":3.75,\"payload\":\"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee\"},{\"id\":6,\"type\":\"view\",\"active\":true,\"amount\":7,\"payload\":\"ffffffffffffffffffffffffffffffff\"},{\"id\":7,\"type\":\"sale\",\"active\":true,\"amount\":20,\"payload\":\"gggggggggggggggggggggggggggggggg\"},{\"id\":8,\"type\":\"sale\",\"active\":false,\"amount\":5,\"payload\":\"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\"},{\"id\":9,\"type\":\"sale\",\"active\":true,\"amount\":9.5,\"payload\":\"iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii\"},{\"id\":10,\"type\":\"view\",\"active\":true,\"amount\":4,\"payload\":\"jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj\"},{\"id\":11,\"type\":\"sale\",\"active\":true,\"amount\":17,\"payload\":\"kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk\"},{\"id\":12,\"type\":\"sale\",\"active\":true,\"amount\":1.25,\"payload\":\"llllllllllllllllllllllllllllllll\"},{\"id\":13,\"type\":\"sale\",\"active\":false,\"amount\":13,\"payload\":\"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\"},{\"id\":14,\"type\":\"view\",\"active\":true,\"amount\":3,\"payload\":\"nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn\"},{\"id\":15,\"type\":\"sale\",\"active\":true,\"amount\":22,\"payload\":\"oooooooooooooooooooooooooooooooo\"},{\"id\":16,\"type\":\"sale\",\"active\":true,\"amount\":6.5,\"payload\":\"pppppppppppppppppppppppppppppppp\"},{\"id\":17,\"type\":\"sale\",\"active\":false,\"amount\":9,\"payload\":\"qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\"},{\"id\":18,\"type\":\"sale\",\"active\":true,\"amount\":15,\"payload\":\"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\"},{\"id\":19,\"type\":\"view\",\"active\":true,\"amount\":1,\"payload\":\"ssssssssssssssssssssssssssssssss\"},{\"id\":20,\"type\":\"sale\",\"active\":true,\"amount\":11.75,\"payload\":\"tttttttttttttttttttttttttttttttt\"}]}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": 129
+      }
+    },
+    {
+      "id": "large-regex-scan",
+      "category": "regex",
+      "size_tier": "large",
+      "dimensions": [
+        "large",
+        "regex"
+      ],
+      "expression": "$contains(message, /transaction-[0-9]{8}-approved/i)",
+      "input": "{\"message\":\"prefix-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-TRANSACTION-20260822-APPROVED-suffix\"}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": true
+      }
+    },
+    {
+      "id": "adversarial-deep-path",
+      "category": "adversarial-depth",
+      "size_tier": "small",
+      "dimensions": [
+        "small",
+        "adversarial",
+        "simple-path"
+      ],
+      "expression": "a.b.c.d.e.f.g.h.i.j.k.l.value",
+      "input": "{\"a\":{\"b\":{\"c\":{\"d\":{\"e\":{\"f\":{\"g\":{\"h\":{\"i\":{\"j\":{\"k\":{\"l\":{\"value\":\"found\"}}}}}}}}}}}}}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": "found"
+      }
+    },
+    {
+      "id": "adversarial-wide-object",
+      "category": "adversarial-width",
+      "size_tier": "large",
+      "dimensions": [
+        "large",
+        "adversarial",
+        "simple-path"
+      ],
+      "expression": "payload.target.value",
+      "input": "{\"payload\":{\"field00\":0,\"field01\":1,\"field02\":2,\"field03\":3,\"field04\":4,\"field05\":5,\"field06\":6,\"field07\":7,\"field08\":8,\"field09\":9,\"field10\":10,\"field11\":11,\"field12\":12,\"field13\":13,\"field14\":14,\"field15\":15,\"field16\":16,\"field17\":17,\"field18\":18,\"field19\":19,\"field20\":20,\"field21\":21,\"field22\":22,\"field23\":23,\"field24\":24,\"field25\":25,\"field26\":26,\"field27\":27,\"field28\":28,\"field29\":29,\"field30\":30,\"field31\":31,\"field32\":32,\"field33\":33,\"field34\":34,\"field35\":35,\"field36\":36,\"field37\":37,\"field38\":38,\"field39\":39,\"target\":{\"value\":99}}}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": 99
+      }
+    },
+    {
+      "id": "adversarial-descendant",
+      "category": "adversarial-descendant",
+      "size_tier": "medium",
+      "dimensions": [
+        "medium",
+        "adversarial"
+      ],
+      "expression": "$sum(payload.**.value)",
+      "input": "{\"payload\":{\"left\":{\"value\":1,\"child\":{\"value\":2,\"child\":{\"value\":3}}},\"right\":{\"value\":4,\"children\":[{\"value\":5},{\"value\":6},{\"nested\":{\"value\":7}}]},\"tail\":[{\"value\":8},{\"value\":9},{\"value\":10}]}}",
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": 55
+      }
+    },
+    {
+      "id": "official-dataset1-contacts",
+      "category": "official-path",
+      "size_tier": "large",
+      "dimensions": [
+        "large",
+        "simple-path",
+        "official-dataset"
+      ],
+      "expression": "Phone[type = \"office\"].number",
+      "source": {
+        "kind": "jsonata-js-dataset",
+        "path": "test/test-suite/datasets/dataset1.json",
+        "commit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+        "sha256": "e0b2afeddbe0689cff49d74351c6dd4f3f9e3440af7783db9f03ac246881303e"
+      },
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": [
+          "01962 001234",
+          "01962 001235"
+        ]
+      },
+      "input": "{\"FirstName\":\"Fred\",\"Surname\":\"Smith\",\"Age\":28,\"Address\":{\"Street\":\"Hursley Park\",\"City\":\"Winchester\",\"Postcode\":\"SO21 2JN\"},\"Phone\":[{\"type\":\"home\",\"number\":\"0203 544 1234\"},{\"type\":\"office\",\"number\":\"01962 001234\"},{\"type\":\"office\",\"number\":\"01962 001235\"},{\"type\":\"mobile\",\"number\":\"077 7700 1234\"}],\"Email\":[{\"type\":\"work\",\"address\":[\"fred.smith@my-work.com\",\"fsmith@my-work.com\"]},{\"type\":\"home\",\"address\":[\"freddy@my-social.com\",\"frederic.smith@very-serious.com\"]}],\"Other\":{\"Over 18 ?\":true,\"Misc\":null,\"Alternative.Address\":{\"Street\":\"Brick Lane\",\"City\":\"London\",\"Postcode\":\"E1 6RF\"}}}"
+    },
+    {
+      "id": "official-dataset5-orders",
+      "category": "official-aggregate",
+      "size_tier": "large",
+      "dimensions": [
+        "large",
+        "aggregate",
+        "official-dataset"
+      ],
+      "expression": "$sum(Account.Order.Product.(Price * Quantity))",
+      "source": {
+        "kind": "jsonata-js-dataset",
+        "path": "test/test-suite/datasets/dataset5.json",
+        "commit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+        "sha256": "18c1326e4828f7a3b0515c06ae93e45dec34cb461201ad34e8882f8c24f12093"
+      },
+      "modes": [
+        "compile",
+        "decoded",
+        "bytes",
+        "parallel"
+      ],
+      "oracle": {
+        "value": 336.36
+      },
+      "input": "{\"Account\":{\"Account Name\":\"Firefly\",\"Order\":[{\"OrderID\":\"order103\",\"Product\":[{\"Product Name\":\"Bowler Hat\",\"ProductID\":858383,\"SKU\":\"0406654608\",\"Description\":{\"Colour\":\"Purple\",\"Width\":300,\"Height\":200,\"Depth\":210,\"Weight\":0.75},\"Price\":34.45,\"Quantity\":2},{\"Product Name\":\"Trilby hat\",\"ProductID\":858236,\"SKU\":\"0406634348\",\"Description\":{\"Colour\":\"Orange\",\"Width\":300,\"Height\":200,\"Depth\":210,\"Weight\":0.6},\"Price\":21.67,\"Quantity\":1}]},{\"OrderID\":\"order104\",\"Product\":[{\"Product Name\":\"Bowler Hat\",\"ProductID\":858383,\"SKU\":\"040657863\",\"Description\":{\"Colour\":\"Purple\",\"Width\":300,\"Height\":200,\"Depth\":210,\"Weight\":0.75},\"Price\":34.45,\"Quantity\":4},{\"ProductID\":345664,\"SKU\":\"0406654603\",\"Product Name\":\"Cloak\",\"Description\":{\"Colour\":\"Black\",\"Width\":30,\"Height\":20,\"Depth\":210,\"Weight\":2},\"Price\":107.99,\"Quantity\":1}]}]}}"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+File: benchmark.test
+Type: delay
+Time: 2026-08-23 14:07:34 SAST
+Showing nodes accounting for 49.50s, 100% of 49.51s total
+Dropped 25 nodes (cum <= 0.25s)
+      flat  flat%   sum%        cum   cum%
+    49.50s   100%   100%     49.50s   100%  runtime.chanrecv1
+         0     0%   100%     24.67s 49.82%  github.com/tiaanduplessis/jsonata-go/internal/benchmark_test.BenchmarkMatrix
+         0     0%   100%     24.84s 50.17%  main.main
+         0     0%   100%     24.84s 50.17%  runtime.main
+         0     0%   100%     49.33s 99.64%  testing.(*B).Run
+         0     0%   100%     24.66s 49.80%  testing.(*B).doBench
+         0     0%   100%     24.66s 49.80%  testing.(*B).run
+         0     0%   100%     24.67s 49.84%  testing.(*B).run1
+         0     0%   100%     24.67s 49.82%  testing.(*B).run1.func1
+         0     0%   100%     49.34s 99.66%  testing.(*B).runN
+         0     0%   100%     24.84s 50.17%  testing.(*M).Run
+         0     0%   100%     24.66s 49.80%  testing.(*benchState).processBench
+         0     0%   100%     24.67s 49.83%  testing.runBenchmarks
+         0     0%   100%     24.67s 49.83%  testing.runBenchmarks.func1

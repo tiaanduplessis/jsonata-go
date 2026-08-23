@@ -1,0 +1,37 @@
+File: benchmark.test
+Type: delay
+Time: 2026-08-23 14:07:34 SAST
+Showing nodes accounting for 55.02ms, 100% of 55.02ms total
+Dropped 166 nodes (cum <= 0.28ms)
+Showing top 30 nodes out of 43
+      flat  flat%   sum%        cum   cum%
+   52.41ms 95.25% 95.25%    52.41ms 95.25%  runtime.unlock (partial-inline)
+    1.86ms  3.38% 98.63%     1.86ms  3.38%  runtime._LostContendedRuntimeLock
+    0.75ms  1.37%   100%     0.75ms  1.37%  sync.(*Mutex).Unlock
+         0     0%   100%     0.81ms  1.46%  encoding/json.Marshal
+         0     0%   100%     0.76ms  1.38%  encoding/json.newEncodeState
+         0     0%   100%     0.87ms  1.59%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.Compare
+         0     0%   100%     0.79ms  1.44%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.canonical
+         0     0%   100%     0.84ms  1.53%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.canonicalJSON
+         0     0%   100%     0.93ms  1.70%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.verifyParallel.func1
+         0     0%   100%     0.28ms  0.51%  runtime.(*sweepLocked).sweep
+         0     0%   100%    12.90ms 23.44%  runtime.findRunnable
+         0     0%   100%    24.97ms 45.39%  runtime.forEachP (inline)
+         0     0%   100%    24.97ms 45.39%  runtime.forEachPInternal
+         0     0%   100%    30.03ms 54.57%  runtime.gcBgMarkWorker
+         0     0%   100%    29.90ms 54.35%  runtime.gcMarkDone
+         0     0%   100%    11.37ms 20.67%  runtime.gcMarkDone.forEachP.func5
+         0     0%   100%     4.91ms  8.92%  runtime.gcMarkDone.func2
+         0     0%   100%    13.62ms 24.76%  runtime.gcMarkTermination
+         0     0%   100%    13.60ms 24.72%  runtime.gcMarkTermination.forEachP.func7
+         0     0%   100%     0.94ms  1.71%  runtime.gcstopm
+         0     0%   100%     9.13ms 16.60%  runtime.gopreempt_m (inline)
+         0     0%   100%    10.47ms 19.04%  runtime.goschedImpl
+         0     0%   100%     1.34ms  2.43%  runtime.gosched_m
+         0     0%   100%     0.78ms  1.42%  runtime.incidlelocked
+         0     0%   100%    11.82ms 21.49%  runtime.mcall
+         0     0%   100%     8.99ms 16.34%  runtime.morestack
+         0     0%   100%        1ms  1.83%  runtime.mstart
+         0     0%   100%        1ms  1.83%  runtime.mstart0
+         0     0%   100%        1ms  1.83%  runtime.mstart1
+         0     0%   100%     8.99ms 16.35%  runtime.newstack

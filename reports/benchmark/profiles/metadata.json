@@ -1,0 +1,144 @@
+{
+  "recorded_at": "2026-08-23T12:07:35Z",
+  "reference": {
+    "implementation": "jsonata-js",
+    "version": "2.2.2",
+    "commit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+    "generator": "testdata/benchmark/generate-oracle.mjs",
+    "generation": {
+      "matrix_sha256": "00188eed6b864ca43f63a9661cc51635df7ad71ff8860e951f93f0db1018f56e",
+      "generator_sha256": "57a5f6c34494a530c9d3e4b51565275c921cfa8397590ba810827ee13f81816e",
+      "package_lock_sha256": "2dfafd6d8fba701563fead913976837b2e3f97d3007b757ca39d597859d08298"
+    }
+  },
+  "machine": {
+    "go_version": "go1.26.6",
+    "goos": "darwin",
+    "goarch": "arm64",
+    "compiler": "gc",
+    "cpu_model": "Apple M5",
+    "cpu_count": 10,
+    "gomaxprocs": 10,
+    "power_mode": "AC power"
+  },
+  "repository": {
+    "revision": "ca6b2906c3025c113e428e4c2f045b76266fb095",
+    "dirty": false
+  },
+  "commands": [
+    {
+      "arguments": [
+        "go",
+        "test",
+        "./internal/benchmark",
+        "-run",
+        "^$",
+        "-bench",
+        "^BenchmarkMatrix/(decoded|bytes)/(medium-transform|large-filter-reduce)$",
+        "-benchmem",
+        "-benchtime=3s",
+        "-count=1",
+        "-o",
+        "reports/benchmark/profiles/.benchmark-profile.test",
+        "-cpuprofile",
+        "reports/benchmark/profiles/cpu.pprof",
+        "-memprofile",
+        "reports/benchmark/profiles/heap.pprof",
+        "-mutexprofile",
+        "reports/benchmark/profiles/mutex.pprof",
+        "-blockprofile",
+        "reports/benchmark/profiles/block.pprof"
+      ],
+      "environment": [
+        "BENCH_IMPLEMENTATION=jsonata-go"
+      ]
+    },
+    {
+      "arguments": [
+        "go",
+        "tool",
+        "pprof",
+        "-top",
+        "-nodecount=30",
+        "reports/benchmark/profiles/cpu.pprof"
+      ],
+      "stdout": "reports/benchmark/profiles/cpu.txt"
+    },
+    {
+      "arguments": [
+        "go",
+        "tool",
+        "pprof",
+        "-top",
+        "-alloc_space",
+        "-nodecount=30",
+        "reports/benchmark/profiles/heap.pprof"
+      ],
+      "stdout": "reports/benchmark/profiles/allocations.txt"
+    },
+    {
+      "arguments": [
+        "go",
+        "tool",
+        "pprof",
+        "-top",
+        "-nodecount=30",
+        "reports/benchmark/profiles/mutex.pprof"
+      ],
+      "stdout": "reports/benchmark/profiles/mutex.txt"
+    },
+    {
+      "arguments": [
+        "go",
+        "tool",
+        "pprof",
+        "-top",
+        "-nodecount=30",
+        "reports/benchmark/profiles/block.pprof"
+      ],
+      "stdout": "reports/benchmark/profiles/block.txt"
+    }
+  ],
+  "files": [
+    {
+      "file": "cpu.pprof",
+      "sha256": "11703b9fdabb1f3c687bf3a97b4ee1b183c62f451581ec7f338e7fd0be2d6e3e",
+      "bytes": 46008
+    },
+    {
+      "file": "heap.pprof",
+      "sha256": "3b4135fd5685e9a91269c0066ea15167587420327304fd02aa9e9ee77fd34fb4",
+      "bytes": 17677
+    },
+    {
+      "file": "mutex.pprof",
+      "sha256": "8d54ab04b6432431b5ca35fd65979ac3358c36a757d03c69242f370e82de0675",
+      "bytes": 10850
+    },
+    {
+      "file": "block.pprof",
+      "sha256": "607c1244d5dba4be3eff4772089c1c41bea6df93d4eab6a36fc5c81b5226740f",
+      "bytes": 1964
+    },
+    {
+      "file": "cpu.txt",
+      "sha256": "6bd63d6f6b81ecad4a355e7f6562122d8bf70f350c138be287bc1a6ec5c754bb",
+      "bytes": 2585
+    },
+    {
+      "file": "allocations.txt",
+      "sha256": "b6ba7ba447a688d33914d8609a02e869a9e60ac7a7428f6e6ce159319dc27ed1",
+      "bytes": 3436
+    },
+    {
+      "file": "mutex.txt",
+      "sha256": "788360548eda1e363937b0eaec64fa8673801326f4e30fd64111392a0cb80e46",
+      "bytes": 2437
+    },
+    {
+      "file": "block.txt",
+      "sha256": "8ed18aef69d2753885adec3d13f7e5cf337dfb7391f83bc6301fd3943654c75f",
+      "bytes": 1148
+    }
+  ]
+}

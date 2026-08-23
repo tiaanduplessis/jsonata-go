@@ -1,0 +1,520 @@
+# round 1 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  529377	       555.9 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  347853	       636.7 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	  190516	      1269 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  481125	       491.8 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  343052	       804.8 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	  182540	      1322 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  481882	       491.7 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	  168300	      1421 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   90333	      3031 ns/op	    3953 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	  191968	      1216 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	  128373	      1855 ns/op	    2419 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	  106716	      2239 ns/op	    3033 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  347630	       858.9 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   34636	      7410 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   20690	     13181 ns/op	   12718 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  292226	       804.4 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   43530	      6269 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   27706	      9741 ns/op	   13078 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  217513	      1022 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   33219	      7231 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   21687	     12791 ns/op	   13800 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  507850	       464.1 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  229395	      1046 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	  163561	      1496 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  347223	       751.5 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   21866	     10123 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	   10000	     21040 ns/op	   20338 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	  126270	      1945 ns/op	    5283 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   35056	      8074 ns/op	    2423 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   25148	      9007 ns/op	    3700 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  173936	      1349 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  139802	      1584 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   79258	      3649 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  556392	       427.5 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  370569	       645.2 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   45117	      5336 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  511767	       538.2 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   66828	      3601 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   39340	      6122 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  488943	       482.0 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  148778	      1873 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   43863	      5482 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  304419	       776.4 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   90498	      2643 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   28755	      8435 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	13.872s
+# round 2 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  540991	       424.7 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  376371	       631.3 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	  189372	      1270 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  483152	       490.3 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  341353	       803.7 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	  180883	      1320 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  492038	       480.1 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	  171529	      1416 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   90932	      3039 ns/op	    3954 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	  198759	      1186 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	  131131	      1825 ns/op	    2418 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	  106484	      2368 ns/op	    3030 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  355383	       790.3 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   36931	      6524 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   21259	     11292 ns/op	   12718 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  299595	       938.6 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   43674	      5773 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   27628	      8363 ns/op	   13078 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  239179	      1006 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   33008	      7288 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   21069	     11849 ns/op	   13800 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  486038	       468.2 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  234510	      1032 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	  165432	      1449 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  353425	       839.6 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   22183	     10196 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	   10000	     21354 ns/op	   20338 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	  126853	      1908 ns/op	    5283 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   32077	      7288 ns/op	    2419 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   23840	      9142 ns/op	    3694 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  175237	      1371 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  129079	      1849 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   79530	      2993 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  548847	       428.1 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  375954	       636.9 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   44098	      6364 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  492214	       487.8 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   66735	      3593 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   39300	      7077 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  482868	       498.0 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  149130	      1602 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   42772	      5666 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  307768	       889.0 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   91130	      2626 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   28033	      8552 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	13.700s
+# round 3 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  543986	       426.4 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  374782	       650.7 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	  179532	      1651 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  465770	       484.1 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  348919	       684.4 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	  183382	      1326 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  497671	       557.2 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	  161947	      1404 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   92074	      2604 ns/op	    3953 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	  199938	      1193 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	  130948	      2466 ns/op	    2418 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	  108097	      2245 ns/op	    3033 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  355656	       698.8 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   36562	      6614 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   19510	     12050 ns/op	   12718 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  294460	       818.9 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   36196	      5603 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   26594	      8235 ns/op	   13078 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  224932	      1061 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   33058	      7361 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   18667	     12961 ns/op	   13801 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  480945	       468.7 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  236032	      1107 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	  147039	      1516 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  359900	       693.6 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   23977	     10065 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	   10000	     25851 ns/op	   20339 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	  114494	      2029 ns/op	    5282 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   31718	      7465 ns/op	    2423 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   26590	     11001 ns/op	    3702 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  163273	      1402 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  153874	      1583 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   80482	      2990 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  550294	       505.9 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  366639	       647.4 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   45770	      5211 ns/op	    7739 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  518582	       469.0 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   65868	      4263 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   39168	      6301 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  493146	       480.0 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  146536	      1682 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   41648	      7334 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  304069	       771.4 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   91161	      2687 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   28428	      9865 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	14.211s
+# round 4 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  533371	       429.9 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  376390	       635.4 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	  190954	      1258 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  488263	       566.6 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  328054	       709.6 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	  179533	      1293 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  495615	       481.0 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	  171235	      1618 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   88579	      2626 ns/op	    3953 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	  201990	      1194 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	  129025	      1863 ns/op	    2419 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	  107352	      2668 ns/op	    3036 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  330582	       698.4 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   36970	      6947 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   21368	     11280 ns/op	   12718 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  294693	       954.1 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   43910	      5489 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   28831	      8186 ns/op	   13078 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  235738	      1177 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   32505	      7572 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   21092	     11092 ns/op	   13800 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  519433	       462.4 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  234439	      1271 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	  155248	      1516 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  348895	       685.9 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   24094	     11411 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	    9496	     21242 ns/op	   20338 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	  126394	      1923 ns/op	    5282 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   34502	      7242 ns/op	    2425 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   25370	     10878 ns/op	    3694 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  160454	      1466 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  145680	      1615 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   79870	      3010 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  554212	       534.2 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  335542	       775.2 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   42967	      5583 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  472394	       579.2 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   65118	      3655 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   38913	      6223 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  479344	       486.2 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  146839	      1941 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   41584	      5812 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  296509	       791.8 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   63981	      3143 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   28630	      9530 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	13.314s
+# round 5 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  549384	       425.0 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  377278	       907.5 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	  177492	      1291 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  478126	       488.6 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  348159	       694.5 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	  176785	      1563 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  494577	       481.6 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	  170906	      1396 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   91350	      2594 ns/op	    3953 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	  197997	      1391 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	  129829	      2479 ns/op	    2421 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	   88437	      2472 ns/op	    3042 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  338592	       859.5 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   34316	      6754 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   21616	     11158 ns/op	   12718 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  301387	       804.1 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   43306	      5530 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   28929	      8198 ns/op	   13078 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  238173	      1008 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   29536	      7677 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   20552	     14227 ns/op	   13800 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  486835	       563.0 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  228541	      1046 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	  164120	      1458 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  346642	       688.4 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   24276	     11383 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	   10000	     21304 ns/op	   20338 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	  125296	      1915 ns/op	    5283 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   33675	      7525 ns/op	    2424 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   23586	     10674 ns/op	    3703 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  158013	      1401 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  150440	      1568 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   77977	      3041 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  542949	       507.8 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  366910	       648.2 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   44926	      5375 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  495790	       471.8 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   66084	      4214 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   38718	      6730 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  480990	       485.8 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  148010	      1833 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   38581	      5624 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  298330	       777.3 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   91112	      2791 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   28110	      9826 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	13.910s
+# round 6 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  536598	       425.0 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  375780	       637.5 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	  187842	      1647 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  441115	       515.2 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  337299	       698.7 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	  183716	      1312 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  494022	       624.5 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	  156343	      1517 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   86680	      2667 ns/op	    3953 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	  173097	      1553 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	   90602	      3023 ns/op	    2418 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	   97304	      2766 ns/op	    3043 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  291267	       821.6 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   30321	      8222 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   20316	     11227 ns/op	   12718 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  305166	       789.3 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   43635	      6116 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   25276	      8506 ns/op	   13078 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  189596	      1245 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   30300	      7697 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   21459	     13397 ns/op	   13800 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  412123	       524.3 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  223707	      1040 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	  168093	      1698 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  304038	       747.5 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   22449	     10328 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	   10000	     21099 ns/op	   20338 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	  124838	      2272 ns/op	    5283 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   31359	      7389 ns/op	    2424 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   23049	     10642 ns/op	    3706 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  156961	      1569 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  133191	      2033 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   75696	      3024 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  545986	       437.5 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  364965	       686.2 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   39850	      7644 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  454674	       534.1 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   63692	      3595 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   39822	      6081 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  443706	       528.4 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  140611	      1728 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   38764	      6179 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  204532	      1143 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   85092	      2878 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   27080	      8885 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	13.672s
+# round 7 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  222960	      1042 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  146510	      2532 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	   78842	      4014 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  181644	      1320 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  112454	      2114 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	   60808	      5215 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  194010	      1606 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	   46594	      5586 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   19234	     11482 ns/op	    3954 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	   46141	      6205 ns/op	    3290 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	   47455	      5256 ns/op	    2417 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	   37894	      6941 ns/op	    3036 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  170090	      1593 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   10000	     24698 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	    8358	     39855 ns/op	   12719 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  114952	      2380 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   18752	     15468 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   10461	     20877 ns/op	   13079 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	   85140	      2405 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   13078	     22044 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   10000	     46802 ns/op	   13801 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  217340	      1326 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  120662	      2509 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	   86050	      3317 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  171664	      1630 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   10000	     22578 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	    9330	     31386 ns/op	   20339 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	  101301	      3473 ns/op	    5283 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   26500	      8474 ns/op	    2430 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   22534	     10435 ns/op	    3708 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  160152	      1555 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  131974	      2182 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   37062	      7015 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  285630	       996.3 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  180558	      2096 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   23725	     10070 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  317815	       775.7 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   41077	      8629 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   25632	      8311 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  378650	       609.0 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  114477	      2133 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   29733	      9268 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  204699	      1306 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   51714	      6832 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   16216	     16740 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	16.066s
+# round 8 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  169604	      2355 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	   97923	      3278 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	   35382	      7399 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	   81291	      2787 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  124488	      3631 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	   63238	      4225 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  200228	      2099 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	   62468	      3998 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   32167	     11487 ns/op	    3954 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	   62001	      4700 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	   68073	      8408 ns/op	    2420 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	   15019	     19831 ns/op	    3027 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	   82164	      3740 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   10000	     23224 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   10000	     54925 ns/op	   12719 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	   96427	      2260 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   17169	     14955 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   15243	     25305 ns/op	   13079 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  114044	      2438 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   16515	     16292 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   10000	     21724 ns/op	   13799 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  282088	      1335 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	   76581	      3071 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	   81514	      4536 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  109699	      3317 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	    9986	     34280 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	    4744	     60367 ns/op	   20339 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	   35424	      6081 ns/op	    5283 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   17854	     22069 ns/op	    2421 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   10000	     20602 ns/op	    3709 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	   83808	      2455 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	   95182	      3067 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   42412	      6886 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  226752	      1588 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  168639	      2035 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   21868	     14329 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  211006	      1346 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   23236	     10784 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   10000	     29345 ns/op	   10766 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  253950	       864.1 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	   78618	      3641 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   23011	     12912 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  194990	      1105 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   65442	      3995 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   16944	     12494 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	19.817s
+# round 9 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  539088	       511.3 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  372417	       630.3 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	  192670	      1296 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  462430	       520.3 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  338176	       860.5 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	  172831	      1406 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  486354	       500.7 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	  170629	      1407 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   89377	      3338 ns/op	    3954 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	  174937	      1231 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	  130647	      1829 ns/op	    2415 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	  106380	      2259 ns/op	    3035 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  347647	       798.2 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   36640	      6937 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   20181	     11967 ns/op	   12718 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  281550	       978.2 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   44328	      5355 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   30004	      8083 ns/op	   13078 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  240466	      1006 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   32918	      8286 ns/op	    9733 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   21589	     11107 ns/op	   13799 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  532386	       459.9 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  233138	      1201 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	  154015	      1468 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  346314	       706.2 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   23343	     11567 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	   11442	     20954 ns/op	   20338 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	  125734	      1932 ns/op	    5283 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   32878	      6887 ns/op	    2422 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   26708	      9286 ns/op	    3699 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  171980	      1647 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  142681	      2203 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   74814	      3417 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  492193	       454.6 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  350569	       652.3 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   44505	      6164 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  514840	       463.2 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   67189	      3760 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   37794	      6127 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  492715	       576.7 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  147541	      1721 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   42601	      5754 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  313160	       767.5 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   91184	      3556 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   29508	      8158 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	13.990s
+# round 10 implementation blues
+goos: darwin
+goarch: arm64
+pkg: github.com/tiaanduplessis/jsonata-go/internal/benchmark
+cpu: Apple M5
+BenchmarkMatrix/compile/small-simple-path-10         	  497784	       447.8 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/small-simple-path-10         	  369097	       681.2 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/small-simple-path-10           	  190780	      1542 ns/op	    2761 B/op	      49 allocs/op
+BenchmarkMatrix/compile/small-comparison-10          	  473698	       494.4 ns/op	    1056 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-comparison-10          	  339375	       697.8 ns/op	    1456 B/op	      29 allocs/op
+BenchmarkMatrix/bytes/small-comparison-10            	  182090	      1314 ns/op	    2777 B/op	      50 allocs/op
+BenchmarkMatrix/compile/small-projection-10          	  497121	       567.5 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/small-projection-10          	  167755	      1400 ns/op	    2064 B/op	      56 allocs/op
+BenchmarkMatrix/bytes/small-projection-10            	   91461	      2640 ns/op	    3954 B/op	      93 allocs/op
+BenchmarkMatrix/compile/small-regex-10               	  199108	      1205 ns/op	    3289 B/op	      38 allocs/op
+BenchmarkMatrix/decoded/small-regex-10               	  129799	      2191 ns/op	    2419 B/op	      44 allocs/op
+BenchmarkMatrix/bytes/small-regex-10                 	  107439	      2422 ns/op	    3038 B/op	      54 allocs/op
+BenchmarkMatrix/compile/medium-aggregate-10          	  339426	       685.4 ns/op	    1264 B/op	      30 allocs/op
+BenchmarkMatrix/decoded/medium-aggregate-10          	   37094	      7849 ns/op	    6792 B/op	     257 allocs/op
+BenchmarkMatrix/bytes/medium-aggregate-10            	   21477	     11096 ns/op	   12718 B/op	     392 allocs/op
+BenchmarkMatrix/compile/medium-higher-order-10       	  301150	       800.6 ns/op	    1288 B/op	      32 allocs/op
+BenchmarkMatrix/decoded/medium-higher-order-10       	   43701	      6733 ns/op	    9232 B/op	     228 allocs/op
+BenchmarkMatrix/bytes/medium-higher-order-10         	   24496	      8581 ns/op	   13078 B/op	     297 allocs/op
+BenchmarkMatrix/compile/medium-transform-10          	  230550	      1081 ns/op	    1536 B/op	      40 allocs/op
+BenchmarkMatrix/decoded/medium-transform-10          	   31911	      7476 ns/op	    9734 B/op	     222 allocs/op
+BenchmarkMatrix/bytes/medium-transform-10            	   20985	     11858 ns/op	   13800 B/op	     328 allocs/op
+BenchmarkMatrix/compile/small-custom-function-10     	  504126	       494.6 ns/op	     904 B/op	      17 allocs/op
+BenchmarkMatrix/decoded/small-custom-function-10     	  218406	      1030 ns/op	    1496 B/op	      32 allocs/op
+BenchmarkMatrix/bytes/small-custom-function-10       	  166682	      1676 ns/op	    2073 B/op	      45 allocs/op
+BenchmarkMatrix/compile/large-filter-reduce-10       	  355077	       698.0 ns/op	    1224 B/op	      28 allocs/op
+BenchmarkMatrix/decoded/large-filter-reduce-10       	   22635	     12093 ns/op	    9568 B/op	     370 allocs/op
+BenchmarkMatrix/bytes/large-filter-reduce-10         	   10000	     21562 ns/op	   20338 B/op	     670 allocs/op
+BenchmarkMatrix/compile/large-regex-scan-10          	   99129	      2285 ns/op	    5283 B/op	      49 allocs/op
+BenchmarkMatrix/decoded/large-regex-scan-10          	   34266	      6961 ns/op	    2418 B/op	      46 allocs/op
+BenchmarkMatrix/bytes/large-regex-scan-10            	   24732	     10650 ns/op	    3701 B/op	      56 allocs/op
+BenchmarkMatrix/compile/adversarial-deep-path-10     	  145896	      1770 ns/op	    2736 B/op	      71 allocs/op
+BenchmarkMatrix/decoded/adversarial-deep-path-10     	  140638	      1646 ns/op	    2480 B/op	      78 allocs/op
+BenchmarkMatrix/bytes/adversarial-deep-path-10       	   75888	      3243 ns/op	    7323 B/op	     116 allocs/op
+BenchmarkMatrix/compile/adversarial-wide-object-10   	  518610	       441.8 ns/op	     992 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-wide-object-10   	  350396	       780.2 ns/op	    1440 B/op	      28 allocs/op
+BenchmarkMatrix/bytes/adversarial-wide-object-10     	   46291	      5189 ns/op	    7740 B/op	     162 allocs/op
+BenchmarkMatrix/compile/adversarial-descendant-10    	  506715	       482.8 ns/op	    1000 B/op	      19 allocs/op
+BenchmarkMatrix/decoded/adversarial-descendant-10    	   66505	      3585 ns/op	    5584 B/op	     111 allocs/op
+BenchmarkMatrix/bytes/adversarial-descendant-10      	   39189	      7226 ns/op	   10765 B/op	     182 allocs/op
+BenchmarkMatrix/compile/official-dataset1-contacts-10         	  498282	       483.9 ns/op	    1024 B/op	      21 allocs/op
+BenchmarkMatrix/decoded/official-dataset1-contacts-10         	  147548	      1624 ns/op	    2224 B/op	      64 allocs/op
+BenchmarkMatrix/bytes/official-dataset1-contacts-10           	   43815	      5498 ns/op	    7067 B/op	     178 allocs/op
+BenchmarkMatrix/compile/official-dataset5-orders-10           	  302370	       905.8 ns/op	    1368 B/op	      33 allocs/op
+BenchmarkMatrix/decoded/official-dataset5-orders-10           	   90694	      2950 ns/op	    3384 B/op	     109 allocs/op
+BenchmarkMatrix/bytes/official-dataset5-orders-10             	   27676	      8454 ns/op	    9156 B/op	     282 allocs/op
+PASS
+ok  	github.com/tiaanduplessis/jsonata-go/internal/benchmark	13.548s

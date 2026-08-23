@@ -1,0 +1,1531 @@
+{
+  "schemaVersion": 3,
+  "referenceName": "jsonata-js-v2.2.2",
+  "referenceCommit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+  "suiteCases": 1686,
+  "features": [
+    {
+      "id": "array-constructor",
+      "status": "supported",
+      "cases": 26,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/array-constructor",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 26,
+        "passes": 26,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "blocks",
+      "status": "supported",
+      "cases": 7,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/blocks",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 7,
+        "passes": 7,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "boolean-expresssions",
+      "status": "supported",
+      "cases": 31,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/boolean-expresssions",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 31,
+        "passes": 31,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "closures",
+      "status": "supported",
+      "cases": 2,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/closures",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 2,
+        "passes": 2,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "coalescing-operator",
+      "status": "supported",
+      "cases": 15,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/coalescing-operator",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 15,
+        "passes": 15,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "comments",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/comments",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "comparison-operators",
+      "status": "supported",
+      "cases": 48,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/comparison-operators",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 48,
+        "passes": 48,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "conditionals",
+      "status": "supported",
+      "cases": 9,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/conditionals",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 9,
+        "passes": 9,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "context",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/context",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "default-operator",
+      "status": "supported",
+      "cases": 19,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/default-operator",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 19,
+        "passes": 19,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "descendent-operator",
+      "status": "supported",
+      "cases": 17,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/descendent-operator",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 17,
+        "passes": 17,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "encoding",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/encoding",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "errors",
+      "status": "supported",
+      "cases": 27,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/errors",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 27,
+        "passes": 27,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "fields",
+      "status": "supported",
+      "cases": 8,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/fields",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 8,
+        "passes": 8,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "flattening",
+      "status": "supported",
+      "cases": 61,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/flattening",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 61,
+        "passes": 61,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-abs",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-abs",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-append",
+      "status": "supported",
+      "cases": 6,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-append",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 6,
+        "passes": 6,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-applications",
+      "status": "supported",
+      "cases": 22,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-applications",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 22,
+        "passes": 22,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-assert",
+      "status": "supported",
+      "cases": 8,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-assert",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 8,
+        "passes": 8,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-average",
+      "status": "supported",
+      "cases": 13,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-average",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 13,
+        "passes": 13,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-boolean",
+      "status": "supported",
+      "cases": 24,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-boolean",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 24,
+        "passes": 24,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-ceil",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-ceil",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-contains",
+      "status": "supported",
+      "cases": 8,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-contains",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 8,
+        "passes": 8,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-count",
+      "status": "supported",
+      "cases": 14,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-count",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 14,
+        "passes": 14,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-decodeUrl",
+      "status": "supported",
+      "cases": 3,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-decodeUrl",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 3,
+        "passes": 3,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-decodeUrlComponent",
+      "status": "supported",
+      "cases": 3,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-decodeUrlComponent",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 3,
+        "passes": 3,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-distinct",
+      "status": "supported",
+      "cases": 8,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-distinct",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 8,
+        "passes": 8,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-each",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-each",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-encodeUrl",
+      "status": "supported",
+      "cases": 3,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-encodeUrl",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 3,
+        "passes": 3,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-encodeUrlComponent",
+      "status": "supported",
+      "cases": 3,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-encodeUrlComponent",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 3,
+        "passes": 3,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-error",
+      "status": "supported",
+      "cases": 11,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-error",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 11,
+        "passes": 11,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-eval",
+      "status": "supported",
+      "cases": 12,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-eval",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 12,
+        "passes": 12,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-exists",
+      "status": "supported",
+      "cases": 25,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-exists",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 25,
+        "passes": 25,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-floor",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-floor",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-formatBase",
+      "status": "supported",
+      "cases": 9,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-formatBase",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 9,
+        "passes": 9,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-formatInteger",
+      "status": "supported",
+      "cases": 65,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-formatInteger",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 65,
+        "passes": 65,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-formatNumber",
+      "status": "supported",
+      "cases": 45,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-formatNumber",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 45,
+        "passes": 45,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-fromMillis",
+      "status": "supported",
+      "cases": 93,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-fromMillis",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 93,
+        "passes": 93,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-join",
+      "status": "supported",
+      "cases": 12,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-join",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 12,
+        "passes": 12,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-keys",
+      "status": "supported",
+      "cases": 7,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-keys",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 7,
+        "passes": 7,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-length",
+      "status": "supported",
+      "cases": 17,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-length",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 17,
+        "passes": 17,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-lookup",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-lookup",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-lowercase",
+      "status": "supported",
+      "cases": 2,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-lowercase",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 2,
+        "passes": 2,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-max",
+      "status": "supported",
+      "cases": 27,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-max",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 27,
+        "passes": 27,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-merge",
+      "status": "supported",
+      "cases": 5,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-merge",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 5,
+        "passes": 5,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-number",
+      "status": "supported",
+      "cases": 34,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-number",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 34,
+        "passes": 34,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-pad",
+      "status": "supported",
+      "cases": 13,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-pad",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 13,
+        "passes": 13,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-parseInteger",
+      "status": "supported",
+      "cases": 61,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-parseInteger",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 61,
+        "passes": 61,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-power",
+      "status": "supported",
+      "cases": 7,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-power",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 7,
+        "passes": 7,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-replace",
+      "status": "supported",
+      "cases": 12,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-replace",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 12,
+        "passes": 12,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-reverse",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-reverse",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-round",
+      "status": "supported",
+      "cases": 18,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-round",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 18,
+        "passes": 18,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-shuffle",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-shuffle",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-sift",
+      "status": "supported",
+      "cases": 5,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-sift",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 5,
+        "passes": 5,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-signatures",
+      "status": "supported",
+      "cases": 41,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-signatures",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 41,
+        "passes": 41,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-sort",
+      "status": "supported",
+      "cases": 11,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-sort",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 11,
+        "passes": 11,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-split",
+      "status": "supported",
+      "cases": 19,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-split",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 19,
+        "passes": 19,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-spread",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-spread",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-sqrt",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-sqrt",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-string",
+      "status": "supported",
+      "cases": 31,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-string",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 31,
+        "passes": 31,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-substring",
+      "status": "supported",
+      "cases": 19,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-substring",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 19,
+        "passes": 19,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-substringAfter",
+      "status": "supported",
+      "cases": 5,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-substringAfter",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 5,
+        "passes": 5,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-substringBefore",
+      "status": "supported",
+      "cases": 5,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-substringBefore",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 5,
+        "passes": 5,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-sum",
+      "status": "supported",
+      "cases": 7,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-sum",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 7,
+        "passes": 7,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-tomillis",
+      "status": "supported",
+      "cases": 60,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-tomillis",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 60,
+        "passes": 60,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-trim",
+      "status": "supported",
+      "cases": 3,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-trim",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 3,
+        "passes": 3,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-typeOf",
+      "status": "supported",
+      "cases": 13,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-typeOf",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 13,
+        "passes": 13,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-uppercase",
+      "status": "supported",
+      "cases": 2,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-uppercase",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 2,
+        "passes": 2,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "function-zip",
+      "status": "supported",
+      "cases": 6,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/function-zip",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 6,
+        "passes": 6,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "higher-order-functions",
+      "status": "supported",
+      "cases": 3,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/higher-order-functions",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 3,
+        "passes": 3,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "hof-filter",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/hof-filter",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "hof-map",
+      "status": "supported",
+      "cases": 12,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/hof-map",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 12,
+        "passes": 12,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "hof-reduce",
+      "status": "supported",
+      "cases": 11,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/hof-reduce",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 11,
+        "passes": 11,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "hof-single",
+      "status": "supported",
+      "cases": 11,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/hof-single",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 11,
+        "passes": 11,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "hof-zip-map",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/hof-zip-map",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "inclusion-operator",
+      "status": "supported",
+      "cases": 9,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/inclusion-operator",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 9,
+        "passes": 9,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "joins",
+      "status": "supported",
+      "cases": 45,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/joins",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 45,
+        "passes": 45,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "lambdas",
+      "status": "supported",
+      "cases": 14,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/lambdas",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 14,
+        "passes": 14,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "literals",
+      "status": "supported",
+      "cases": 24,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/literals",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 24,
+        "passes": 24,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "matchers",
+      "status": "supported",
+      "cases": 2,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/matchers",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 2,
+        "passes": 2,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "missing-paths",
+      "status": "supported",
+      "cases": 6,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/missing-paths",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 6,
+        "passes": 6,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "multiple-array-selectors",
+      "status": "supported",
+      "cases": 3,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/multiple-array-selectors",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 3,
+        "passes": 3,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "null",
+      "status": "supported",
+      "cases": 7,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/null",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 7,
+        "passes": 7,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "numeric-operators",
+      "status": "supported",
+      "cases": 19,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/numeric-operators",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 19,
+        "passes": 19,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "object-constructor",
+      "status": "supported",
+      "cases": 27,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/object-constructor",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 27,
+        "passes": 27,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "parent-operator",
+      "status": "supported",
+      "cases": 44,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/parent-operator",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 44,
+        "passes": 44,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "parentheses",
+      "status": "supported",
+      "cases": 8,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/parentheses",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 8,
+        "passes": 8,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "partial-application",
+      "status": "supported",
+      "cases": 5,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/partial-application",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 5,
+        "passes": 5,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "performance",
+      "status": "supported",
+      "cases": 2,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/performance",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 2,
+        "passes": 2,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "predicates",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/predicates",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "quoted-selectors",
+      "status": "supported",
+      "cases": 8,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/quoted-selectors",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 8,
+        "passes": 8,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "range-operator",
+      "status": "supported",
+      "cases": 25,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/range-operator",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 25,
+        "passes": 25,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "regex",
+      "status": "supported",
+      "cases": 39,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/regex",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 39,
+        "passes": 39,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "simple-array-selectors",
+      "status": "supported",
+      "cases": 23,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/simple-array-selectors",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 23,
+        "passes": 23,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "sorting",
+      "status": "supported",
+      "cases": 21,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/sorting",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 21,
+        "passes": 21,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "string-concat",
+      "status": "supported",
+      "cases": 12,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/string-concat",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 12,
+        "passes": 12,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "tail-recursion",
+      "status": "supported",
+      "cases": 10,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/tail-recursion",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 10,
+        "passes": 10,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "token-conversion",
+      "status": "supported",
+      "cases": 4,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/token-conversion",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 4,
+        "passes": 4,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "transform",
+      "status": "supported",
+      "cases": 104,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/transform",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 104,
+        "passes": 104,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "transforms",
+      "status": "supported",
+      "cases": 15,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/transforms",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 15,
+        "passes": 15,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "variables",
+      "status": "supported",
+      "cases": 13,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/variables",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 13,
+        "passes": 13,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    },
+    {
+      "id": "wildcards",
+      "status": "supported",
+      "cases": 13,
+      "fixture": "testdata/reference/jsonata-js-v2.2.2/test/test-suite/groups/wildcards",
+      "evidence": "reports/conformance/report.json",
+      "outcome": {
+        "enabled": 13,
+        "passes": 13,
+        "failures": 0,
+        "skips": 0,
+        "remaining": 0
+      }
+    }
+  ],
+  "library": [
+    {
+      "id": "complete-language-suite",
+      "status": "supported",
+      "evidence": [
+        "internal/conformance/full_suite_test.go",
+        "reports/conformance/report.json"
+      ]
+    },
+    {
+      "id": "structured-errors",
+      "status": "supported",
+      "evidence": [
+        "internal/differential/corpus_test.go",
+        "testdata/differential/oracle.json"
+      ]
+    },
+    {
+      "id": "deterministic-differential-corpus",
+      "status": "supported",
+      "evidence": [
+        "internal/differential/corpus_test.go",
+        "testdata/differential/cases.json"
+      ]
+    },
+    {
+      "id": "bounded-generated-differential-campaign",
+      "status": "supported",
+      "evidence": [
+        "internal/differential/corpus_test.go",
+        "testdata/differential/fuzz-cases.json",
+        "testdata/differential/fuzz-oracle.json"
+      ]
+    },
+    {
+      "id": "context-and-resource-guardrails",
+      "status": "supported",
+      "evidence": [
+        "internal/evaluator/phase3_test.go",
+        "internal/security/regression_test.go"
+      ]
+    },
+    {
+      "id": "concurrent-evaluation",
+      "status": "supported",
+      "evidence": [
+        "jsonata_test.go",
+        "internal/security/regression_test.go"
+      ]
+    },
+    {
+      "id": "safe-extension-registration",
+      "status": "supported",
+      "evidence": [
+        "extensions_normalization_test.go",
+        "internal/security/fuzz_test.go"
+      ]
+    },
+    {
+      "id": "security-regressions",
+      "status": "supported",
+      "evidence": [
+        "reports/security-regressions.json",
+        "internal/security/regression_test.go"
+      ]
+    }
+  ],
+  "behavioralDifferences": [
+    {
+      "id": "regex-unpaired-surrogate-results",
+      "feature": "regex",
+      "status": "documented",
+      "referenceBehavior": "ECMAScript strings can contain unpaired UTF-16 surrogate code units.",
+      "libraryBehavior": "Boolean matches remain exact; a match, capture, replacement, split part, or callback argument containing an unpaired surrogate returns U1002.",
+      "boundary": "Go strings and encoding/json cannot preserve an unpaired surrogate without invalid UTF-8 or replacement.",
+      "futureCompatibility": "Exact representation requires an explicit opt-in UTF-16 result API.",
+      "evidence": [
+        "internal/regex/regex_test.go",
+        "internal/evaluator/builtins_regex_test.go"
+      ]
+    },
+    {
+      "id": "unicode-case-mapping-runtime",
+      "feature": "lowercase-uppercase",
+      "status": "documented",
+      "referenceBehavior": "Node.js 24.19.0 with Unicode 17.0 uppercases U+019B to U+A7DC.",
+      "libraryBehavior": "Supported Go 1.26.6 builds with golang.org/x/text v0.39.0 use Unicode 15.0.0 tables and leave U+019B unchanged; supported Go 1.27.0 builds use Unicode 17.0.0 tables and uppercase U+019B to U+A7DC.",
+      "boundary": "ECMAScript casing follows the host runtime; this library's mapping is toolchain-dependent, with Go 1.26.6 differing at this boundary and Go 1.27.0 matching the pinned Node.js 24.19.0 result.",
+      "futureCompatibility": "A supported Go runtime or x/text Unicode-table change requires rerunning the pinned Node.js oracle comparison and updating the version-specific claim.",
+      "evidence": [
+        "go.mod",
+        "internal/evaluator/builtins_string_test.go"
+      ]
+    }
+  ]
+}

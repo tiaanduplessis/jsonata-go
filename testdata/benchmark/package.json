@@ -1,0 +1,12 @@
+{
+  "name": "jsonata-go-benchmark-oracle",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate-oracle.mjs",
+    "check": "node generate-oracle.mjs --check"
+  },
+  "dependencies": {
+    "jsonata": "2.2.2"
+  }
+}

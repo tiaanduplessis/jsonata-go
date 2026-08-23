@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "referenceName": "jsonata-js-v2.2.2",
+  "referenceCommit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+  "risks": [
+    {
+      "id": "GHSA-2943-5xfg-gq5f",
+      "category": "crafted-expression-code-execution",
+      "source": "https://github.com/jsonata-js/jsonata/security/advisories/GHSA-2943-5xfg-gq5f",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/security/regression_test.go", "test": "TestGHSA2943CraftedExpressionCannotReachHostCallables"}]
+    },
+    {
+      "id": "GHSA-86vw-mfpg-wwv9",
+      "category": "date-resource-exhaustion",
+      "source": "https://github.com/jsonata-js/jsonata/security/advisories/GHSA-86vw-mfpg-wwv9",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/security/regression_test.go", "test": "TestGHSA86ToMillisAdversarialInputConsumesBudget"}]
+    },
+    {
+      "id": "prototype-and-constructor-keys",
+      "category": "prototype-pollution",
+      "source": "https://github.com/jsonata-js/jsonata/releases/tag/v2.2.1",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/security/regression_test.go", "test": "TestPrototypeAndConstructorNamesRemainPlainData"}]
+    },
+    {
+      "id": "reserved-internal-flags",
+      "category": "internal-function-confusion",
+      "source": "https://github.com/jsonata-js/jsonata/releases/tag/v2.2.1",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/security/regression_test.go", "test": "TestInternalFunctionFlagsCannotBeConstructed"}]
+    },
+    {
+      "id": "wildcard-function-boundary",
+      "category": "runtime-wrapper-exposure",
+      "source": "https://github.com/jsonata-js/jsonata/releases/tag/v2.2.1",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/security/regression_test.go", "test": "TestWildcardDoesNotTraverseFunctionInternals"}]
+    },
+    {
+      "id": "evaluation-resource-guardrails",
+      "category": "resource-exhaustion",
+      "source": "https://github.com/jsonata-js/jsonata/releases/tag/v2.2.0",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/security/regression_test.go", "test": "TestResourceGuardrailsBoundSequenceRecursionAndCancellation"}]
+    },
+    {
+      "id": "append-sequence-guardrail",
+      "category": "resource-exhaustion",
+      "source": "https://github.com/jsonata-js/jsonata/releases/tag/v2.2.1",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/evaluator/resource_security_test.go", "test": "TestAppendHonorsOperationBudgetAndCancellation"}]
+    },
+    {
+      "id": "evaluation-local-root",
+      "category": "concurrent-root-isolation",
+      "source": "https://github.com/jsonata-js/jsonata/releases/tag/v2.2.2",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/security/regression_test.go", "test": "TestConcurrentRootIsEvaluationLocal"}]
+    },
+    {
+      "id": "hostile-cyclic-go-input",
+      "category": "go-input-resource-exhaustion",
+      "source": "README.md#errors-and-guardrails",
+      "applicability": "applicable",
+      "status": "covered",
+      "evidence": [{"file": "internal/security/regression_test.go", "test": "TestHostileCyclicInputReturnsBoundedError"}]
+    }
+  ]
+}

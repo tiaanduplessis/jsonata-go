@@ -1,0 +1,9 @@
+{
+  "repository": "jsonata-js/jsonata",
+  "release": "v2.2.2",
+  "commit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+  "advisories": [
+    "GHSA-2943-5xfg-gq5f",
+    "GHSA-86vw-mfpg-wwv9"
+  ]
+}

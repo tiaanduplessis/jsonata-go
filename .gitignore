@@ -1,0 +1,24 @@
+# Go build and test output
+/bin/
+/dist/
+*.test
+coverage.out
+coverage.html
+
+# Local tooling and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Generated dependency trees
+/testdata/benchmark/node_modules/
+
+# Generated reports are ignored unless they are audited release evidence.
+/reports/*
+!/reports/benchmark/
+!/reports/benchmark/**
+!/reports/conformance/
+!/reports/conformance/report.json
+!/reports/feature-matrix.json
+!/reports/security-regressions.json
+/tmp/

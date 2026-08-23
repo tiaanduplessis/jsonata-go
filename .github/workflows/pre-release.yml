@@ -1,0 +1,46 @@
+name: Pre-release verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Exact branch, commit, or existing tag to verify
+        required: true
+        type: string
+      version:
+        description: Module version that will be signed and tagged (vX.Y.Z)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pre-release-${{ inputs.ref }}-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Verify release candidate
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        go: ['1.26.x', '1.27.x']
+    env:
+      RELEASE_REF: ${{ inputs.ref }}
+      RELEASE_VERSION: ${{ inputs.version }}
+    steps:
+      - name: Check out the exact release ref
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+      - name: Set up Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: ${{ matrix.go }}
+          cache: true
+      - name: Run the mandatory pre-tag release gates
+        run: .github/scripts/release-verify.sh "$RELEASE_VERSION"

@@ -1,0 +1,3505 @@
+{
+  "schemaVersion": 1,
+  "referenceName": "jsonata-js-v2.2.2",
+  "referenceCommit": "6c7e95fdbf4405a1e741852a7cd8cd985b4305bb",
+  "cases": [
+    {
+      "id": "fuzz-000",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-001",
+      "kind": "value",
+      "value": "item-63-001"
+    },
+    {
+      "id": "fuzz-002",
+      "kind": "value",
+      "value": 28
+    },
+    {
+      "id": "fuzz-003",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-004",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-005",
+      "kind": "value",
+      "value": "label-005"
+    },
+    {
+      "id": "fuzz-006",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-007",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-008",
+      "kind": "value",
+      "value": 32
+    },
+    {
+      "id": "fuzz-009",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-010",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-011",
+      "kind": "value",
+      "value": "item-119-011"
+    },
+    {
+      "id": "fuzz-012",
+      "kind": "value",
+      "value": "label-012"
+    },
+    {
+      "id": "fuzz-013",
+      "kind": "value",
+      "value": [
+        "item-13-0-114",
+        "item-13-1-114",
+        "item-13-2-114",
+        "item-13-3-114"
+      ]
+    },
+    {
+      "id": "fuzz-014",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-015",
+      "kind": "value",
+      "value": 116
+    },
+    {
+      "id": "fuzz-016",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-017",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-018",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-019",
+      "kind": "value",
+      "value": "label-019"
+    },
+    {
+      "id": "fuzz-020",
+      "kind": "value",
+      "value": 142
+    },
+    {
+      "id": "fuzz-021",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "fuzz-022",
+      "kind": "value",
+      "value": [
+        "item-22-0-46",
+        "item-22-1-46"
+      ]
+    },
+    {
+      "id": "fuzz-023",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-024",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "fuzz-025",
+      "kind": "value",
+      "value": [
+        "item-25-0-71",
+        "item-25-1-71",
+        "item-25-2-71",
+        "item-25-3-71",
+        "item-25-4-71",
+        "item-25-5-71"
+      ]
+    },
+    {
+      "id": "fuzz-026",
+      "kind": "value",
+      "value": [
+        "item-26-0-100",
+        "item-26-1-100",
+        "item-26-2-100",
+        "item-26-3-100",
+        "item-26-4-100"
+      ]
+    },
+    {
+      "id": "fuzz-027",
+      "kind": "value",
+      "value": [
+        "item-27-0-18",
+        "item-27-1-18",
+        "item-27-2-18",
+        "item-27-3-18"
+      ]
+    },
+    {
+      "id": "fuzz-028",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-029",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-030",
+      "kind": "value",
+      "value": [
+        "item-30-0-27",
+        "item-30-1-27",
+        "item-30-2-27",
+        "item-30-3-27",
+        "item-30-4-27",
+        "item-30-5-27"
+      ]
+    },
+    {
+      "id": "fuzz-031",
+      "kind": "value",
+      "value": [
+        "a:54",
+        "b:61"
+      ]
+    },
+    {
+      "id": "fuzz-032",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-033",
+      "kind": "value",
+      "value": [
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "id": "fuzz-034",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-035",
+      "kind": "value",
+      "value": 45
+    },
+    {
+      "id": "fuzz-036",
+      "kind": "value",
+      "value": [
+        -13,
+        15,
+        87,
+        -1,
+        -1
+      ]
+    },
+    {
+      "id": "fuzz-037",
+      "kind": "value",
+      "value": [
+        27,
+        17,
+        22
+      ]
+    },
+    {
+      "id": "fuzz-038",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-039",
+      "kind": "value",
+      "value": [
+        -7,
+        -8,
+        14,
+        -11,
+        -10,
+        104
+      ]
+    },
+    {
+      "id": "fuzz-040",
+      "kind": "value",
+      "value": [
+        6,
+        10,
+        -12,
+        15,
+        -2,
+        3,
+        65
+      ]
+    },
+    {
+      "id": "fuzz-041",
+      "kind": "value",
+      "value": {
+        "a": 11,
+        "b": -11,
+        "v": 84
+      }
+    },
+    {
+      "id": "fuzz-042",
+      "kind": "value",
+      "value": [
+        95,
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "id": "fuzz-043",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-044",
+      "kind": "value",
+      "value": [
+        108,
+        109
+      ]
+    },
+    {
+      "id": "fuzz-045",
+      "kind": "value",
+      "value": 71
+    },
+    {
+      "id": "fuzz-046",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-047",
+      "kind": "value",
+      "value": "label:047:31"
+    },
+    {
+      "id": "fuzz-048",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-049",
+      "kind": "value",
+      "value": [
+        57,
+        56,
+        53,
+        50
+      ]
+    },
+    {
+      "id": "fuzz-050",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-051",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-052",
+      "kind": "value",
+      "value": {
+        "sum": -17,
+        "text": "label-0529"
+      }
+    },
+    {
+      "id": "fuzz-053",
+      "kind": "value",
+      "value": 50
+    },
+    {
+      "id": "fuzz-054",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-055",
+      "kind": "value",
+      "value": [
+        -14,
+        -4,
+        10,
+        11,
+        4,
+        125
+      ]
+    },
+    {
+      "id": "fuzz-056",
+      "kind": "value",
+      "value": [
+        -1,
+        1,
+        64,
+        13,
+        -6,
+        -4
+      ]
+    },
+    {
+      "id": "fuzz-057",
+      "kind": "value",
+      "value": [
+        "item-57-0-85",
+        "item-57-1-85",
+        "item-57-2-85",
+        "item-57-3-85",
+        "item-57-4-85",
+        "item-57-5-85"
+      ]
+    },
+    {
+      "id": "fuzz-058",
+      "kind": "value",
+      "value": [
+        91,
+        139,
+        115
+      ]
+    },
+    {
+      "id": "fuzz-059",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-060",
+      "kind": "value",
+      "value": [
+        74,
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "id": "fuzz-061",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-062",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-063",
+      "kind": "value",
+      "value": [
+        24,
+        22,
+        22,
+        25,
+        21
+      ]
+    },
+    {
+      "id": "fuzz-064",
+      "kind": "value",
+      "value": [
+        115,
+        124,
+        120,
+        119
+      ]
+    },
+    {
+      "id": "fuzz-065",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-066",
+      "kind": "value",
+      "value": 82
+    },
+    {
+      "id": "fuzz-067",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-068",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-069",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "fuzz-070",
+      "kind": "value",
+      "value": [
+        2,
+        5,
+        122,
+        0,
+        -15,
+        0
+      ]
+    },
+    {
+      "id": "fuzz-071",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-072",
+      "kind": "value",
+      "value": 92
+    },
+    {
+      "id": "fuzz-073",
+      "kind": "value",
+      "value": "label:073:4"
+    },
+    {
+      "id": "fuzz-074",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-075",
+      "kind": "value",
+      "value": 234
+    },
+    {
+      "id": "fuzz-076",
+      "kind": "value",
+      "value": [
+        100,
+        93
+      ]
+    },
+    {
+      "id": "fuzz-077",
+      "kind": "value",
+      "value": [
+        63,
+        52,
+        55,
+        58,
+        52
+      ]
+    },
+    {
+      "id": "fuzz-078",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-079",
+      "kind": "value",
+      "value": {
+        "sum": 14,
+        "text": "label-0799"
+      }
+    },
+    {
+      "id": "fuzz-080",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-081",
+      "kind": "value",
+      "value": {
+        "a": 8,
+        "b": 5,
+        "v": 60
+      }
+    },
+    {
+      "id": "fuzz-082",
+      "kind": "value",
+      "value": [
+        2,
+        -11,
+        120,
+        6,
+        -12,
+        7,
+        15
+      ]
+    },
+    {
+      "id": "fuzz-083",
+      "kind": "value",
+      "value": {
+        "a": 10,
+        "b": -14,
+        "v": 12
+      }
+    },
+    {
+      "id": "fuzz-084",
+      "kind": "value",
+      "value": "item-89-084"
+    },
+    {
+      "id": "fuzz-085",
+      "kind": "value",
+      "value": "item-76-085"
+    },
+    {
+      "id": "fuzz-086",
+      "kind": "value",
+      "value": 86
+    },
+    {
+      "id": "fuzz-087",
+      "kind": "value",
+      "value": 105
+    },
+    {
+      "id": "fuzz-088",
+      "kind": "value",
+      "value": 114
+    },
+    {
+      "id": "fuzz-089",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-090",
+      "kind": "value",
+      "value": 130
+    },
+    {
+      "id": "fuzz-091",
+      "kind": "value",
+      "value": [
+        88,
+        89,
+        90,
+        91
+      ]
+    },
+    {
+      "id": "fuzz-092",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-093",
+      "kind": "value",
+      "value": {
+        "a": -5,
+        "b": 14,
+        "v": 41
+      }
+    },
+    {
+      "id": "fuzz-094",
+      "kind": "value",
+      "value": [
+        68,
+        38,
+        58,
+        173,
+        108
+      ]
+    },
+    {
+      "id": "fuzz-095",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-096",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-097",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-098",
+      "kind": "value",
+      "value": [
+        7,
+        1,
+        83,
+        0,
+        5,
+        0
+      ]
+    },
+    {
+      "id": "fuzz-099",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-100",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-101",
+      "kind": "value",
+      "value": [
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "id": "fuzz-102",
+      "kind": "value",
+      "value": {
+        "a": 4,
+        "b": -6,
+        "v": 31
+      }
+    },
+    {
+      "id": "fuzz-103",
+      "kind": "value",
+      "value": [
+        "item-103-0-101",
+        "item-103-1-101",
+        "item-103-2-101"
+      ]
+    },
+    {
+      "id": "fuzz-104",
+      "kind": "value",
+      "value": [
+        2,
+        9,
+        -13,
+        13,
+        1,
+        -15,
+        118
+      ]
+    },
+    {
+      "id": "fuzz-105",
+      "kind": "value",
+      "value": [
+        -9,
+        4,
+        119,
+        11,
+        -15
+      ]
+    },
+    {
+      "id": "fuzz-106",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "fuzz-107",
+      "kind": "value",
+      "value": [
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "fuzz-108",
+      "kind": "value",
+      "value": {
+        "a": 5,
+        "b": -12,
+        "v": 99
+      }
+    },
+    {
+      "id": "fuzz-109",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-110",
+      "kind": "value",
+      "value": "item-91-110"
+    },
+    {
+      "id": "fuzz-111",
+      "kind": "value",
+      "value": [
+        16,
+        26,
+        27,
+        21,
+        22
+      ]
+    },
+    {
+      "id": "fuzz-112",
+      "kind": "value",
+      "value": "label:112:61"
+    },
+    {
+      "id": "fuzz-113",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-114",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-115",
+      "kind": "value",
+      "value": 122
+    },
+    {
+      "id": "fuzz-116",
+      "kind": "value",
+      "value": [
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "id": "fuzz-117",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-118",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-119",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "fuzz-120",
+      "kind": "value",
+      "value": {
+        "a": 9,
+        "b": 5,
+        "v": 6
+      }
+    },
+    {
+      "id": "fuzz-121",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-122",
+      "kind": "value",
+      "value": [
+        "a:78",
+        "b:90"
+      ]
+    },
+    {
+      "id": "fuzz-123",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-124",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-125",
+      "kind": "value",
+      "value": 57
+    },
+    {
+      "id": "fuzz-126",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "fuzz-127",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-128",
+      "kind": "value",
+      "value": [
+        46,
+        51
+      ]
+    },
+    {
+      "id": "fuzz-129",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-130",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-131",
+      "kind": "value",
+      "value": "label:131:96"
+    },
+    {
+      "id": "fuzz-132",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-133",
+      "kind": "value",
+      "value": 220
+    },
+    {
+      "id": "fuzz-134",
+      "kind": "value",
+      "value": 82
+    },
+    {
+      "id": "fuzz-135",
+      "kind": "value",
+      "value": 425
+    },
+    {
+      "id": "fuzz-136",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-137",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-138",
+      "kind": "value",
+      "value": [
+        5,
+        8,
+        11,
+        95
+      ]
+    },
+    {
+      "id": "fuzz-139",
+      "kind": "value",
+      "value": 38
+    },
+    {
+      "id": "fuzz-140",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-141",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-142",
+      "kind": "value",
+      "value": {
+        "a": 11,
+        "b": -4,
+        "v": 102
+      }
+    },
+    {
+      "id": "fuzz-143",
+      "kind": "value",
+      "value": 8
+    },
+    {
+      "id": "fuzz-144",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-145",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "fuzz-146",
+      "kind": "value",
+      "value": 101
+    },
+    {
+      "id": "fuzz-147",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-148",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-149",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-150",
+      "kind": "value",
+      "value": 129
+    },
+    {
+      "id": "fuzz-151",
+      "kind": "value",
+      "value": "label-151"
+    },
+    {
+      "id": "fuzz-152",
+      "kind": "value",
+      "value": 45
+    },
+    {
+      "id": "fuzz-153",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-154",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-155",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-156",
+      "kind": "value",
+      "value": [
+        59,
+        55,
+        57,
+        74
+      ]
+    },
+    {
+      "id": "fuzz-157",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-158",
+      "kind": "value",
+      "value": "label:158:16"
+    },
+    {
+      "id": "fuzz-159",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-160",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-161",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-162",
+      "kind": "value",
+      "value": 17
+    },
+    {
+      "id": "fuzz-163",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-164",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-165",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-166",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-167",
+      "kind": "value",
+      "value": {
+        "a": -11,
+        "b": -12,
+        "v": 74
+      }
+    },
+    {
+      "id": "fuzz-168",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-169",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-170",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-171",
+      "kind": "value",
+      "value": 77
+    },
+    {
+      "id": "fuzz-172",
+      "kind": "value",
+      "value": 5
+    },
+    {
+      "id": "fuzz-173",
+      "kind": "value",
+      "value": [
+        118,
+        119,
+        120,
+        121
+      ]
+    },
+    {
+      "id": "fuzz-174",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-175",
+      "kind": "value",
+      "value": 68
+    },
+    {
+      "id": "fuzz-176",
+      "kind": "value",
+      "value": [
+        "a:18",
+        "b:22"
+      ]
+    },
+    {
+      "id": "fuzz-177",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-178",
+      "kind": "value",
+      "value": "item-77-178"
+    },
+    {
+      "id": "fuzz-179",
+      "kind": "value",
+      "value": 19
+    },
+    {
+      "id": "fuzz-180",
+      "kind": "value",
+      "value": [
+        "item-180-0-27",
+        "item-180-1-27"
+      ]
+    },
+    {
+      "id": "fuzz-181",
+      "kind": "value",
+      "value": [
+        -15,
+        -12,
+        72,
+        -10,
+        -5
+      ]
+    },
+    {
+      "id": "fuzz-182",
+      "kind": "value",
+      "value": 83
+    },
+    {
+      "id": "fuzz-183",
+      "kind": "value",
+      "value": {
+        "a": -8,
+        "b": 14,
+        "v": 43
+      }
+    },
+    {
+      "id": "fuzz-184",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-185",
+      "kind": "value",
+      "value": 117
+    },
+    {
+      "id": "fuzz-186",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-187",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-188",
+      "kind": "value",
+      "value": [
+        126,
+        127,
+        128,
+        129
+      ]
+    },
+    {
+      "id": "fuzz-189",
+      "kind": "value",
+      "value": {
+        "sum": 108,
+        "text": "label-189-x"
+      }
+    },
+    {
+      "id": "fuzz-190",
+      "kind": "value",
+      "value": [
+        57,
+        71,
+        57,
+        61
+      ]
+    },
+    {
+      "id": "fuzz-191",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-192",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-193",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-194",
+      "kind": "value",
+      "value": [
+        106,
+        101
+      ]
+    },
+    {
+      "id": "fuzz-195",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-196",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-197",
+      "kind": "value",
+      "value": 288
+    },
+    {
+      "id": "fuzz-198",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-199",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-200",
+      "kind": "value",
+      "value": [
+        -14,
+        -11,
+        2,
+        98
+      ]
+    },
+    {
+      "id": "fuzz-201",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-202",
+      "kind": "value",
+      "value": {
+        "sum": 103,
+        "text": "label-202-x"
+      }
+    },
+    {
+      "id": "fuzz-203",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-204",
+      "kind": "value",
+      "value": 3
+    },
+    {
+      "id": "fuzz-205",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-206",
+      "kind": "value",
+      "value": 42
+    },
+    {
+      "id": "fuzz-207",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-208",
+      "kind": "value",
+      "value": [
+        "a:18",
+        "b:18"
+      ]
+    },
+    {
+      "id": "fuzz-209",
+      "kind": "value",
+      "value": [
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "id": "fuzz-210",
+      "kind": "value",
+      "value": 32
+    },
+    {
+      "id": "fuzz-211",
+      "kind": "value",
+      "value": "label-211"
+    },
+    {
+      "id": "fuzz-212",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-213",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-214",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "fuzz-215",
+      "kind": "value",
+      "value": 43
+    },
+    {
+      "id": "fuzz-216",
+      "kind": "value",
+      "value": [
+        93,
+        94,
+        95,
+        96
+      ]
+    },
+    {
+      "id": "fuzz-217",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-218",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-219",
+      "kind": "value",
+      "value": 20
+    },
+    {
+      "id": "fuzz-220",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-221",
+      "kind": "value",
+      "value": -11
+    },
+    {
+      "id": "fuzz-222",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-223",
+      "kind": "value",
+      "value": "a"
+    },
+    {
+      "id": "fuzz-224",
+      "kind": "value",
+      "value": "abe"
+    },
+    {
+      "id": "fuzz-225",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-226",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-227",
+      "kind": "value",
+      "value": 69
+    },
+    {
+      "id": "fuzz-228",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-229",
+      "kind": "value",
+      "value": 110
+    },
+    {
+      "id": "fuzz-230",
+      "kind": "value",
+      "value": [
+        "item-230-0-50",
+        "item-230-1-50",
+        "item-230-2-50"
+      ]
+    },
+    {
+      "id": "fuzz-231",
+      "kind": "value",
+      "value": [
+        4,
+        10,
+        106,
+        12,
+        3,
+        -3,
+        6
+      ]
+    },
+    {
+      "id": "fuzz-232",
+      "kind": "value",
+      "value": 90
+    },
+    {
+      "id": "fuzz-233",
+      "kind": "value",
+      "value": "label-233"
+    },
+    {
+      "id": "fuzz-234",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-235",
+      "kind": "value",
+      "value": "a"
+    },
+    {
+      "id": "fuzz-236",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-237",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-238",
+      "kind": "value",
+      "value": [
+        79,
+        73,
+        66,
+        85
+      ]
+    },
+    {
+      "id": "fuzz-239",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-240",
+      "kind": "value",
+      "value": [
+        61,
+        62,
+        63,
+        64
+      ]
+    },
+    {
+      "id": "fuzz-241",
+      "kind": "value",
+      "value": "a"
+    },
+    {
+      "id": "fuzz-242",
+      "kind": "value",
+      "value": "9"
+    },
+    {
+      "id": "fuzz-243",
+      "kind": "value",
+      "value": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "fuzz-244",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-245",
+      "kind": "value",
+      "value": "label:245:55"
+    },
+    {
+      "id": "fuzz-246",
+      "kind": "value",
+      "value": [
+        81,
+        76,
+        73,
+        77,
+        77
+      ]
+    },
+    {
+      "id": "fuzz-247",
+      "kind": "value",
+      "value": [
+        23,
+        32,
+        24,
+        31,
+        22,
+        12
+      ]
+    },
+    {
+      "id": "fuzz-248",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-249",
+      "kind": "value",
+      "value": "9"
+    },
+    {
+      "id": "fuzz-250",
+      "kind": "value",
+      "value": 111
+    },
+    {
+      "id": "fuzz-251",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-252",
+      "kind": "value",
+      "value": [
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "id": "fuzz-253",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-254",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-255",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-256",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-257",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-258",
+      "kind": "value",
+      "value": 297
+    },
+    {
+      "id": "fuzz-259",
+      "kind": "value",
+      "value": 55
+    },
+    {
+      "id": "fuzz-260",
+      "kind": "value",
+      "value": 58
+    },
+    {
+      "id": "fuzz-261",
+      "kind": "value",
+      "value": 51
+    },
+    {
+      "id": "fuzz-262",
+      "kind": "value",
+      "value": [
+        "item-262-0-95",
+        "item-262-1-95"
+      ]
+    },
+    {
+      "id": "fuzz-263",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-264",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-265",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-266",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-267",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-268",
+      "kind": "value",
+      "value": 95
+    },
+    {
+      "id": "fuzz-269",
+      "kind": "value",
+      "value": "item-109-269"
+    },
+    {
+      "id": "fuzz-270",
+      "kind": "value",
+      "value": {
+        "a": 15,
+        "b": -14,
+        "v": 122
+      }
+    },
+    {
+      "id": "fuzz-271",
+      "kind": "value",
+      "value": "label:271:9"
+    },
+    {
+      "id": "fuzz-272",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-273",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-274",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-275",
+      "kind": "value",
+      "value": [
+        "a:33",
+        "b:10"
+      ]
+    },
+    {
+      "id": "fuzz-276",
+      "kind": "value",
+      "value": [
+        132,
+        121,
+        126,
+        112,
+        124
+      ]
+    },
+    {
+      "id": "fuzz-277",
+      "kind": "value",
+      "value": 200
+    },
+    {
+      "id": "fuzz-278",
+      "kind": "value",
+      "value": {
+        "sum": 48,
+        "text": "label-278el"
+      }
+    },
+    {
+      "id": "fuzz-279",
+      "kind": "value",
+      "value": [
+        "item-279-0-54",
+        "item-279-1-54",
+        "item-279-2-54"
+      ]
+    },
+    {
+      "id": "fuzz-280",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-281",
+      "kind": "value",
+      "value": "item-82-281"
+    },
+    {
+      "id": "fuzz-282",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "fuzz-283",
+      "kind": "value",
+      "value": "label-283"
+    },
+    {
+      "id": "fuzz-284",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-285",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-286",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-287",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-288",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-289",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-290",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-291",
+      "kind": "value",
+      "value": 116
+    },
+    {
+      "id": "fuzz-292",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-293",
+      "kind": "value",
+      "value": "a"
+    },
+    {
+      "id": "fuzz-294",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-295",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-296",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-297",
+      "kind": "value",
+      "value": "label:297:101"
+    },
+    {
+      "id": "fuzz-298",
+      "kind": "value",
+      "value": [
+        5,
+        11,
+        -2,
+        -12,
+        96
+      ]
+    },
+    {
+      "id": "fuzz-299",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-300",
+      "kind": "value",
+      "value": [
+        119,
+        120,
+        121,
+        122
+      ]
+    },
+    {
+      "id": "fuzz-301",
+      "kind": "value",
+      "value": [
+        116,
+        117,
+        118,
+        119
+      ]
+    },
+    {
+      "id": "fuzz-302",
+      "kind": "value",
+      "value": [
+        29,
+        28,
+        39
+      ]
+    },
+    {
+      "id": "fuzz-303",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-304",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-305",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-306",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "fuzz-307",
+      "kind": "value",
+      "value": [
+        "a:59",
+        "b:31"
+      ]
+    },
+    {
+      "id": "fuzz-308",
+      "kind": "value",
+      "value": [
+        61,
+        62,
+        63,
+        64
+      ]
+    },
+    {
+      "id": "fuzz-309",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-310",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-311",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-312",
+      "kind": "value",
+      "value": [
+        115,
+        115,
+        122
+      ]
+    },
+    {
+      "id": "fuzz-313",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-314",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-315",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-316",
+      "kind": "value",
+      "value": [
+        "a:83",
+        "b:78"
+      ]
+    },
+    {
+      "id": "fuzz-317",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-318",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-319",
+      "kind": "value",
+      "value": {
+        "sum": -18,
+        "text": "label-319a"
+      }
+    },
+    {
+      "id": "fuzz-320",
+      "kind": "value",
+      "value": [
+        "item-320-0-109",
+        "item-320-1-109",
+        "item-320-2-109",
+        "item-320-3-109"
+      ]
+    },
+    {
+      "id": "fuzz-321",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-322",
+      "kind": "value",
+      "value": "label:322:76"
+    },
+    {
+      "id": "fuzz-323",
+      "kind": "value",
+      "value": [
+        12,
+        4,
+        -11,
+        -6,
+        5,
+        -15,
+        90
+      ]
+    },
+    {
+      "id": "fuzz-324",
+      "kind": "value",
+      "value": "item-12-324"
+    },
+    {
+      "id": "fuzz-325",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-326",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-327",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-328",
+      "kind": "value",
+      "value": [
+        -14,
+        10,
+        10,
+        -15,
+        9,
+        14,
+        72
+      ]
+    },
+    {
+      "id": "fuzz-329",
+      "kind": "value",
+      "value": "label-329"
+    },
+    {
+      "id": "fuzz-330",
+      "kind": "value",
+      "value": 23
+    },
+    {
+      "id": "fuzz-331",
+      "kind": "value",
+      "value": [
+        22,
+        16
+      ]
+    },
+    {
+      "id": "fuzz-332",
+      "kind": "value",
+      "value": {
+        "a": 9,
+        "b": 1,
+        "v": 41
+      }
+    },
+    {
+      "id": "fuzz-333",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-334",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-335",
+      "kind": "value",
+      "value": "label-335"
+    },
+    {
+      "id": "fuzz-336",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-337",
+      "kind": "value",
+      "value": [
+        61,
+        69,
+        67,
+        53
+      ]
+    },
+    {
+      "id": "fuzz-338",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-339",
+      "kind": "value",
+      "value": [
+        24,
+        18,
+        21
+      ]
+    },
+    {
+      "id": "fuzz-340",
+      "kind": "value",
+      "value": 53
+    },
+    {
+      "id": "fuzz-341",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-342",
+      "kind": "value",
+      "value": [
+        55,
+        53,
+        69
+      ]
+    },
+    {
+      "id": "fuzz-343",
+      "kind": "value",
+      "value": 46
+    },
+    {
+      "id": "fuzz-344",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-345",
+      "kind": "value",
+      "value": [
+        77,
+        113,
+        149,
+        107,
+        134
+      ]
+    },
+    {
+      "id": "fuzz-346",
+      "kind": "value",
+      "value": 30
+    },
+    {
+      "id": "fuzz-347",
+      "kind": "value",
+      "value": "label-347"
+    },
+    {
+      "id": "fuzz-348",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "fuzz-349",
+      "kind": "value",
+      "value": 51
+    },
+    {
+      "id": "fuzz-350",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-351",
+      "kind": "value",
+      "value": {
+        "a": -14,
+        "b": 14,
+        "v": 7
+      }
+    },
+    {
+      "id": "fuzz-352",
+      "kind": "value",
+      "value": "item-14-352"
+    },
+    {
+      "id": "fuzz-353",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-354",
+      "kind": "value",
+      "value": 52
+    },
+    {
+      "id": "fuzz-355",
+      "kind": "value",
+      "value": [
+        "a:2",
+        "b:27"
+      ]
+    },
+    {
+      "id": "fuzz-356",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-357",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-358",
+      "kind": "value",
+      "value": [
+        -3,
+        5,
+        72,
+        9,
+        11,
+        -2,
+        -8,
+        -14
+      ]
+    },
+    {
+      "id": "fuzz-359",
+      "kind": "value",
+      "value": [
+        88,
+        89,
+        102
+      ]
+    },
+    {
+      "id": "fuzz-360",
+      "kind": "value",
+      "value": 102
+    },
+    {
+      "id": "fuzz-361",
+      "kind": "value",
+      "value": 9
+    },
+    {
+      "id": "fuzz-362",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-363",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-364",
+      "kind": "value",
+      "value": "-x"
+    },
+    {
+      "id": "fuzz-365",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-366",
+      "kind": "value",
+      "value": {
+        "sum": 75,
+        "text": "label-3669"
+      }
+    },
+    {
+      "id": "fuzz-367",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-368",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-369",
+      "kind": "value",
+      "value": [
+        103,
+        -17,
+        13,
+        33,
+        13,
+        -12
+      ]
+    },
+    {
+      "id": "fuzz-370",
+      "kind": "value",
+      "value": [
+        48,
+        33
+      ]
+    },
+    {
+      "id": "fuzz-371",
+      "kind": "value",
+      "value": [
+        "a:83",
+        "b:64"
+      ]
+    },
+    {
+      "id": "fuzz-372",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-373",
+      "kind": "value",
+      "value": 14
+    },
+    {
+      "id": "fuzz-374",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-375",
+      "kind": "value",
+      "value": "item-68-375"
+    },
+    {
+      "id": "fuzz-376",
+      "kind": "value",
+      "value": 128
+    },
+    {
+      "id": "fuzz-377",
+      "kind": "value",
+      "value": "label-377"
+    },
+    {
+      "id": "fuzz-378",
+      "kind": "value",
+      "value": [
+        14,
+        -13,
+        1,
+        -6,
+        -4,
+        -12
+      ]
+    },
+    {
+      "id": "fuzz-379",
+      "kind": "value",
+      "value": 52
+    },
+    {
+      "id": "fuzz-380",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-381",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-382",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-383",
+      "kind": "value",
+      "value": 76
+    },
+    {
+      "id": "fuzz-384",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-385",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-386",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-387",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-388",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-389",
+      "kind": "value",
+      "value": [
+        8,
+        15,
+        12,
+        -3,
+        12,
+        -1,
+        28
+      ]
+    },
+    {
+      "id": "fuzz-390",
+      "kind": "value",
+      "value": "label:390:16"
+    },
+    {
+      "id": "fuzz-391",
+      "kind": "value",
+      "value": "9"
+    },
+    {
+      "id": "fuzz-392",
+      "kind": "value",
+      "value": 113
+    },
+    {
+      "id": "fuzz-393",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-394",
+      "kind": "value",
+      "value": "a"
+    },
+    {
+      "id": "fuzz-395",
+      "kind": "value",
+      "value": [
+        90,
+        100,
+        101,
+        92,
+        92
+      ]
+    },
+    {
+      "id": "fuzz-396",
+      "kind": "value",
+      "value": "label:396:124"
+    },
+    {
+      "id": "fuzz-397",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-398",
+      "kind": "value",
+      "value": [
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "id": "fuzz-399",
+      "kind": "value",
+      "value": 73
+    },
+    {
+      "id": "fuzz-400",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-401",
+      "kind": "value",
+      "value": 345
+    },
+    {
+      "id": "fuzz-402",
+      "kind": "value",
+      "value": "item-2-402"
+    },
+    {
+      "id": "fuzz-403",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-404",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-405",
+      "kind": "value",
+      "value": 105
+    },
+    {
+      "id": "fuzz-406",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-407",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-408",
+      "kind": "value",
+      "value": [
+        66,
+        126,
+        114
+      ]
+    },
+    {
+      "id": "fuzz-409",
+      "kind": "value",
+      "value": 13
+    },
+    {
+      "id": "fuzz-410",
+      "kind": "value",
+      "value": 130
+    },
+    {
+      "id": "fuzz-411",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-412",
+      "kind": "value",
+      "value": "label:412:71"
+    },
+    {
+      "id": "fuzz-413",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-414",
+      "kind": "value",
+      "value": "label:414:83"
+    },
+    {
+      "id": "fuzz-415",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-416",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-417",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-418",
+      "kind": "value",
+      "value": [
+        "a:-11",
+        "b:-1"
+      ]
+    },
+    {
+      "id": "fuzz-419",
+      "kind": "value",
+      "value": [
+        4,
+        10,
+        -15,
+        -2,
+        41
+      ]
+    },
+    {
+      "id": "fuzz-420",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-421",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-422",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-423",
+      "kind": "value",
+      "value": false
+    },
+    {
+      "id": "fuzz-424",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-425",
+      "kind": "value",
+      "value": [
+        89,
+        90,
+        91,
+        92
+      ]
+    },
+    {
+      "id": "fuzz-426",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-427",
+      "kind": "value",
+      "value": [
+        18,
+        15
+      ]
+    },
+    {
+      "id": "fuzz-428",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-429",
+      "kind": "value",
+      "value": "label:429:59"
+    },
+    {
+      "id": "fuzz-430",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-431",
+      "kind": "value",
+      "value": [
+        125,
+        127
+      ]
+    },
+    {
+      "id": "fuzz-432",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-433",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-434",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-435",
+      "kind": "value",
+      "value": 100
+    },
+    {
+      "id": "fuzz-436",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-437",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-438",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-439",
+      "kind": "value",
+      "value": {
+        "a": 11,
+        "b": -12,
+        "v": 42
+      }
+    },
+    {
+      "id": "fuzz-440",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-441",
+      "kind": "value",
+      "value": [
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "id": "fuzz-442",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-443",
+      "kind": "value",
+      "value": {
+        "sum": 9,
+        "text": "label-443el"
+      }
+    },
+    {
+      "id": "fuzz-444",
+      "kind": "value",
+      "value": [
+        95,
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "id": "fuzz-445",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-446",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-447",
+      "kind": "value",
+      "value": [
+        37,
+        100,
+        67,
+        61,
+        34,
+        52
+      ]
+    },
+    {
+      "id": "fuzz-448",
+      "kind": "value",
+      "value": [
+        65,
+        50
+      ]
+    },
+    {
+      "id": "fuzz-449",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-450",
+      "kind": "value",
+      "value": [
+        "item-450-0-59",
+        "item-450-1-59",
+        "item-450-2-59",
+        "item-450-3-59",
+        "item-450-4-59",
+        "item-450-5-59"
+      ]
+    },
+    {
+      "id": "fuzz-451",
+      "kind": "value",
+      "value": 156
+    },
+    {
+      "id": "fuzz-452",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-453",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-454",
+      "kind": "value",
+      "value": [
+        96,
+        94,
+        82,
+        88,
+        83
+      ]
+    },
+    {
+      "id": "fuzz-455",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-456",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-457",
+      "kind": "value",
+      "value": 60
+    },
+    {
+      "id": "fuzz-458",
+      "kind": "value",
+      "value": {
+        "sum": 15,
+        "text": "label-458el"
+      }
+    },
+    {
+      "id": "fuzz-459",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-460",
+      "kind": "value",
+      "value": [
+        -13,
+        3,
+        -5,
+        -6,
+        -8,
+        -14,
+        85
+      ]
+    },
+    {
+      "id": "fuzz-461",
+      "kind": "value",
+      "value": [
+        "item-461-0-97",
+        "item-461-1-97",
+        "item-461-2-97",
+        "item-461-3-97"
+      ]
+    },
+    {
+      "id": "fuzz-462",
+      "kind": "value",
+      "value": [
+        "item-462-0-26",
+        "item-462-1-26",
+        "item-462-2-26",
+        "item-462-3-26",
+        "item-462-4-26"
+      ]
+    },
+    {
+      "id": "fuzz-463",
+      "kind": "value",
+      "value": 112
+    },
+    {
+      "id": "fuzz-464",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-465",
+      "kind": "value",
+      "value": [
+        -13,
+        9,
+        105,
+        -6,
+        2,
+        15,
+        6
+      ]
+    },
+    {
+      "id": "fuzz-466",
+      "kind": "value",
+      "value": "9"
+    },
+    {
+      "id": "fuzz-467",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-468",
+      "kind": "value",
+      "value": [
+        101,
+        107,
+        107,
+        92,
+        103
+      ]
+    },
+    {
+      "id": "fuzz-469",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-470",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-471",
+      "kind": "value",
+      "value": {
+        "a": 9,
+        "b": -2,
+        "v": 105
+      }
+    },
+    {
+      "id": "fuzz-472",
+      "kind": "error",
+      "error": {
+        "code": "T1003"
+      }
+    },
+    {
+      "id": "fuzz-473",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-474",
+      "kind": "value",
+      "value": "label-474"
+    },
+    {
+      "id": "fuzz-475",
+      "kind": "value",
+      "value": ""
+    },
+    {
+      "id": "fuzz-476",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-477",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-478",
+      "kind": "value",
+      "value": [
+        8,
+        -9,
+        47,
+        -10,
+        6
+      ]
+    },
+    {
+      "id": "fuzz-479",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-480",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-481",
+      "kind": "error",
+      "error": {
+        "code": "D1009"
+      }
+    },
+    {
+      "id": "fuzz-482",
+      "kind": "value",
+      "value": [
+        97,
+        95,
+        77
+      ]
+    },
+    {
+      "id": "fuzz-483",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    },
+    {
+      "id": "fuzz-484",
+      "kind": "value",
+      "value": [
+        "a:7",
+        "b:17"
+      ]
+    },
+    {
+      "id": "fuzz-485",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "fuzz-486",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-487",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "map"
+      }
+    },
+    {
+      "id": "fuzz-488",
+      "kind": "value",
+      "value": "item-34-488"
+    },
+    {
+      "id": "fuzz-489",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-490",
+      "kind": "value",
+      "value": {
+        "a": -7,
+        "b": -8,
+        "v": 102
+      }
+    },
+    {
+      "id": "fuzz-491",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-492",
+      "kind": "error",
+      "error": {
+        "code": "T2001",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-493",
+      "kind": "value",
+      "value": {
+        "sum": 3,
+        "text": "label-4939"
+      }
+    },
+    {
+      "id": "fuzz-494",
+      "kind": "value",
+      "value": 9
+    },
+    {
+      "id": "fuzz-495",
+      "kind": "error",
+      "error": {
+        "code": "T2011"
+      }
+    },
+    {
+      "id": "fuzz-496",
+      "kind": "value",
+      "value": [
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "id": "fuzz-497",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-498",
+      "kind": "value",
+      "value": "item-41-498"
+    },
+    {
+      "id": "fuzz-499",
+      "kind": "value",
+      "value": true
+    },
+    {
+      "id": "fuzz-500",
+      "kind": "value",
+      "value": [
+        "item-500-0-22",
+        "item-500-1-22",
+        "item-500-2-22",
+        "item-500-3-22",
+        "item-500-4-22",
+        "item-500-5-22"
+      ]
+    },
+    {
+      "id": "fuzz-501",
+      "kind": "error",
+      "error": {
+        "code": "T0412",
+        "token": "sum"
+      }
+    },
+    {
+      "id": "fuzz-502",
+      "kind": "error",
+      "error": {
+        "code": "T2002",
+        "token": "+"
+      }
+    },
+    {
+      "id": "fuzz-503",
+      "kind": "error",
+      "error": {
+        "code": "T1006"
+      }
+    },
+    {
+      "id": "fuzz-504",
+      "kind": "value",
+      "value": -36
+    },
+    {
+      "id": "fuzz-505",
+      "kind": "value",
+      "value": "label:505:16"
+    },
+    {
+      "id": "fuzz-506",
+      "kind": "value",
+      "value": [
+        14,
+        -2,
+        20,
+        -14,
+        -4
+      ]
+    },
+    {
+      "id": "fuzz-507",
+      "kind": "value",
+      "value": "el"
+    },
+    {
+      "id": "fuzz-508",
+      "kind": "value",
+      "value": 22
+    },
+    {
+      "id": "fuzz-509",
+      "kind": "error",
+      "error": {
+        "code": "T0410",
+        "token": "sqrt"
+      }
+    },
+    {
+      "id": "fuzz-510",
+      "kind": "undefined"
+    },
+    {
+      "id": "fuzz-511",
+      "kind": "error",
+      "error": {
+        "code": "T2012"
+      }
+    }
+  ]
+}

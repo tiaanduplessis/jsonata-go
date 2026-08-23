@@ -1,0 +1,37 @@
+File: benchmark.test
+Type: alloc_space
+Time: 2026-08-23 14:07:34 SAST
+Showing nodes accounting for 19.38GB, 95.94% of 20.20GB total
+Dropped 135 nodes (cum <= 0.10GB)
+Showing top 30 nodes out of 85
+      flat  flat%   sum%        cum   cum%
+    5.45GB 26.97% 26.97%     5.45GB 26.97%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.(*staticTransformCloneState).clone
+    2.34GB 11.60% 38.58%     2.34GB 11.60%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticSumFlattenArrays.func1 (inline)
+    2.09GB 10.36% 48.94%     2.09GB 10.36%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticTransformUpdates
+    1.55GB  7.65% 56.59%     2.37GB 11.75%  encoding/json.(*decodeState).objectInterface
+    1.47GB  7.29% 63.88%     1.47GB  7.29%  encoding/json.(*Decoder).refill
+    0.78GB  3.84% 67.72%     3.45GB 17.06%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticSumFilteredValues
+    0.72GB  3.54% 71.27%     0.72GB  3.54%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.collapse
+    0.60GB  2.98% 74.25%     0.60GB  2.98%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.cloneVars (inline)
+    0.47GB  2.30% 76.55%     1.27GB  6.28%  github.com/tiaanduplessis/jsonata-go/internal/value.decodeValue
+    0.40GB  2.00% 78.55%     0.50GB  2.48%  encoding/json.(*scanner).error (inline)
+    0.40GB  1.96% 80.51%     0.52GB  2.58%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.cloneJSONataValue
+    0.30GB  1.49% 82.00%     0.30GB  1.49%  github.com/tiaanduplessis/jsonata-go/internal/value.Public
+    0.30GB  1.48% 83.48%     0.38GB  1.89%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.(*transformCloner).cloneMap
+    0.27GB  1.32% 84.80%     0.27GB  1.32%  encoding/json.unquote (inline)
+    0.25GB  1.24% 86.05%     0.25GB  1.24%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.staticSumProject
+    0.20GB  1.00% 87.05%     2.29GB 11.32%  encoding/json.(*decodeState).arrayInterface
+    0.19GB  0.93% 87.98%     0.51GB  2.51%  encoding/json.(*decodeState).literalInterface
+    0.18GB  0.89% 88.87%     0.18GB  0.89%  encoding/json.(*decodeState).convertNumber
+    0.18GB  0.88% 89.75%     0.18GB  0.88%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.frameFor
+    0.17GB  0.82% 90.57%     0.55GB  2.71%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.cloneVarsMutable (inline)
+    0.15GB  0.75% 91.32%     2.98GB 14.76%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.eval
+    0.15GB  0.75% 92.06%     0.80GB  3.98%  encoding/json.(*Decoder).Token
+    0.14GB   0.7% 92.77%     0.14GB   0.7%  github.com/tiaanduplessis/jsonata-go/internal/value.canonicalObjectOrder
+    0.13GB  0.62% 93.39%     0.13GB  0.62%  encoding/json.NewDecoder
+    0.12GB   0.6% 93.99%     0.21GB  1.05%  encoding/json.mapEncoder.encode
+    0.11GB  0.56% 94.55%     0.11GB  0.56%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.beginCloneVisit
+    0.08GB  0.42% 94.97%     0.39GB  1.94%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.(*transformCloner).clone
+    0.08GB  0.41% 95.38%     0.24GB  1.19%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.normalizeTransformObjectOrder
+    0.06GB  0.29% 95.66%     0.13GB  0.66%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.collectionSortedKeys
+    0.06GB  0.28% 95.94%     3.70GB 18.32%  github.com/tiaanduplessis/jsonata-go/internal/evaluator.evalWithRuntime
