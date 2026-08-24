@@ -1,0 +1,7 @@
+name: JSONata Go CodeQL configuration
+
+# CodeQL 2.26.3 exceeds its 2 GiB evaluator result limit for this query on the
+# expression evaluator. Every other query in the default Go suite remains on.
+query-filters:
+  - exclude:
+      id: go/allocation-size-overflow
