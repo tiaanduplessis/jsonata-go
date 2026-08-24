@@ -1,37 +1,37 @@
 File: benchmark.test
 Type: delay
-Time: 2026-08-23 16:51:23 SAST
-Showing nodes accounting for 26.12ms, 100% of 26.12ms total
-Dropped 127 nodes (cum <= 0.13ms)
+Time: 2026-08-24 03:48:49 SAST
+Showing nodes accounting for 28.02ms, 99.69% of 28.11ms total
+Dropped 150 nodes (cum <= 0.14ms)
 Showing top 30 nodes out of 67
       flat  flat%   sum%        cum   cum%
-   25.95ms 99.32% 99.32%    25.95ms 99.32%  runtime.unlock (inline)
-    0.18ms  0.68%   100%     0.18ms  0.68%  runtime._LostContendedRuntimeLock
-         0     0%   100%     0.18ms  0.68%  encoding/json.(*Decoder).Decode
-         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*Decoder).ReadValue (inline)
-         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).ReadValue
-         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).consumeArray
-         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).consumeObject
-         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).consumeValue
-         0     0%   100%     0.17ms  0.64%  encoding/json/jsontext.(*decoderState).consumeWhitespace
-         0     0%   100%     0.18ms  0.68%  encoding/json/jsontext.(*decoderState).fetch
-         0     0%   100%     0.16ms   0.6%  github.com/recolabs/gnata.(*Expression).Eval (inline)
-         0     0%   100%     0.16ms   0.6%  github.com/recolabs/gnata.(*Expression).evalCore
-         0     0%   100%     0.24ms  0.92%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.Compare
-         0     0%   100%     0.24ms  0.92%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.canonicalJSON
-         0     0%   100%     0.16ms   0.6%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.gnataExpression.Eval
-         0     0%   100%     0.42ms  1.61%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.verifyParallel.func1
-         0     0%   100%     0.20ms  0.76%  runtime.(*mcache).nextFree
-         0     0%   100%     0.20ms  0.76%  runtime.(*mcache).refill
-         0     0%   100%     0.20ms  0.76%  runtime.(*mcentral).cacheSpan
-         0     0%   100%     0.18ms   0.7%  runtime.(*mcentral).grow
-         0     0%   100%     0.18ms   0.7%  runtime.(*mheap).alloc
-         0     0%   100%     0.18ms   0.7%  runtime.(*mheap).alloc.func1
-         0     0%   100%     0.22ms  0.83%  runtime.(*mheap).allocSpan
-         0     0%   100%     0.42ms  1.60%  runtime.(*pageAlloc).scavenge
-         0     0%   100%     0.42ms  1.60%  runtime.(*pageAlloc).scavenge.func1
-         0     0%   100%     0.42ms  1.60%  runtime.(*pageAlloc).scavengeOne
-         0     0%   100%     0.42ms  1.60%  runtime.(*scavengerState).init.func2
-         0     0%   100%     0.42ms  1.60%  runtime.(*scavengerState).run
-         0     0%   100%     0.13ms  0.51%  runtime.asyncPreempt2.func1
-         0     0%   100%     0.42ms  1.60%  runtime.bgscavenge
+   28.02ms 99.69% 99.69%    28.02ms 99.69%  runtime.unlock (partial-inline)
+         0     0% 99.69%     0.34ms  1.21%  encoding/json.(*Decoder).Decode
+         0     0% 99.69%     0.32ms  1.13%  encoding/json/jsontext.(*Decoder).ReadValue (inline)
+         0     0% 99.69%     0.32ms  1.13%  encoding/json/jsontext.(*decoderState).ReadValue
+         0     0% 99.69%     0.32ms  1.13%  encoding/json/jsontext.(*decoderState).consumeArray
+         0     0% 99.69%     0.32ms  1.13%  encoding/json/jsontext.(*decoderState).consumeObject
+         0     0% 99.69%     0.28ms  1.00%  encoding/json/jsontext.(*decoderState).consumeString
+         0     0% 99.69%     0.32ms  1.13%  encoding/json/jsontext.(*decoderState).consumeValue
+         0     0% 99.69%     0.32ms  1.13%  encoding/json/jsontext.(*decoderState).fetch
+         0     0% 99.69%     0.19ms  0.66%  github.com/recolabs/gnata.(*Expression).Eval (inline)
+         0     0% 99.69%     0.19ms  0.66%  github.com/recolabs/gnata.(*Expression).evalCore
+         0     0% 99.69%     0.19ms  0.66%  github.com/recolabs/gnata/internal/evaluator.Eval
+         0     0% 99.69%     0.18ms  0.65%  github.com/recolabs/gnata/internal/evaluator.evalBinary
+         0     0% 99.69%     0.38ms  1.36%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.Compare
+         0     0% 99.69%     0.38ms  1.36%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.canonicalJSON
+         0     0% 99.69%     0.19ms  0.66%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.gnataExpression.Eval
+         0     0% 99.69%     0.67ms  2.39%  github.com/tiaanduplessis/jsonata-go/internal/benchmark.verifyParallel.func1
+         0     0% 99.69%     0.24ms  0.86%  runtime.(*mcache).nextFree
+         0     0% 99.69%     0.24ms  0.86%  runtime.(*mcache).refill
+         0     0% 99.69%     0.24ms  0.86%  runtime.(*mcentral).cacheSpan
+         0     0% 99.69%     0.41ms  1.46%  runtime.(*mheap).freeSpan (inline)
+         0     0% 99.69%     0.41ms  1.46%  runtime.(*mheap).freeSpan.func1
+         0     0% 99.69%     0.65ms  2.33%  runtime.(*pageAlloc).scavenge
+         0     0% 99.69%     0.65ms  2.33%  runtime.(*pageAlloc).scavenge.func1
+         0     0% 99.69%     0.65ms  2.33%  runtime.(*pageAlloc).scavengeOne
+         0     0% 99.69%     0.65ms  2.33%  runtime.(*scavengerState).init.func2
+         0     0% 99.69%     0.65ms  2.33%  runtime.(*scavengerState).run
+         0     0% 99.69%     0.43ms  1.52%  runtime.(*sweepLocked).sweep
+         0     0% 99.69%     0.24ms  0.86%  runtime.asyncPreempt2.func1
+         0     0% 99.69%     0.65ms  2.33%  runtime.bgscavenge

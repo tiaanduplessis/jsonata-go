@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-08-23T14:51:24Z",
+  "recorded_at": "2026-08-24T01:48:50Z",
   "reference": {
     "implementation": "jsonata-js",
     "version": "2.2.2",
@@ -22,7 +22,7 @@
     "power_mode": "AC power"
   },
   "repository": {
-    "revision": "5b4734a4c7fc8a2007a4764b68208cbc0a83a600",
+    "revision": "1b75a21128d3b23b1b1342f9c20b8f848062c10c",
     "dirty": false
   },
   "commands": [
@@ -102,42 +102,42 @@
   "files": [
     {
       "file": "cpu.pprof",
-      "sha256": "41f1dbc0c4683aa0b09d155b5f110e61d87d224a500065ef918eb1c3519f7119",
-      "bytes": 34659
+      "sha256": "fd86139e32dce66cf1ff159484ef0c3498a33cd092fb24f1d2b325ac2dbf16c3",
+      "bytes": 26370
     },
     {
       "file": "heap.pprof",
-      "sha256": "5e8180bd5a1285d0848acd1d5a67240d8e6b0410e0fc8f35a6e384c4b77ac4e9",
-      "bytes": 20390
+      "sha256": "0a86ab93ca722c92c3b5137185a1ebd1166ef8cbbd3f5569844e32c7a9a4ef7c",
+      "bytes": 22378
     },
     {
       "file": "mutex.pprof",
-      "sha256": "ef92e300eee42280d4b87d957ec1c2f73af9b829123ce363d0a494c3d54e812f",
-      "bytes": 10615
+      "sha256": "b26905e2c26a73d67bbe2179b4be157caf5c2b0bc49ca8f0692d0a66c03c04fe",
+      "bytes": 11827
     },
     {
       "file": "block.pprof",
-      "sha256": "c0860ee7fb8a829192f8e8d9b9e46ee304791cfa06ab07d73514ecebd4e2cfc1",
-      "bytes": 1679
+      "sha256": "a7b4b974185aa5c15df8ed7759a3865020a683099f5e1f23530e72067300ea6d",
+      "bytes": 1678
     },
     {
       "file": "cpu.txt",
-      "sha256": "98ed027005bc4c60af56f52eaeb64f3105f885705522c408b550e877292f2bc2",
-      "bytes": 2648
+      "sha256": "b2672a1dd05cf69dbcd1de4b1e184b49c97a7932e6aae2a9f39e848f2ec557e5",
+      "bytes": 2718
     },
     {
       "file": "allocations.txt",
-      "sha256": "fd825527a27a822b44a72bc4a4949890948d7687e520ec1baddb6f56e03bb48a",
-      "bytes": 3391
+      "sha256": "c09ef36e78c856bf2fde3d5dc92d004cdfb79f7f54b993b9069236050e801f19",
+      "bytes": 3470
     },
     {
       "file": "mutex.txt",
-      "sha256": "fb5a96135343673ac55afe687bd8206aecb05dc270a6b2a303a9e1ad1ee67d15",
-      "bytes": 2793
+      "sha256": "29d6b04d1a194cd520f8be160066e4d6bb60655b44b9eef0b8a7e137b6e8a62f",
+      "bytes": 2863
     },
     {
       "file": "block.txt",
-      "sha256": "911a6dc2750355c0a298b13fba9eaf033324c96b3236adbd47175b1439a946bc",
+      "sha256": "4e48ccbac1d724657184d8c47fcc1c6f7b77bbd7b01de8977dc7d40f2d60db29",
       "bytes": 1148
     }
   ]

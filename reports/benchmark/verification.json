@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-08-23T14:41:12Z",
+  "recorded_at": "2026-08-24T01:38:58Z",
   "reference": {
     "implementation": "jsonata-js",
     "version": "2.2.2",
@@ -48,7 +48,7 @@
     "power_mode": "AC power"
   },
   "repository": {
-    "revision": "5b4734a4c7fc8a2007a4764b68208cbc0a83a600",
+    "revision": "1b75a21128d3b23b1b1342f9c20b8f848062c10c",
     "dirty": false
   },
   "cases": 15,
