@@ -22,6 +22,13 @@ if grep -E 'go get github\.com/tiaanduplessis/jsonata-go@v1\.0\.0|release-candid
 	exit 1
 fi
 
+for file in README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md; do
+	if tr '\n' ' ' <"$file" | grep -Ei 'no public release tag|recommended first public release|once that release is published|no release tag is claimed|no tag is claimed here' >/dev/null; then
+		echo "public documentation describes the published release as pending: $file" >&2
+		exit 1
+	fi
+done
+
 if grep -Ein 'TODO|FIXME|placeholder' README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md DEPENDENCIES.md RELEASING.md doc.go; then
 	echo 'release documentation contains a placeholder marker' >&2
 	exit 1
