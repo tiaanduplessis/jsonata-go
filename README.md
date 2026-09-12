@@ -15,6 +15,13 @@ and context-aware evaluation for safe embedding in concurrent services.
 
 ## Quickstart
 
+Use the latest patch release of Go 1.26 or 1.27. Add the published module to
+your Go project:
+
+```text
+go get github.com/tiaanduplessis/jsonata-go@v0.1.0
+```
+
 Compile an expression once and evaluate it with ordinary Go JSON values:
 
 ```go
@@ -121,13 +128,8 @@ JSONata 2.2.2, not a competitor's behavior.
 
 ## Installation and compatibility
 
-The repository is currently a pre-release development version (`0.0.0-dev`);
-no public release tag exists yet. The recommended first public release is
-`v0.1.0`. Once that release is published, add it with the Go toolchain:
-
-```text
-go get github.com/tiaanduplessis/jsonata-go@v0.1.0
-```
+[v0.1.0](https://github.com/tiaanduplessis/jsonata-go/releases/tag/v0.1.0)
+is available for public evaluation. The API remains pre-1.0.
 
 The supported Go major releases are 1.26 and 1.27; use the latest patch
 release in either line. The language target is JSONata 2.2 with the fixes in
@@ -144,7 +146,7 @@ their specialized APIs; prefer the root package for compiling and evaluating
 expressions. Their compatibility behavior is covered by the repository's
 tests, but they are not a replacement for the higher-level root API.
 
-This is a pre-1.0 API. The first `v0.1.0` release is intended for public
+This is a pre-1.0 API. The `v0.1.0` release is available for public
 evaluation, but exported APIs and compatibility behavior may still change
 before `v1.0.0`. Treat the API as subject to change until the project makes a
 separate v1.0 stability commitment.
@@ -368,13 +370,13 @@ are recorded in the [feature matrix](reports/feature-matrix.json).
 
 ## Public-release status
 
-The repository contains the pre-release implementation and its pinned
+The first public release, `v0.1.0`, was published on 2026-08-24 and is
+available through the Go module proxy. The repository includes pinned
 conformance, differential, security, and benchmark harnesses. The committed
-conformance report currently records zero failures and zero skips, but that is
-not an API-stability guarantee. Maintainers recommend `v0.1.0` as the first
-public release after the API review and clean-checkout release gates pass; no
-tag is claimed here. Performance remains a scoped evidence claim only: if the
-strict benchmark claim gate is not met, no fastest-library claim is published.
+conformance report records zero failures and zero skips; this is not an
+API-stability guarantee. Performance remains a scoped evidence claim only:
+if the strict benchmark claim gate is not met, no fastest-library claim is
+published.
 
 For the public-release sequence, maintainers review the API and compatibility
 boundaries, run the repository's release gates, create the reviewed semantic

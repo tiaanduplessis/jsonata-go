@@ -9,9 +9,10 @@ Maintainers may remove comments, close discussions, or restrict participation
 when conduct violates these standards. They will apply this policy consistently
 and privately where practical.
 
-Report a conduct concern privately through the contact method in
-[SECURITY.md](SECURITY.md). Do not include secrets or personal data. Security
-vulnerabilities must follow the private reporting process in that policy.
+Report a conduct concern privately to
+[tiaanduplessis@hotmail.com](mailto:tiaanduplessis@hotmail.com) with
+"jsonata-go conduct" in the subject. Do not include secrets or personal data.
+Security vulnerabilities must follow [SECURITY.md](SECURITY.md).
 
 This policy applies to the repository, its issue and pull-request discussions,
 and project-related community spaces.

@@ -51,9 +51,9 @@ make fmt-check lint test test-race docs-check
 
 ## API and compatibility boundaries
 
-The current development version is `0.0.0-dev`. The recommended first public
-release is `v0.1.0`, but this is still a pre-1.0 API: exported APIs and
-compatibility behavior may change before a separate v1.0 stability commitment.
+Development builds use `0.0.0-dev`. The published release is `v0.1.0`.
+This is still a pre-1.0 API: exported APIs and compatibility behavior may
+change before a separate v1.0 stability commitment.
 
 Preserve the established compatibility surface: `Compile`, `MustCompile`,
 `Expr.Eval`, `Expr.EvalBytes`, `RegisterExts`, `RegisterVars`, `Extension`,
@@ -176,9 +176,8 @@ license notice. New dependencies must be documented in
 
 ## Release boundary
 
-A pull request does not create a tag or publish a release. The recommended
-first public release is `v0.1.0`; no tag is implied by this document. Before
-publishing it, maintainers should complete the API and compatibility review,
+A pull request does not create a tag or publish a release. Before publishing
+a new release, maintainers should complete the API and compatibility review,
 run the clean-checkout release gates, create the reviewed semantic-version tag,
 verify the public module and release artifacts, and announce the release. The
 tagged workflow owns the release mechanics and its gates; see

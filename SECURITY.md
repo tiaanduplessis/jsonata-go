@@ -2,10 +2,9 @@
 
 ## Supported versions
 
-The project has no public release tag yet. After the recommended first
-`v0.1.0` release, only the latest released minor version will receive security
-fixes. Development branches may receive fixes before release but are not
-security-support commitments. Security fixes are tested with the latest patch
+Only the latest released minor version receives security fixes. Currently,
+that is the `v0.1.x` line; use its latest patch release. Development branches
+may receive fixes before release but are not security-support commitments. Security fixes are tested with the latest patch
 release in both supported Go lines.
 
 The supported Go major releases are 1.26 and 1.27. Keep Go patched to the
@@ -22,9 +21,9 @@ Please do not open a public issue for a suspected vulnerability. Report it
 privately through the repository host's security advisory mechanism:
 https://github.com/tiaanduplessis/jsonata-go/security/advisories/new
 
-If that mechanism is unavailable, contact the maintainers through a private
-channel configured in the repository metadata and include "jsonata-go
-security" in the subject.
+If that mechanism is unavailable, email
+[tiaanduplessis@hotmail.com](mailto:tiaanduplessis@hotmail.com) with
+"jsonata-go security" in the subject.
 
 Include the affected version or commit, a minimal reproduction, impact, and
 any suggested mitigation. Do not include secrets or personal data in the
