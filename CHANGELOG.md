@@ -3,7 +3,7 @@
 All notable changes are recorded here. Release entries are created from the
 tagged source after the release verification workflow passes.
 
-## Unreleased
+## v0.2.0 - 2026-11-01
 
 - Fixed values that a path of two or more steps selects. They no longer carry
   evaluator context into functions, so `$string(a.b)` no longer adds JSON
