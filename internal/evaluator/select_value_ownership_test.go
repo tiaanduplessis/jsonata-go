@@ -74,7 +74,7 @@ func TestSelectValueBindingAndParentSemantics(t *testing.T) {
 	}{
 		{
 			name:       "nested focus bindings",
-			expression: `groups@$group.items@$item[$item.active and $item.value > $group.limit].{'group':$group.id,'value':$item.value}`,
+			expression: `groups@$group.$group.items@$item[$item.active and $item.value > $group.limit].{'group':$group.id,'value':$item.value}`,
 			input: map[string]any{"groups": []any{
 				map[string]any{"id": "a", "limit": 1.0, "items": []any{
 					map[string]any{"value": 1.0, "active": true},

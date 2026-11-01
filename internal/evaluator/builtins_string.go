@@ -270,13 +270,17 @@ func builtinSubstring(st state, args []any) (any, error) {
 		return value.Undefined, nil
 	}
 	s, _ := text.(string)
-	start, _ := numeric(collapse(args[1]))
+	startArg := collapse(args[1])
+	start, _ := numeric(startArg)
 	if len(args) == 2 {
 		return substringRunes(st, s, int(start), 0, false)
 	}
 	lengthArg := collapse(args[2])
 	if value.IsUndefined(lengthArg) {
 		return substringRunes(st, s, int(start), 0, false)
+	}
+	if value.IsUndefined(startArg) {
+		return "", nil
 	}
 	length, _ := numeric(lengthArg)
 	return substringRunes(st, s, int(start), int(length), true)
@@ -370,7 +374,11 @@ func builtinSubstringBefore(_ state, args []any) (any, error) {
 		return value.Undefined, nil
 	}
 	s, _ := text.(string)
-	substr, _ := collapse(args[1]).(string)
+	chars := collapse(args[1])
+	if value.IsUndefined(chars) {
+		return s, nil
+	}
+	substr, _ := chars.(string)
 	if index := strings.Index(s, substr); index >= 0 {
 		return s[:index], nil
 	}

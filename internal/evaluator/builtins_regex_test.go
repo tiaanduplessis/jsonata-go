@@ -45,7 +45,7 @@ func TestCustomMatcherPublicShape(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := []any{map[string]any{"match": "a", "index": 0.0}}
+	want := map[string]any{"match": "a", "index": 0.0}
 	if !reflect.DeepEqual(got, want) {
 		t.Fatalf("custom matcher result = %#v, want %#v", got, want)
 	}

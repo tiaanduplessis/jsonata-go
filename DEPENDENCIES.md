@@ -16,12 +16,15 @@ compatibility evidence.
 | --- | --- | --- |
 | `github.com/dlclark/regexp2` | ECMAScript-compatible regular-expression fallback | MIT; [upstream repository](https://github.com/dlclark/regexp2) and the module's `LICENSE` file |
 | `golang.org/x/text` | Unicode and text processing | BSD-3-Clause; [upstream repository](https://go.googlesource.com/text) and the module's `LICENSE` file |
-| `golang.org/x/vuln` | Reproducible `govulncheck` release gate | BSD-3-Clause; [upstream repository](https://go.googlesource.com/vuln) and the module's `LICENSE` file |
 | `github.com/blues/jsonata-go` | Compatibility and differential-test reference | MIT; [upstream repository](https://github.com/blues/jsonata-go) and the module's `LICENSE` file |
 | `github.com/recolabs/gnata` | Differential-test and benchmark reference | MIT with an upstream notice; [upstream repository](https://github.com/RecoLabs/gnata) and the module's `LICENSE` and `NOTICE` files |
 
 The two reference implementations are test and benchmark inputs; they are not
-required to embed the evaluator at runtime. Keep them pinned while evidence is
+required to embed the evaluator at runtime. Module graph pruning keeps them out
+of a consumer's module requirements. The `govulncheck` release gate is not a
+module requirement: `make vulncheck` runs the `golang.org/x/vuln` version that
+`GOVULNCHECK_VERSION` in the Makefile pins (BSD-3-Clause;
+[upstream repository](https://go.googlesource.com/vuln)). Keep them pinned while evidence is
 being reproduced. A compatibility target changes only through a reviewed
 change to the pinned reference, its fixtures, and the corresponding reports.
 

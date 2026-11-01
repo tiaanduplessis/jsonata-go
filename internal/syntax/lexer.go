@@ -726,7 +726,21 @@ func Parse(source string) (Node, *ParseError) {
 	if p.peek().Kind != EOF {
 		return nil, p.error("S0201", p.peek(), "unexpected token")
 	}
+	if hasPercentToken(ts) {
+		if err := checkAncestry(n); err != nil {
+			return nil, err
+		}
+	}
 	return n, nil
+}
+
+func hasPercentToken(tokens []Token) bool {
+	for _, t := range tokens {
+		if t.Kind == Operator && t.Text == "%" {
+			return true
+		}
+	}
+	return false
 }
 func (p *Parser) peek() Token {
 	if p.index >= len(p.tokens) {
@@ -859,7 +873,6 @@ func (p *Parser) expression(min int) (Node, *ParseError) {
 				number := p.peek()
 				return nil, p.error("S0213", number, "literal value cannot be used as a path step")
 			}
-			rightStart := p.peek()
 			if p.peek().Kind == Operator && p.peek().Text == "%" {
 				count := 0
 				for p.index+count < len(p.tokens) && p.tokens[p.index+count].Kind == Operator && p.tokens[p.index+count].Text == "%" {
@@ -878,9 +891,6 @@ func (p *Parser) expression(min int) (Node, *ParseError) {
 			p.allowParentOperator = parentAllowed
 			if e != nil {
 				return nil, e
-			}
-			if _, parent := right.(Parent); parent && !parentAllowed && !containsParent(left) && !emptyGrouping(left) {
-				return nil, p.error("S0217", rightStart, "parent operator cannot be used here")
 			}
 			left = Binary{".", left, right, t.Pos}
 			continue
@@ -991,9 +1001,6 @@ func (p *Parser) prefix() (Node, *ParseError) {
 				count++
 			}
 			if p.index+count < len(p.tokens) && p.tokens[p.index+count].Kind == RParen {
-				if count == 1 {
-					return nil, p.error("S0217", p.peek(), "parent operator cannot be used here")
-				}
 				if count == 2 {
 					return nil, p.error("S0211", p.tokens[p.index+1], "operator cannot be used as a unary operator")
 				}
@@ -1045,6 +1052,8 @@ func (p *Parser) prefix() (Node, *ParseError) {
 			}
 			n = Block{Expressions: expressions, Pos: t.Pos}
 		} else if _, binding := n.(Bind); binding {
+			n = Block{Expressions: []Node{n}, Pos: t.Pos}
+		} else if BindsPathVariable(n) {
 			n = Block{Expressions: []Node{n}, Pos: t.Pos}
 		}
 		if array, ok := n.(Array); ok {
@@ -1112,9 +1121,6 @@ func (p *Parser) prefix() (Node, *ParseError) {
 			return p.transform(t)
 		}
 		if t.Text == "%" {
-			if !p.allowParentOperator && p.peek().Kind != LParen && !(p.peek().Kind == Operator && p.peek().Text == "%") {
-				return nil, p.error("S0217", t, "parent operator cannot be used here")
-			}
 			return p.postfix(Parent{t.Pos})
 		}
 	case Colon:
@@ -1418,6 +1424,9 @@ func (p *Parser) parentExpression(min int) (Node, *ParseError) {
 	return n, err
 }
 
+// ContainsParent reports whether n uses the parent operator.
+func ContainsParent(n Node) bool { return containsParent(n) }
+
 func containsParent(n Node) bool {
 	switch x := n.(type) {
 	case Parent:
@@ -1463,6 +1472,31 @@ func containsParent(n Node) bool {
 		return containsParent(x.Value)
 	}
 	return false
+}
+
+// BindsPathVariable reports whether a path binds a focus or position variable.
+// Parentheses keep such a path as a block, so its variables stay inside it.
+func BindsPathVariable(n Node) bool {
+	for {
+		switch x := n.(type) {
+		case Binary:
+			switch x.Op {
+			case "@", "#":
+				return true
+			case ".", "^":
+				if BindsPathVariable(x.Right) {
+					return true
+				}
+				n = x.Left
+			default:
+				return false
+			}
+		case Selector:
+			n = x.Base
+		default:
+			return false
+		}
+	}
 }
 
 func emptyGrouping(n Node) bool {

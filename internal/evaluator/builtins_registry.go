@@ -46,7 +46,62 @@ func (f builtinValue) invoke(st state, args []any) (any, error) {
 	if err := rejectUTF16StringArguments(f.spec.name, prepared); err != nil {
 		return nil, withRuntimeToken(err, f.spec.name)
 	}
-	return f.spec.implementation(st, prepared)
+	return f.spec.implementation(st, builtinArguments(prepared))
+}
+
+// builtinArguments removes the path context that the evaluator attaches to a
+// step result. A function receives only the argument value, as it does in
+// jsonata-js, so a value read through a multi-step path behaves the same as
+// the same value given as a literal.
+func builtinArguments(args []any) []any {
+	var out []any
+	for i, arg := range args {
+		plain, changed := plainArgument(arg)
+		if changed && out == nil {
+			out = append(make([]any, 0, len(args)), args[:i]...)
+		}
+		if out != nil {
+			out = append(out, plain)
+		}
+	}
+	if out == nil {
+		return args
+	}
+	return out
+}
+
+func plainArgument(arg any) (any, bool) {
+	switch current := arg.(type) {
+	case contextual:
+		plain, _ := plainArgument(current.v)
+		return plain, true
+	case bound:
+		plain, _ := plainArgument(current.v)
+		return plain, true
+	case sortedSequence:
+		plain, _ := plainArgument(current.values)
+		if items, ok := plain.(sequence); ok {
+			return value.Array{Items: items, Keep: current.keep}, true
+		}
+		return plain, true
+	case sequence:
+		var items sequence
+		for i, item := range current {
+			plain, changed := plainArgument(item)
+			if changed && items == nil {
+				items = append(make(sequence, 0, len(current)), current[:i]...)
+			}
+			if items != nil {
+				items = append(items, plain)
+			}
+		}
+		if items == nil {
+			return arg, false
+		}
+		return items, true
+	default:
+		return arg, false
+	}
 }
 
 func fixedBuiltinArityExceeded(signature functionSignature, count int) bool {
@@ -233,6 +288,12 @@ func builtinAppend(st state, args []any) (any, error) {
 	if len(args) != 2 {
 		return nil, functionArityError("$append", 2, len(args))
 	}
+	if value.IsUndefined(args[0]) {
+		return args[1], nil
+	}
+	if value.IsUndefined(args[1]) {
+		return args[0], nil
+	}
 	total := itemsLength(args[0]) + itemsLength(args[1])
 	if st.runtime != nil {
 		if err := st.runtime.check(); err != nil {
@@ -258,9 +319,6 @@ func builtinAppend(st state, args []any) (any, error) {
 			result = append(result, item)
 			count++
 		}
-	}
-	if len(result) == 1 {
-		return result[0], nil
 	}
 	return value.Array{Items: result}, nil
 }

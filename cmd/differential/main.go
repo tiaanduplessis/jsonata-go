@@ -12,6 +12,7 @@ import (
 func main() {
 	output := flag.String("output", "testdata/differential/cases.json", "generated corpus output path")
 	fuzzOutput := flag.String("fuzz-output", "testdata/differential/fuzz-cases.json", "generated bounded differential campaign output path")
+	shapeOutput := flag.String("shape-output", "testdata/differential/shape-cases.json", "generated shape campaign output path")
 	matrixOutput := flag.String("matrix-output", "reports/feature-matrix.json", "generated feature matrix output path")
 	suiteRoot := flag.String("suite", "testdata/reference/jsonata-js-v2.2.2", "pinned language-neutral suite path")
 	conformanceReport := flag.String("conformance-report", "reports/conformance/report.json", "complete pinned conformance report path")
@@ -34,6 +35,14 @@ func main() {
 	if err != nil {
 		fatal(err)
 	}
+	shapeCorpus, err := differential.GenerateShapes()
+	if err != nil {
+		fatal(err)
+	}
+	shapeEncoded, err := differential.Encode(shapeCorpus)
+	if err != nil {
+		fatal(err)
+	}
 	matrix, err := differential.GenerateFeatureMatrix(*suiteRoot, *conformanceReport)
 	if err != nil {
 		fatal(err)
@@ -45,11 +54,13 @@ func main() {
 	if *check {
 		checkCurrent(*output, encoded)
 		checkCurrent(*fuzzOutput, fuzzEncoded)
+		checkCurrent(*shapeOutput, shapeEncoded)
 		checkCurrent(*matrixOutput, matrixEncoded)
 		return
 	}
 	write(*output, encoded)
 	write(*fuzzOutput, fuzzEncoded)
+	write(*shapeOutput, shapeEncoded)
 	write(*matrixOutput, matrixEncoded)
 }
 

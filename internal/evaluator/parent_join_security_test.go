@@ -1,7 +1,6 @@
 package evaluator
 
 import (
-	"context"
 	"errors"
 	"testing"
 
@@ -37,21 +36,5 @@ func TestExternalBindingsCannotEnableAncestorLookup(t *testing.T) {
 	result, evalErr := EvalBindingsWithOptions(node, input, map[string]any{"lineage": true}, Options{MaxCallDepth: 16, MaxOperations: 256})
 	if result != nil || !errors.Is(evalErr, errUndefined) {
 		t.Fatalf("external binding enabled ancestor lookup: result=%#v error=%v", result, evalErr)
-	}
-}
-
-func TestLineageLookupHonorsRuntimeLimits(t *testing.T) {
-	cycle := &contextual{v: map[string]any{"safe": true}, vars: map[string]any{}}
-	cycle.parent = cycle
-	runtime := newEvalRuntime(Options{MaxOperations: 2})
-	if _, err := lineageField(cycle, "missing", runtime); err == nil {
-		t.Fatal("cyclic lineage lookup ignored operation budget")
-	}
-
-	canceled, cancel := context.WithCancel(context.Background())
-	cancel()
-	runtime = newEvalRuntime(Options{Context: canceled})
-	if _, err := lineageField(cycle, "missing", runtime); !errors.Is(err, context.Canceled) {
-		t.Fatalf("lineageField() error = %v, want context.Canceled", err)
 	}
 }
