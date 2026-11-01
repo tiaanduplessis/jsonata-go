@@ -106,6 +106,19 @@ An engine snapshots its registry when it compiles an expression; later engine
 registrations affect only expressions compiled afterward. Expression-level and
 per-call bindings override that snapshot.
 
+### Behaviour differences from blues/jsonata-go
+
+The language follows jsonata-js, so an expression that was written against
+`blues/jsonata-go` v1.5.4 can give a different result. Test each expression
+again after migration. These differences are the most common:
+
+- A `$map` or `$filter` result with one item is that item, not a one-item
+  array. Use an array constructor, such as `[$map(...)]`, where the result
+  must be an array.
+- A JSON `null` is a value. With `{"a": null}`, `$exists(a)` is `true`,
+  `$string(a)` is `"null"`, and `$count(a)` is `1`. The `blues` evaluator
+  treats such a field as missing.
+
 ### Migrating from gnata
 
 `gnata` does not have an import-compatible registration surface, so migrate at

@@ -33,6 +33,7 @@ differential-oracle:
 	$(GO) run ./cmd/differential
 	node testdata/differential/generate-oracle.mjs --checkout "$(JSONATA_JS_CHECKOUT)" --corpus testdata/differential/cases.json --output testdata/differential/oracle.json
 	node testdata/differential/generate-oracle.mjs --checkout "$(JSONATA_JS_CHECKOUT)" --corpus testdata/differential/fuzz-cases.json --output testdata/differential/fuzz-oracle.json
+	node testdata/differential/generate-oracle.mjs --checkout "$(JSONATA_JS_CHECKOUT)" --corpus testdata/differential/shape-cases.json --output testdata/differential/shape-oracle.json
 
 fuzz-smoke:
 	@test -d internal || { echo "fuzz targets are not present: internal" >&2; exit 1; }

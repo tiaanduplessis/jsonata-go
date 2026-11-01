@@ -335,7 +335,9 @@ func builtinDistinct(st state, args []any) (any, error) {
 		}
 	}
 	switch input.(type) {
-	case value.Array, []any, sequence:
+	case sequence:
+		return sequence(unique), nil
+	case value.Array, []any:
 		return value.Array{Items: unique}, nil
 	default:
 		if len(unique) == 0 {
@@ -388,7 +390,7 @@ func builtinEach(st state, args []any) (any, error) {
 			result = append(result, collapse(item))
 		}
 	}
-	return value.Array{Items: result}, nil
+	return hofSequence(result), nil
 }
 
 func builtinJoin(st state, args []any) (any, error) {
@@ -480,7 +482,11 @@ func builtinLookup(st state, args []any) (any, error) {
 	if len(args) != 2 {
 		return nil, functionArityError("$lookup", 2, len(args))
 	}
-	key, ok := collapse(args[1]).(string)
+	keyArg := collapse(args[1])
+	if value.IsUndefined(keyArg) {
+		return value.Undefined, nil
+	}
+	key, ok := keyArg.(string)
 	if !ok {
 		return nil, functionArityError("$lookup", 2, len(args))
 	}

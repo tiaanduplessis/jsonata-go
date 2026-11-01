@@ -64,7 +64,7 @@ func TestFrameNestedBindingIsolation(t *testing.T) {
 		map[string]any{"outer": "a", "inner": "a1"},
 		map[string]any{"outer": "b", "inner": "b1"},
 	}
-	got := evalFrameTest(t, `items@$i.children@$c.{'outer': $i.id, 'inner': $c.id}`, input)
+	got := evalFrameTest(t, `items@$i.$i.children@$c.{'outer': $i.id, 'inner': $c.id}`, input)
 	if !reflect.DeepEqual(got, want) {
 		t.Fatalf("got %#v, want %#v", got, want)
 	}

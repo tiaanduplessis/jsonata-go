@@ -423,6 +423,7 @@ func convertExtensionArgument(arg reflect.Value, param extensionParam) (reflect.
 }
 
 func extensionReflectValue(st state, input any) reflect.Value {
+	input, _ = plainArgument(input)
 	input = collapse(input)
 	if value.IsUndefined(input) {
 		return reflect.Value{}

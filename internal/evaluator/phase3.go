@@ -43,7 +43,7 @@ func (e *lexicalEnv) lookup(name string) (any, bool) {
 		}
 		if cell, ok := v.(*lexicalCell); ok {
 			if !cell.initialized {
-				return value.Undefined, true
+				continue
 			}
 			return cell.value, true
 		}

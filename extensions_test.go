@@ -2,6 +2,7 @@ package jsonata
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"reflect"
 	"strings"
@@ -552,4 +553,61 @@ func preservePackageRegistry(t *testing.T) {
 		packageRegistry.values = original
 		packageRegistry.Unlock()
 	})
+}
+
+func TestExtensionArgumentsMatchAcrossPathForms(t *testing.T) {
+	input := map[string]any{
+		"s": "x", "n": 2.0, "o": map[string]any{"k": "v"}, "l": []any{"a", "b"},
+		"a": map[string]any{
+			"s": "x", "n": 2.0, "o": map[string]any{"k": "v"}, "l": []any{"a", "b"},
+			"b": map[string]any{"z": 1.0},
+		},
+	}
+	describe := func(v any) string { return reflect.TypeOf(v).String() + ":" + jsonText(t, v) }
+	extensions := map[string]Extension{
+		"str":  {Func: func(v string) string { return describe(v) }},
+		"num":  {Func: func(v float64) string { return describe(v) }},
+		"obj":  {Func: func(v map[string]any) string { return describe(v) }},
+		"list": {Func: func(v []any) string { return describe(v) }},
+		"any":  {Func: func(v any) string { return describe(v) }},
+		"ctx":  {Func: func(_ context.Context, v any) string { return describe(v) }},
+	}
+	forms := []string{
+		"%s", "a.%s", "a.b.%%.%s", "($x := a.%s; $x)", "(function($q){$q})(a.%s)",
+		"(a.%s)^($)", "a@$o.$o.%s", "a#$i.%s", "a.(%s)",
+	}
+	for _, field := range []struct{ name, function string }{
+		{"s", "str"}, {"n", "num"}, {"o", "obj"}, {"l", "list"},
+	} {
+		for _, function := range []string{field.function, "any", "ctx"} {
+			want := ""
+			for _, form := range forms {
+				source := strings.ReplaceAll(strings.ReplaceAll(form, "%s", field.name), "%%", "%")
+				expression := "$" + function + "(" + source + ")"
+				compiled := MustCompile(expression)
+				if err := compiled.RegisterExts(extensions); err != nil {
+					t.Fatal(err)
+				}
+				got, err := compiled.Eval(input)
+				if err != nil {
+					t.Fatalf("%s: %v", expression, err)
+				}
+				if want == "" {
+					want = got.(string)
+				}
+				if got != want {
+					t.Errorf("%s received %v; the one-step path gives %v", expression, got, want)
+				}
+			}
+		}
+	}
+}
+
+func jsonText(t *testing.T, v any) string {
+	t.Helper()
+	encoded, err := json.Marshal(v)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return string(encoded)
 }

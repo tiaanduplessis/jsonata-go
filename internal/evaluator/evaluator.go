@@ -150,11 +150,16 @@ type sequence = value.Sequence
 type bound struct {
 	v    any
 	vars map[string]any
+	// focus is the context of the step that bound a focus variable with @.
+	// The next path step is evaluated against it, as in jsonata-js, rather
+	// than against the bound value.
+	focus *contextual
 }
 type contextual struct {
 	v, parent any
 	vars      map[string]any
-	lineage   bool
+	// focus carries a focus binding's step context to the next path step.
+	focus *contextual
 }
 type sortedSequence struct {
 	values     any
@@ -234,6 +239,8 @@ type state struct {
 	env                   *lexicalEnv
 	runtime               *evalRuntime
 	tail                  bool
+	pathPrefix            bool
+	pathStep              bool
 	preserveObjectOrder   bool
 	allowNonFinite        bool
 }
@@ -552,14 +559,14 @@ func items(v any) []any {
 			if !nested.Keep {
 				out := make([]any, 0, len(nested.Items))
 				for _, item := range nested.Items {
-					out = append(out, contextual{v: item, parent: x.parent, vars: cloneVars(x.vars), lineage: x.lineage})
+					out = append(out, contextual{v: item, parent: x.parent, vars: cloneVars(x.vars)})
 				}
 				return out
 			}
 		case sequence:
 			out := make([]any, 0, len(nested))
 			for _, item := range nested {
-				out = append(out, contextual{v: item, parent: x.parent, vars: cloneVars(x.vars), lineage: x.lineage})
+				out = append(out, contextual{v: item, parent: x.parent, vars: cloneVars(x.vars)})
 			}
 			return out
 		}
@@ -675,6 +682,15 @@ func eval(n syntax.Node, st state) (any, error) {
 		}
 		defer st.runtime.leaveEval()
 	}
+	pathStep, pathPrefix := st.pathStep, st.pathPrefix
+	st.pathStep, st.pathPrefix = false, false
+	if !pathStep && !pathPrefix && endsWithFocus(n) {
+		result, err := eval(n, withPathStep(st))
+		if err != nil {
+			return nil, err
+		}
+		return focusResult(result), nil
+	}
 	switch x := n.(type) {
 	case syntax.Literal:
 		if x.Kind == syntax.Number {
@@ -730,19 +746,6 @@ func eval(n syntax.Node, st state) (any, error) {
 		if err != nil {
 			return nil, err
 		}
-		if value.IsUndefined(v) && hasLineageBindings(st.vars) {
-			v, err = lineageField(st.parent, x.Value, st.runtime)
-			if err != nil {
-				return nil, err
-			}
-			v = inheritLineageVars(v, st.vars)
-		}
-		if value.IsUndefined(v) {
-			v, err = fieldWithRuntime(st.root, x.Value, st.runtime)
-			if err != nil {
-				return nil, err
-			}
-		}
 		return checkedSequenceResult(v, st.runtime)
 	case syntax.Variable:
 		if x.Name == "$" {
@@ -770,19 +773,6 @@ func eval(n syntax.Node, st state) (any, error) {
 		v, err := fieldWithRuntime(st.current, x.Name, st.runtime)
 		if err != nil {
 			return nil, err
-		}
-		if value.IsUndefined(v) && hasLineageBindings(st.vars) {
-			v, err = lineageField(st.parent, x.Name, st.runtime)
-			if err != nil {
-				return nil, err
-			}
-			v = inheritLineageVars(v, st.vars)
-		}
-		if value.IsUndefined(v) {
-			v, err = fieldWithRuntime(st.root, x.Name, st.runtime)
-			if err != nil {
-				return nil, err
-			}
 		}
 		return checkedSequenceResult(v, st.runtime)
 	case syntax.Parent:
@@ -840,7 +830,11 @@ func eval(n syntax.Node, st state) (any, error) {
 		}
 		return value.Array{Items: out}, nil
 	case syntax.Block:
-		return evalBlock(x, st)
+		result, err := evalBlock(x, st)
+		if err != nil || len(x.Expressions) != 1 || !syntax.BindsPathVariable(x.Expressions[0]) {
+			return result, err
+		}
+		return withoutPathBindings(result), nil
 	case syntax.Bind:
 		v, _, err := evaluateBinding(x, st)
 		return v, err
@@ -856,19 +850,20 @@ func eval(n syntax.Node, st state) (any, error) {
 		for _, pair := range x.Pairs {
 			key := pair.Key
 			if pair.KeyExpr == nil {
-				if dynamic := field(st.current, pair.Key); !value.IsUndefined(dynamic) {
-					dynamic = collapse(dynamic)
-					if _, ok := dynamic.(string); !ok {
-						return nil, runtimeError{
-							code:     "T1003",
-							msg:      "Key in object structure must evaluate to a string; got: " + toString(dynamic),
-							value:    publicDiagnosticValue(dynamic),
-							position: x.Pos.Offset + 1,
-							hasPos:   true,
-						}
-					}
-					key = dynamic.(string)
+				dynamic := collapse(field(st.current, pair.Key))
+				if value.IsUndefined(dynamic) {
+					continue
 				}
+				if _, ok := dynamic.(string); !ok {
+					return nil, runtimeError{
+						code:     "T1003",
+						msg:      "Key in object structure must evaluate to a string; got: " + toString(dynamic),
+						value:    publicDiagnosticValue(dynamic),
+						position: x.Pos.Offset + 1,
+						hasPos:   true,
+					}
+				}
+				key = dynamic.(string)
 			}
 			if pair.KeyExpr != nil {
 				keyState := st
@@ -878,6 +873,9 @@ func eval(n syntax.Node, st state) (any, error) {
 					return nil, e
 				}
 				kv = collapse(kv)
+				if value.IsUndefined(kv) {
+					continue
+				}
 				if containsUTF16String(kv) {
 					return nil, unsupportedUTF16StringError()
 				}
@@ -920,6 +918,7 @@ func eval(n syntax.Node, st state) (any, error) {
 	case syntax.Selector:
 		baseState := st
 		baseState.tail = false
+		baseState.pathStep = endsWithFocus(x.Base)
 		base, e := eval(x.Base, baseState)
 		if e != nil {
 			return nil, e
@@ -937,6 +936,7 @@ func eval(n syntax.Node, st state) (any, error) {
 		}
 		return result, nil
 	case syntax.Binary:
+		st.pathPrefix = pathPrefix && x.Op == "."
 		result, err := binary(x.Op, x.Left, x.Right, st, x.Op == "." && implicitObjectProjection(x.Pos, x.Right))
 		if err != nil {
 			position := x.Pos.Offset + 1
@@ -1027,7 +1027,7 @@ func eval(n syntax.Node, st state) (any, error) {
 			return nil, e
 		}
 		for _, f := range x.Fields {
-			v, e = applyPath(v, syntax.Name{Value: f.Value, Pos: f.Pos}, st, false)
+			v, e = applyPath(v, syntax.Name{Value: f.Value, Pos: f.Pos}, st, false, false, false)
 			if e != nil {
 				return nil, e
 			}
@@ -1083,8 +1083,11 @@ func binary(op string, left, right syntax.Node, st state, groupObjects bool) (an
 		return eval(right, st)
 	}
 	if op == "." {
+		lastStep := !st.pathPrefix
+		st.pathPrefix = false
 		leftState := st
 		leftState.tail = false
+		leftState.pathPrefix = true
 		lv, e := eval(left, leftState)
 		if e != nil {
 			return nil, e
@@ -1113,7 +1116,7 @@ func binary(op string, left, right syntax.Node, st state, groupObjects bool) (an
 				lv = contextual{v: lv, parent: frameFor(st.current, st), vars: cloneVars(st.vars)}
 			}
 		}
-		if b, ok := lv.(bound); ok {
+		if b, ok := lv.(bound); ok && b.focus == nil {
 			ns := cloneVarsMutable(st.vars)
 			for k, v := range b.vars {
 				ns[k] = v
@@ -1125,7 +1128,11 @@ func binary(op string, left, right syntax.Node, st state, groupObjects bool) (an
 		if a, ok := lv.(value.Array); ok {
 			keep = a.Keep
 		}
-		result, e := applyPath(lv, right, st, groupObjects)
+		tuple := isTuplePath(left, right)
+		result, e := applyPath(lv, right, st, groupObjects, lastStep && !tuple, tuple)
+		if e == nil && lastStep && focusStep(right, true) {
+			result = focusResult(result)
+		}
 		if e != nil || !keep || value.IsUndefined(result) {
 			return result, e
 		}
@@ -1147,6 +1154,7 @@ func binary(op string, left, right syntax.Node, st state, groupObjects bool) (an
 	if op == "#" {
 		leftState := st
 		leftState.tail = false
+		leftState.pathStep = endsWithFocus(left)
 		lv, e := eval(left, leftState)
 		if e != nil {
 			return nil, e
@@ -1162,6 +1170,8 @@ func binary(op string, left, right syntax.Node, st state, groupObjects bool) (an
 	}
 	leftState := st
 	leftState.tail = false
+	leftState.pathStep = op == "^" && endsWithFocus(left)
+	leftState.pathPrefix = op == "^"
 	lv, e := eval(left, leftState)
 	if e != nil {
 		return nil, e
@@ -1213,8 +1223,14 @@ func binary(op string, left, right syntax.Node, st state, groupObjects bool) (an
 			descending = unary.Op == ">"
 			keyExpr = unary.Expr
 		}
+		if len(values) == 0 && !sortedKeep(lv) {
+			return value.Undefined, nil
+		}
+		if len(values) == 1 && !sortedKeep(lv) && sortIndex == nil {
+			return values[0], nil
+		}
 		if len(values) <= 1 {
-			return sortedSequence{values: lv, descending: descending, keep: sortedKeep(lv)}, nil
+			return sortedSequence{values: sequence(values), descending: descending, keep: sortedKeep(lv)}, nil
 		}
 		{
 			type keyed struct {
@@ -1402,6 +1418,9 @@ func binary(op string, left, right syntax.Node, st state, groupObjects bool) (an
 	case "=":
 		return equal(a, b), nil
 	case "!=":
+		if value.IsUndefined(a) || value.IsUndefined(b) {
+			return false, nil
+		}
 		return !equal(a, b), nil
 	case "<":
 		return compareChecked(a, b, "<", "T2009")
@@ -1480,38 +1499,10 @@ func sortKeyValid(v any) bool {
 		return true
 	case string:
 		return true
-	case []any:
-		for _, item := range x {
-			if !sortKeyTupleItemValid(item) && !value.IsUndefined(item) {
-				return false
-			}
-		}
-		return true
-	case value.Array:
-		for _, item := range x.Items {
-			if !sortKeyTupleItemValid(item) && !value.IsUndefined(item) {
-				return false
-			}
-		}
-		return true
-	case sequence:
-		for _, item := range x {
-			if !sortKeyTupleItemValid(item) && !value.IsUndefined(item) {
-				return false
-			}
-		}
-		return true
 	default:
 		_, ok := strictNumeric(v)
 		return ok
 	}
-}
-
-func sortKeyTupleItemValid(v any) bool {
-	if _, ok := v.(string); ok {
-		return true
-	}
-	return sortKeyValid(v)
 }
 
 func isSortExpr(n syntax.Node) bool {
@@ -1522,10 +1513,145 @@ func isSortExpr(n syntax.Node) bool {
 		return false
 	}
 }
-func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, error) {
+
+// isTuplePath reports whether a path binds a focus or position variable or uses
+// the parent operator. jsonata-js evaluates such a path as a tuple stream, which
+// flattens an array that a step gives, including at the last step.
+func isTuplePath(left, right syntax.Node) bool {
+	if syntax.ContainsParent(right) || isBindingStep(right) {
+		return true
+	}
+	for {
+		path, ok := left.(syntax.Binary)
+		if ok && path.Op == "^" {
+			left = path.Left
+			continue
+		}
+		if !ok || path.Op != "." {
+			return isBindingStep(left) || syntax.ContainsParent(left)
+		}
+		if isBindingStep(path.Right) || syntax.ContainsParent(path.Right) {
+			return true
+		}
+		left = path.Left
+	}
+}
+
+func isBindingStep(n syntax.Node) bool {
+	for {
+		switch x := n.(type) {
+		case syntax.Binary:
+			if x.Op == "@" || x.Op == "#" {
+				return true
+			}
+			return false
+		case syntax.Selector:
+			n = x.Base
+		default:
+			return false
+		}
+	}
+}
+
+func withPathStep(st state) state {
+	st.pathStep = true
+	return st
+}
+
+// endsWithFocus reports whether an expression ends with a path step that binds
+// a focus variable, with or without a predicate, a position binding, or a sort
+// after it. As in jsonata-js, a focus on a variable that is not a path step
+// binds nothing: the expression gives the variable's value.
+func endsWithFocus(n syntax.Node) bool { return focusStep(n, false) }
+
+func focusStep(n syntax.Node, inPath bool) bool {
+	for {
+		switch x := n.(type) {
+		case syntax.Binary:
+			switch x.Op {
+			case "@":
+				_, variable := x.Left.(syntax.Variable)
+				return inPath || !variable
+			case ".":
+				n, inPath = x.Right, true
+			case "#", "^":
+				n = x.Left
+			default:
+				return false
+			}
+		case syntax.Selector:
+			if x.Index == nil {
+				return false
+			}
+			n = x.Base
+		default:
+			return false
+		}
+	}
+}
+
+// withoutPathBindings removes the focus and position variables that a path in
+// parentheses bound, so they do not reach the steps after the parentheses.
+func withoutPathBindings(v any) any {
+	switch x := v.(type) {
+	case bound:
+		return withoutPathBindings(x.v)
+	case contextual:
+		return contextual{v: withoutPathBindings(x.v), parent: x.parent}
+	case value.Array:
+		items := make([]any, len(x.Items))
+		for i, item := range x.Items {
+			items[i] = withoutPathBindings(item)
+		}
+		x.Items = items
+		return x
+	case sequence:
+		out := make(sequence, len(x))
+		for i, item := range x {
+			out[i] = withoutPathBindings(item)
+		}
+		return out
+	case sortedSequence:
+		x.values = withoutPathBindings(x.values)
+		return x
+	}
+	return v
+}
+
+// focusResult gives the result of a path whose last step binds a focus
+// variable. As in jsonata-js, that is the context that each tuple keeps, not
+// the bound value, and % from it is that same context.
+func focusResult(v any) any {
+	switch x := v.(type) {
+	case bound:
+		if x.focus != nil {
+			return contextual{v: x.focus.v, parent: *x.focus, vars: x.focus.vars}
+		}
+	case contextual:
+		if x.focus != nil {
+			return contextual{v: x.focus.v, parent: *x.focus, vars: x.focus.vars}
+		}
+	case sequence:
+		out := make(sequence, len(x))
+		for i, item := range x {
+			out[i] = focusResult(item)
+		}
+		return out
+	case sortedSequence:
+		x.values = focusResult(x.values)
+		return x
+	}
+	return v
+}
+
+// applyPath evaluates one path step for each item of base. When the step is the
+// last step of its path and exactly one item gives a result, an array result is
+// returned as it is instead of being flattened, as in jsonata-js. This keeps an
+// empty or single-item array that a path selects.
+func applyPath(base any, rhs syntax.Node, st state, groupObjects, lastStep, tuple bool) (any, error) {
 	if selector, ok := rhs.(syntax.Selector); ok {
 		if local, post, split := splitJoinSelectors(selector); split {
-			joined, err := applyPath(base, local, st, false)
+			joined, err := applyPath(base, local, st, false, false, false)
 			if err != nil {
 				return nil, err
 			}
@@ -1540,7 +1666,7 @@ func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, err
 	}
 	if binding, ok := rhs.(syntax.Binary); ok && binding.Op == "#" {
 		if selector, ok := binding.Left.(syntax.Selector); ok && selectorStartsJoin(selector) {
-			joined, err := applyPath(base, selector, st, false)
+			joined, err := applyPath(base, selector, st, false, false, false)
 			if err != nil {
 				return nil, err
 			}
@@ -1560,7 +1686,7 @@ func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, err
 		if path, ok := rhs.(syntax.Binary); ok && path.Op == "." {
 			if object, ok := path.Right.(syntax.Object); ok {
 				if _, dynamic := dynamicObjectProjection(object); dynamic {
-					target, err := applyPath(base, path.Left, st, false)
+					target, err := applyPath(base, path.Left, st, false, false, false)
 					if err != nil {
 						return nil, err
 					}
@@ -1587,8 +1713,14 @@ func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, err
 			baseSequence = true
 		}
 	}
+	results := 0
+	var lastResult any
 	for index, raw := range items(base) {
 		source := frameFor(raw, st)
+		if source.focus != nil {
+			source.v, source.parent = source.focus.v, *source.focus
+			source.focus = nil
+		}
 		item := source.v
 		vars := cloneVarsMutable(source.vars)
 		ns := st
@@ -1597,9 +1729,6 @@ func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, err
 		ns.current = item
 		ns.vars = vars
 		ns.vars["#"] = index
-		if nested, ok := rhs.(syntax.Binary); ok && nested.Op == "." {
-			ns.parent = source
-		}
 		// A quoted path segment is lexed as a string literal, but in path
 		// position it names a field rather than producing the literal value.
 		var v any
@@ -1611,10 +1740,14 @@ func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, err
 			}
 			v, e = fieldWithRuntime(ns.current, key, st.runtime)
 		} else {
-			v, e = eval(rhs, ns)
+			v, e = eval(rhs, withPathStep(ns))
 		}
 		if e != nil {
 			return nil, e
+		}
+		if definedStepResult(v) {
+			results++
+			lastResult = v
 		}
 		vals := make([]any, 0)
 		if arrayProjection, parenthesizedArray := rhs.(syntax.Array); parenthesizedArray && arrayProjection.FlattenInPath {
@@ -1667,7 +1800,7 @@ func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, err
 					return nil, err
 				}
 			}
-		} else if isVariableOrName(rhs) && baseCollection {
+		} else if (isVariableOrName(rhs) && baseCollection) || tuple {
 			if a, ok := v.(value.Array); ok && !a.Keep {
 				if st.runtime != nil {
 					if err := st.runtime.checkSequenceLength(len(vals) + len(a.Items)); err != nil {
@@ -1694,6 +1827,11 @@ func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, err
 			valueState := ns
 			valueState.parent = source
 			out = append(out, frameFor(val, valueState))
+		}
+	}
+	if lastStep && !groupObjects && results == 1 {
+		if array, ok := lastResult.(value.Array); ok && !array.Keep {
+			return array, nil
 		}
 	}
 	if len(out) == 0 {
@@ -1728,6 +1866,13 @@ func applyPath(base any, rhs syntax.Node, st state, groupObjects bool) (any, err
 		return normalizeGrouped(grouped).(map[string]any), nil
 	}
 	return pathResult(out, rhs, st.runtime)
+}
+
+func definedStepResult(v any) bool {
+	if empty, ok := v.(sequence); ok {
+		return len(empty) > 0
+	}
+	return !value.IsUndefined(v)
 }
 
 func selectorStartsJoin(selector syntax.Selector) bool {
@@ -1788,6 +1933,7 @@ func groupedObjectProjection(base any, object syntax.Object, st state) (any, err
 		frames[index] = frameFor(raw, st)
 	}
 	projectionKeys := make([][]string, len(object.Pairs))
+	projectionDefined := make([][]bool, len(object.Pairs))
 	orderedKeys := make([]string, 0, len(frames)*len(object.Pairs))
 	seenOrderedKeys := make(map[string]struct{}, len(frames)*len(object.Pairs))
 	for frameIndex, frame := range frames {
@@ -1799,13 +1945,19 @@ func groupedObjectProjection(base any, object syntax.Object, st state) (any, err
 			if dynamicObjectPair(pair) {
 				if projectionKeys[pairIndex] == nil {
 					projectionKeys[pairIndex] = make([]string, len(frames))
+					projectionDefined[pairIndex] = make([]bool, len(frames))
 				}
 				var err error
-				key, err = evalDynamicObjectKey(pair, frame, frameIndex, st)
+				var defined bool
+				key, defined, err = evalDynamicObjectKey(pair, frame, frameIndex, st)
 				if err != nil {
 					return nil, err
 				}
+				if !defined {
+					continue
+				}
 				projectionKeys[pairIndex][frameIndex] = key
+				projectionDefined[pairIndex][frameIndex] = true
 			}
 			if err := validateObjectKey(key, pair.Pos); err != nil {
 				return nil, err
@@ -1844,6 +1996,9 @@ func groupedObjectProjection(base any, object syntax.Object, st state) (any, err
 		groups := make(map[string][]contextual)
 		order := make([]string, 0, len(frames))
 		for index, frame := range frames {
+			if !projectionDefined[pairIndex][index] {
+				continue
+			}
 			key := projectionKeys[pairIndex][index]
 			if _, exists := groups[key]; !exists {
 				order = append(order, key)
@@ -1996,7 +2151,7 @@ func evalObjectPairValue(pair syntax.Pair, groupState state) (any, error) {
 	return eval(pair.Value, groupState)
 }
 
-func evalDynamicObjectKey(pair syntax.Pair, frame contextual, index int, st state) (string, error) {
+func evalDynamicObjectKey(pair syntax.Pair, frame contextual, index int, st state) (string, bool, error) {
 	keyState := st
 	keyState.current = frame.v
 	keyState.parent = frame.parent
@@ -2010,13 +2165,16 @@ func evalDynamicObjectKey(pair syntax.Pair, frame contextual, index int, st stat
 	} else {
 		keyValue, err = eval(pair.KeyExpr, keyState)
 		if err != nil {
-			return "", err
+			return "", false, err
 		}
 	}
 	keyValue = collapse(keyValue)
+	if value.IsUndefined(keyValue) {
+		return "", false, nil
+	}
 	key, ok := keyValue.(string)
 	if !ok {
-		return "", runtimeError{
+		return "", false, runtimeError{
 			code:     "T1003",
 			msg:      "Key in object structure must evaluate to a string; got: " + toString(keyValue),
 			value:    publicDiagnosticValue(keyValue),
@@ -2024,13 +2182,15 @@ func evalDynamicObjectKey(pair syntax.Pair, frame contextual, index int, st stat
 			hasPos:   true,
 		}
 	}
-	return key, nil
+	return key, true, nil
 }
 
 func isVariableOrName(n syntax.Node) bool {
-	switch n.(type) {
+	switch x := n.(type) {
 	case syntax.Name, syntax.Variable:
 		return true
+	case syntax.Wildcard:
+		return !x.Recursive
 	default:
 		return false
 	}
@@ -2259,9 +2419,6 @@ func selectValue(base any, idx syntax.Node, st state) (any, error) {
 	var container any = frameFor(st.current, st)
 	if contextualValue, ok := base.(contextual); ok && contextualValue.parent != nil {
 		container = contextualValue.parent
-		if contextualValue.lineage {
-			container = repeatedLineageFrame(container)
-		}
 	}
 	if b, ok := base.(bound); ok {
 		arr = []any{b}
@@ -2269,7 +2426,10 @@ func selectValue(base any, idx syntax.Node, st state) (any, error) {
 	if idx == nil {
 		// [] is an explicit array constructor. A contextual array is one
 		// projected value and must stay grouped; a direct input array is
-		// selected element-wise.
+		// selected element-wise. A path that selects nothing stays undefined.
+		if value.IsUndefined(base) {
+			return value.Undefined, nil
+		}
 		if _, ok := base.(contextual); ok {
 			return value.Array{Items: []any{base}, Keep: true}, nil
 		}
@@ -2354,6 +2514,7 @@ func selectValue(base any, idx syntax.Node, st state) (any, error) {
 		ns := st
 		ns.tail = false
 		ns.parent = container
+		var focus *contextual
 		if c, ok := item.(contextual); ok {
 			ns.current = c.v
 			ns.parent = c.parent
@@ -2361,18 +2522,24 @@ func selectValue(base any, idx syntax.Node, st state) (any, error) {
 			for k, v := range c.vars {
 				ns.vars[k] = v
 			}
+			focus = c.focus
 		} else if b, ok := item.(bound); ok {
 			ns.current = b.v
 			ns.vars = cloneVarsMutable(st.vars)
 			for k, v := range b.vars {
 				ns.vars[k] = v
 			}
+			focus = b.focus
 		} else {
 			ns.current = item
 			ns.vars = cloneVarsMutable(st.vars)
 		}
 		ns.vars["#"] = i
-		v, e := eval(idx, ns)
+		predicateState := ns
+		if focus != nil {
+			predicateState.current, predicateState.parent = focus.v, focus.parent
+		}
+		v, e := eval(idx, predicateState)
 		if e != nil {
 			return nil, e
 		}
@@ -2383,9 +2550,9 @@ func selectValue(base any, idx syntax.Node, st state) (any, error) {
 				}
 			}
 			if c, ok := item.(contextual); ok {
-				out = append(out, contextual{v: c.v, parent: container, vars: ns.vars})
+				out = append(out, contextual{v: c.v, parent: container, vars: ns.vars, focus: focus})
 			} else if b, ok := item.(bound); ok {
-				out = append(out, contextual{v: b.v, parent: container, vars: ns.vars})
+				out = append(out, contextual{v: b.v, parent: container, vars: ns.vars, focus: focus})
 			} else {
 				out = append(out, contextual{v: item, parent: container, vars: ns.vars})
 			}
@@ -2535,62 +2702,17 @@ func wildcard(v any, recursive bool, runtime *evalRuntime) (any, error) {
 			keys = append(keys, k)
 		}
 		sort.Strings(keys)
-		out := make([]any, 0, sequenceAllocationCapacity(len(keys), runtime))
-		for _, k := range keys {
-			additional := 1
-			if a, ok := x[k].([]any); ok {
-				additional = len(a)
-				if runtime != nil {
-					if err := runtime.checkSequenceLengthAttempted(len(out) + additional); err != nil {
-						return nil, err
-					}
-				}
-				out = append(out, a...)
-			} else if a, ok := x[k].(value.Array); ok {
-				additional = len(a.Items)
-				if runtime != nil {
-					if err := runtime.checkSequenceLengthAttempted(len(out) + additional); err != nil {
-						return nil, err
-					}
-				}
-				out = append(out, a.Items...)
-			} else {
-				if runtime != nil {
-					if err := runtime.checkSequenceLength(len(out) + additional); err != nil {
-						return nil, err
-					}
-				}
-				out = append(out, x[k])
-			}
+		fields := make([]any, len(keys))
+		for i, k := range keys {
+			fields[i] = x[k]
 		}
-		return sequence(out), nil
+		return wildcardFields(fields, runtime)
 	case value.OrderedObject:
-		out := make([]any, 0, sequenceAllocationCapacity(len(x.Order), runtime))
-		for _, key := range x.Order {
-			if a, ok := x.Fields[key].([]any); ok {
-				if runtime != nil {
-					if err := runtime.checkSequenceLengthAttempted(len(out) + len(a)); err != nil {
-						return nil, err
-					}
-				}
-				out = append(out, a...)
-			} else if a, ok := x.Fields[key].(value.Array); ok {
-				if runtime != nil {
-					if err := runtime.checkSequenceLengthAttempted(len(out) + len(a.Items)); err != nil {
-						return nil, err
-					}
-				}
-				out = append(out, a.Items...)
-			} else {
-				if runtime != nil {
-					if err := runtime.checkSequenceLength(len(out) + 1); err != nil {
-						return nil, err
-					}
-				}
-				out = append(out, x.Fields[key])
-			}
+		fields := make([]any, len(x.Order))
+		for i, key := range x.Order {
+			fields[i] = x.Fields[key]
 		}
-		return sequence(out), nil
+		return wildcardFields(fields, runtime)
 	case []any:
 		if runtime != nil {
 			if err := runtime.checkSequenceLength(len(x)); err != nil {
@@ -2610,82 +2732,57 @@ func wildcard(v any, recursive bool, runtime *evalRuntime) (any, error) {
 	}
 }
 
-func lineageField(parent any, name string, runtime *evalRuntime) (any, error) {
-	for current := parent; current != nil; {
-		if runtime != nil {
-			if err := runtime.check(); err != nil {
+// wildcardFields returns the values of an object's fields. An array value is
+// flattened into the result. As in jsonata-js, the result is an array rather
+// than a sequence when a field holds an array, so the last step of a path keeps
+// that array.
+func wildcardFields(fields []any, runtime *evalRuntime) (any, error) {
+	out := make([]any, 0, sequenceAllocationCapacity(len(fields), runtime))
+	array := false
+	for _, field := range fields {
+		switch field.(type) {
+		case []any, value.Array:
+			array = true
+			if err := appendFlattened(&out, field, runtime); err != nil {
 				return nil, err
 			}
-		}
-		switch frame := current.(type) {
-		case contextual:
-			candidate, err := fieldWithRuntime(frame.v, name, runtime)
-			if err != nil {
-				return nil, err
-			}
-			if !value.IsUndefined(candidate) {
-				return contextual{v: candidate, parent: frame, vars: cloneVars(frame.vars), lineage: true}, nil
-			}
-			current = frame.parent
-		case *contextual:
-			if frame == nil {
-				return value.Undefined, nil
-			}
-			candidate, err := fieldWithRuntime(frame.v, name, runtime)
-			if err != nil {
-				return nil, err
-			}
-			if !value.IsUndefined(candidate) {
-				return contextual{v: candidate, parent: *frame, vars: cloneVars(frame.vars), lineage: true}, nil
-			}
-			current = frame.parent
 		default:
-			candidate, err := fieldWithRuntime(current, name, runtime)
-			if err != nil {
-				return nil, err
+			if runtime != nil {
+				if err := runtime.checkSequenceLength(len(out) + 1); err != nil {
+					return nil, err
+				}
 			}
-			if !value.IsUndefined(candidate) {
-				return contextual{v: candidate, parent: frameFor(current, state{}), vars: map[string]any{}, lineage: true}, nil
+			out = append(out, field)
+		}
+	}
+	if array {
+		return value.Array{Items: out}, nil
+	}
+	return sequence(out), nil
+}
+
+func appendFlattened(out *[]any, v any, runtime *evalRuntime) error {
+	var items []any
+	switch x := v.(type) {
+	case []any:
+		items = x
+	case value.Array:
+		items = x.Items
+	default:
+		if runtime != nil {
+			if err := runtime.checkSequenceLengthAttempted(len(*out) + 1); err != nil {
+				return err
 			}
-			return value.Undefined, nil
+		}
+		*out = append(*out, v)
+		return nil
+	}
+	for _, item := range items {
+		if err := appendFlattened(out, item, runtime); err != nil {
+			return err
 		}
 	}
-	return value.Undefined, nil
-}
-
-func hasLineageBindings(vars map[string]any) bool {
-	for _, item := range vars {
-		switch item.(type) {
-		case contextual, *contextual, bound:
-			return true
-		}
-	}
-	return false
-}
-
-func repeatedLineageFrame(parent any) any {
-	switch frame := parent.(type) {
-	case contextual:
-		return contextual{v: frame.v, parent: frame, vars: cloneVars(frame.vars)}
-	case *contextual:
-		if frame != nil {
-			return contextual{v: frame.v, parent: *frame, vars: cloneVars(frame.vars)}
-		}
-	}
-	return parent
-}
-
-func inheritLineageVars(v any, vars map[string]any) any {
-	frame, ok := v.(contextual)
-	if !ok {
-		return v
-	}
-	merged := cloneVarsMutable(frame.vars)
-	for key, item := range vars {
-		merged[key] = item
-	}
-	frame.vars = merged
-	return frame
+	return nil
 }
 
 func field(v any, name string) any {
@@ -3294,13 +3391,20 @@ func cloneVarsMutable(m map[string]any) map[string]any {
 func frameFor(v any, st state) contextual {
 	parent := st.parent
 	var layers []map[string]any
+	var focus *contextual
 	for {
 		switch wrapped := v.(type) {
 		case bound:
 			layers = append(layers, wrapped.vars)
+			if focus == nil {
+				focus = wrapped.focus
+			}
 			v = wrapped.v
 		case contextual:
 			layers = append(layers, wrapped.vars)
+			if focus == nil {
+				focus = wrapped.focus
+			}
 			parent = wrapped.parent
 			v = wrapped.v
 		default:
@@ -3331,7 +3435,7 @@ func frameFor(v any, st state) contextual {
 					vars[key] = item
 				}
 			}
-			return contextual{v: v, parent: parent, vars: vars}
+			return contextual{v: v, parent: parent, vars: vars, focus: focus}
 		}
 	}
 }
@@ -3356,8 +3460,10 @@ func bindValues(v any, name string, st state, index bool) (any, error) {
 	for i, raw := range values {
 		vars := cloneVarsMutable(st.vars)
 		item := raw
+		var focus *contextual
 		if b, ok := raw.(bound); ok {
 			item = b.v
+			focus = b.focus
 			for k, value := range b.vars {
 				vars[k] = value
 			}
@@ -3371,12 +3477,40 @@ func bindValues(v any, name string, st state, index bool) (any, error) {
 				vars[name] = frameFor(item, st)
 			}
 		}
-		out = append(out, bound{v: item, vars: vars})
+		next := bound{v: item, vars: vars, focus: focus}
+		if !index {
+			context := focusContext(st)
+			next.focus = &context
+		}
+		out = append(out, next)
 	}
 	if len(out) == 1 {
 		return out[0], nil
 	}
 	return sequence(out), nil
+}
+
+// focusContext returns the frame of the context that a focus binding keeps.
+// After a focus binding, applyPath makes that frame the parent of the next
+// step, so a chain of focus bindings shares one frame and its true parent.
+func focusContext(st state) contextual {
+	if parent, ok := st.parent.(contextual); ok && sameContainer(parent.v, st.current) {
+		return parent
+	}
+	return frameFor(st.current, st)
+}
+
+func sameContainer(a, b any) bool {
+	switch x := a.(type) {
+	case map[string]any:
+		y, ok := b.(map[string]any)
+		return ok && x != nil && reflect.ValueOf(x).UnsafePointer() == reflect.ValueOf(y).UnsafePointer()
+	case value.OrderedObject:
+		y, ok := b.(value.OrderedObject)
+		return ok && x.Fields != nil && reflect.ValueOf(x.Fields).UnsafePointer() == reflect.ValueOf(y.Fields).UnsafePointer()
+	default:
+		return false
+	}
 }
 
 type transformValue struct {

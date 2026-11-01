@@ -168,6 +168,50 @@ func TestGeneratedFuzzCampaignAndPinnedOracle(t *testing.T) {
 	}
 }
 
+func TestShapeCampaignAndPinnedOracle(t *testing.T) {
+	root := filepath.Join("..", "..", "testdata", "differential")
+	generated, err := differential.GenerateShapes()
+	if err != nil {
+		t.Fatal(err)
+	}
+	generatedBytes, err := differential.Encode(generated)
+	if err != nil {
+		t.Fatal(err)
+	}
+	corpusBytes := readFixture(t, filepath.Join(root, "shape-cases.json"))
+	if !bytes.Equal(corpusBytes, generatedBytes) {
+		t.Fatal("committed shape corpus is stale; run go run ./cmd/differential")
+	}
+	corpus, err := differential.DecodeShapeCorpus(corpusBytes, len(generated.Cases))
+	if err != nil {
+		t.Fatal(err)
+	}
+	oracle, err := differential.DecodeShapeOracle(readFixture(t, filepath.Join(root, "shape-oracle.json")), len(corpus.Cases))
+	if err != nil {
+		t.Fatal(err)
+	}
+	results := make(map[string]differential.OracleResult, len(oracle.Cases))
+	for _, result := range oracle.Cases {
+		if result.Kind == "error" && result.Error.Code == "UNKNOWN" {
+			t.Fatalf("shape oracle case %q has an uncoded jsonata-js failure", result.ID)
+		}
+		results[result.ID] = result
+	}
+	for _, testCase := range corpus.Cases {
+		want, ok := results[testCase.ID]
+		if !ok {
+			t.Fatalf("shape oracle result is missing for %q", testCase.ID)
+		}
+		t.Run(testCase.ID, func(t *testing.T) {
+			t.Parallel()
+			actual, evalErr := evaluate(testCase)
+			assertOracleResult(t, actual, evalErr, want)
+			decoded, decodedErr := evaluateDecoded(testCase)
+			assertOracleResult(t, decoded, decodedErr, want)
+		})
+	}
+}
+
 func assertOracleResult(t *testing.T, actual []byte, evalErr error, want differential.OracleResult) {
 	t.Helper()
 	switch want.Kind {
@@ -198,6 +242,22 @@ func evaluate(testCase differential.Case) ([]byte, error) {
 		return compiled.EvalBytes(testCase.Input)
 	}
 	result, err := compiled.EvalNoInput()
+	if err != nil {
+		return nil, err
+	}
+	return json.Marshal(result)
+}
+
+func evaluateDecoded(testCase differential.Case) ([]byte, error) {
+	compiled, err := jsonata.Compile(testCase.Expression)
+	if err != nil {
+		return nil, err
+	}
+	var input any
+	if err := json.Unmarshal(testCase.Input, &input); err != nil {
+		return nil, err
+	}
+	result, err := compiled.Eval(input)
 	if err != nil {
 		return nil, err
 	}

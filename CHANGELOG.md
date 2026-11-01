@@ -3,6 +3,36 @@
 All notable changes are recorded here. Release entries are created from the
 tagged source after the release verification workflow passes.
 
+## Unreleased
+
+- Fixed values that a path of two or more steps selects. They no longer carry
+  evaluator context into functions, so `$string(a.b)` no longer adds JSON
+  quotes, and `$trim`, `$error`, the URL and base64 functions no longer panic.
+  Extension functions receive the same plain values.
+- Fixed a missing field that resolved to a field of the same name at the
+  document root. `a.x` is now undefined when `a` has no `x`.
+- Fixed `undefined != value`, which returned true. Any comparison with an
+  undefined operand is now false, as in jsonata-js.
+- Fixed object constructors that used the text of an unquoted key when the key
+  expression was undefined. Such a pair is now left out.
+- The last step of a path now keeps an empty or single-item array, and a path
+  that binds a focus or position variable, or that uses `%`, flattens arrays as
+  a tuple stream does. A step or a predicate after a focus binding uses the
+  context of the focus step, and a path that ends with a focus binding gives
+  that context, as in jsonata-js. Removed the ancestor lookup that this
+  replaces, which could return a field of an ancestor of the same name.
+- The parent operator now follows the jsonata-js ancestry rules, so
+  `a.b.%.c` and `$f(a.b.%.c)` are accepted and an unresolvable `%` is S0217.
+- Aligned `$each`, `$match`, `$distinct`, `$append`, `$substring`,
+  `$substringBefore`, `$lookup`, sort, and wildcard results with jsonata-js
+  for single-item, empty, and undefined values.
+- A binding in a block no longer hides an outer variable or a standard
+  function before the binding runs, so `$now := $now()` works.
+- Removed the `golang.org/x/vuln` tool requirement from the module, so a
+  consumer requires only `golang.org/x/text` and `github.com/dlclark/regexp2`.
+- Added the shape differential campaign, which crosses value shapes, path
+  constructs, and function arguments against jsonata-js v2.2.2.
+
 ## v0.1.1 - 2026-09-12
 
 - Corrected public-release and security-support documentation and moved

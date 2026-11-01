@@ -178,10 +178,7 @@ func builtinMatchRegex(st state, args []any) (any, error) {
 			return nil, err
 		}
 	}
-	if len(result) == 0 {
-		return value.Undefined, nil
-	}
-	return value.Array{Items: result}, nil
+	return hofSequence(result), nil
 }
 
 func regexMatchObject(input string, indexes []int) (map[string]any, error) {
